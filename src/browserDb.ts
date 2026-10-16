@@ -165,6 +165,17 @@ export function handleStandaloneRequest(route: string, body?: any): any {
     return o;
   }
 
+function findVariant(state: any, variantId: number) {
+  for (const m of state.menu || []) {
+    for (const v of m.variants || []) {
+      if (Number(v.id) === Number(variantId)) {
+        return { dish: m, variant: v };
+      }
+    }
+  }
+  return null;
+}
+
   // Handle Order creation
   if (route === "order" || route === "orders/create") {
     const orderData = body;
@@ -172,28 +183,40 @@ export function handleStandaloneRequest(route: string, body?: any): any {
     const orderNumber = `INV-${String(nextId).padStart(6, "0")}`;
 
     const items = (orderData.items || []).map((it: any, idx: number) => {
-      const price = Number(it.price || 0);
+      const vId = Number(it.variantId || it.variant_id || 1);
+      const found = findVariant(state, vId);
+
+      const dishName = it.name || found?.dish?.name || "Dish";
+      const variantName = it.variant || found?.variant?.name || "Standard";
+      const unit = it.unit || found?.variant?.unit || "portion";
+      const price = Number(it.price !== undefined && it.price !== null ? it.price : (found?.variant?.price || 0));
       const qty = Number(it.qty || 1000);
       const amount = Math.round((price * qty) / 1000);
+
       return {
         id: nextId * 100 + idx,
         order_id: nextId,
-        variant_id: it.variantId || it.variant_id || 1,
-        name: it.name || "Custom Item",
-        variant: it.variant || "Standard",
-        unit: it.unit || "portion",
+        variant_id: vId,
+        name: dishName,
+        variant: variantName,
+        unit: unit,
         qty,
         price,
         amount,
         note: it.note || "",
         batch: 1,
-        cost: null,
+        cost: found?.variant?.cost ?? null,
       };
     });
 
     const subtotal = items.reduce((acc: number, it: any) => acc + it.amount, 0);
     const discount = Number(orderData.discount || 0);
-    const total = Math.max(0, subtotal - discount);
+    const taxable = Math.max(0, subtotal - discount);
+    const taxBps = Number(state.settings?.taxBps || 0);
+    const serviceBps = Number(state.settings?.serviceBps || 0);
+    const tax = Math.round((taxable * taxBps) / 10000);
+    const serviceCharge = Math.round((taxable * serviceBps) / 10000);
+    const total = taxable + tax + serviceCharge;
 
     let place = "Takeaway";
     if (orderData.service === "Dine-in") {
@@ -216,20 +239,20 @@ export function handleStandaloneRequest(route: string, body?: any): any {
       state: "open",
       version: 1,
       discount,
-      tax_bps: 0,
-      service_bps: 0,
+      tax_bps: taxBps,
+      service_bps: serviceBps,
       reason: null,
       preparation: null,
       items,
       subtotal,
-      tax: 0,
-      serviceCharge: 0,
+      tax,
+      serviceCharge,
       total,
       restaurant: state.settings,
       place,
-      customer: orderData.deliveryName ? { name: orderData.deliveryName, phone: orderData.deliveryPhone, address: orderData.deliveryAddress } : null,
-      taxBps: 0,
-      serviceBps: 0,
+      customer: orderData.deliveryName ? { name: orderData.deliveryName, phone: orderData.deliveryPhone, address: orderData.deliveryAddress } : (orderData.customerId ? (state.customers || []).find((c: any) => c.id === Number(orderData.customerId)) : null),
+      taxBps,
+      serviceBps,
       orderId: nextId,
       invoiceId: nextId,
       revision: 1,
@@ -239,7 +262,7 @@ export function handleStandaloneRequest(route: string, body?: any): any {
       collectible: total,
       balance: total,
       refundStatus: null,
-      paymentStatus: "Unpaid",
+      paymentStatus: total === 0 ? "Paid" : "Unpaid",
       payments: [],
       refunds: [],
       change: 0,
@@ -276,30 +299,43 @@ export function handleStandaloneRequest(route: string, body?: any): any {
 
     const currentBatch = Math.max(1, ...(o.tickets || []).map((t: any) => t.batch || 1)) + 1;
     const newItems = (body.items || []).map((it: any, idx: number) => {
-      const price = Number(it.price || 0);
+      const vId = Number(it.variantId || it.variant_id || 1);
+      const found = findVariant(state, vId);
+
+      const dishName = it.name || found?.dish?.name || "Dish";
+      const variantName = it.variant || found?.variant?.name || "Standard";
+      const unit = it.unit || found?.variant?.unit || "portion";
+      const price = Number(it.price !== undefined && it.price !== null ? it.price : (found?.variant?.price || 0));
       const qty = Number(it.qty || 1000);
       const amount = Math.round((price * qty) / 1000);
+
       return {
         id: o.id * 100 + (o.items?.length || 0) + idx + 1,
         order_id: o.id,
-        variant_id: it.variantId || 1,
-        name: it.name || "Appended Item",
-        variant: it.variant || "Standard",
-        unit: it.unit || "portion",
+        variant_id: vId,
+        name: dishName,
+        variant: variantName,
+        unit: unit,
         qty,
         price,
         amount,
         note: it.note || "",
         batch: currentBatch,
-        cost: null,
+        cost: found?.variant?.cost ?? null,
       };
     });
 
     o.items = [...(o.items || []), ...newItems];
     o.subtotal = o.items.reduce((acc: number, it: any) => acc + (it.amount || 0), 0);
-    o.total = Math.max(0, o.subtotal - (o.discount || 0));
+    const taxable = Math.max(0, o.subtotal - (o.discount || 0));
+    const taxBps = Number(o.taxBps || state.settings?.taxBps || 0);
+    const serviceBps = Number(o.serviceBps || state.settings?.serviceBps || 0);
+    o.tax = Math.round((taxable * taxBps) / 10000);
+    o.serviceCharge = Math.round((taxable * serviceBps) / 10000);
+    o.total = taxable + o.tax + o.serviceCharge;
     o.collectible = o.total;
     o.balance = Math.max(0, o.total - (o.received || 0));
+    o.paymentStatus = o.balance === 0 ? "Paid" : (o.received > 0 ? "Partial" : "Unpaid");
     o.version = (o.version || 1) + 1;
     o.tickets = [
       ...(o.tickets || []),

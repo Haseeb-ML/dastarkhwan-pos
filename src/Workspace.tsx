@@ -240,7 +240,16 @@ function fe({ editing: e, resume: t, onSaved: n }) {
                 if (e)
                     await i("drafts/save", { data: l }, l.key), u(de()), s(`Draft held in Orders & Kitchen`);
                 else {
-                    let e = l.pending?.body || (l.editId ? { id: l.editId, version: l.version, items: l.items.map(({ variantId: e, qty: t, note: n }) => ({ variantId: e, qty: t, note: n })) } : { service: l.service, tableId: Number(l.tableId) || null, customerId: Number(l.customerId) || null, deliveryName: l.deliveryName || '', deliveryPhone: l.deliveryPhone || '', deliveryAddress: l.deliveryAddress || '', discount: O(l.discount), items: l.items.map(({ variantId: e, qty: t, note: n }) => ({ variantId: e, qty: t, note: n })) }), t = l.pending?.route || (l.editId ? `orders/append` : `orders/create`), r = l.pending?.key || l.key, o = { ...l, pending: { route: t, body: e, key: r } };
+                    const mappedItems = l.items.map(it => ({
+                        variantId: it.variantId,
+                        qty: it.qty,
+                        note: it.note || "",
+                        name: it.name,
+                        variant: it.variant,
+                        unit: it.unit,
+                        price: it.price
+                    }));
+                    let e = l.pending?.body || (l.editId ? { id: l.editId, version: l.version, items: mappedItems } : { service: l.service, tableId: Number(l.tableId) || null, customerId: Number(l.customerId) || null, deliveryName: l.deliveryName || '', deliveryPhone: l.deliveryPhone || '', deliveryAddress: l.deliveryAddress || '', discount: O(l.discount), items: mappedItems }), t = l.pending?.route || (l.editId ? `orders/append` : `orders/create`), r = l.pending?.key || l.key, o = { ...l, pending: { route: t, body: e, key: r } };
                     localStorage.setItem(c, JSON.stringify(o)), u(o);
                     let s = await i(t, e, r);
                     l.heldId && await i("drafts/delete", { id: l.heldId }), u(de()), v(!1), setMobileView(`catalog`), n(), a(s.id);
