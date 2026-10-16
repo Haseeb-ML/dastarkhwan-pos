@@ -74,6 +74,7 @@ export function getLocalState() {
       if (!parsed.suppliers) parsed.suppliers = defaultState.suppliers || [];
       if (!parsed.purchases) parsed.purchases = defaultState.purchases || [];
       if (!parsed.supplierPayments) parsed.supplierPayments = defaultState.supplierPayments || [];
+      if (!parsed.accounts) parsed.accounts = defaultState.accounts || [];
       return parsed;
     }
   } catch (e) {
@@ -180,6 +181,7 @@ export function handleStandaloneRequest(route: string, body?: any): any {
     state.suppliers = state.suppliers || [];
     state.purchases = state.purchases || [];
     state.supplierPayments = state.supplierPayments || [];
+    state.accounts = state.accounts || [];
 
     // Recalculate supplier balances
     const updatedSuppliers = (state.suppliers || []).map((s: any) => {
@@ -652,18 +654,52 @@ function findVariant(state: any, variantId: number) {
   // Handle Expenses
   if (route === "expenses") {
     const nextId = (state.expenses?.length ? Math.max(...state.expenses.map((e: any) => e.id || 0)) : 0) + 1;
+    const bDate = body.businessDate || body.date || new Date().toISOString().slice(0, 10);
     const newExp = {
       id: nextId,
       category: body.category || "General",
       amount: Number(body.amount || 0),
+      method: body.method || "Cash",
       note: body.note || "",
-      date: body.date || new Date().toISOString().slice(0, 10),
+      businessDate: bDate,
+      date: bDate,
+      created: new Date().toISOString(),
       actor: currentUser?.id || 1,
     };
     state.expenses = [newExp, ...(state.expenses || [])];
     saveLocalState(state);
     syncExpenseToFirestore(newExp).catch(() => {});
     return newExp;
+  }
+
+  // Handle Expenses Delete
+  if (route === "expenses/delete") {
+    const id = Number(body?.id);
+    state.expenses = (state.expenses || []).filter((e: any) => e.id !== id);
+    saveLocalState(state);
+    return { ok: true };
+  }
+
+  // Handle Custom Accounts Save
+  if (route === "accounts/save") {
+    state.accounts = state.accounts || [];
+    if (body?.id) {
+      const aid = Number(body.id);
+      state.accounts = state.accounts.map((a: any) => a.id === aid ? { ...a, ...body } : a);
+    } else {
+      const nextId = (state.accounts.length ? Math.max(...state.accounts.map((a: any) => a.id || 0)) : 0) + 1;
+      state.accounts = [...state.accounts, { id: nextId, ...body }];
+    }
+    saveLocalState(state);
+    return { ok: true };
+  }
+
+  // Handle Custom Accounts Delete
+  if (route === "accounts/delete") {
+    const id = Number(body?.id);
+    state.accounts = (state.accounts || []).filter((a: any) => a.id !== id);
+    saveLocalState(state);
+    return { ok: true };
   }
 
   // Handle Cash session

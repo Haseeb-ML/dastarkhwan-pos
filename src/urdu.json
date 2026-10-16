@@ -449,5 +449,9 @@
   "Qty / unit": "تعداد",
   "Business / Tax ID": "کاروباری نمبر",
   "Kitchen ticket": "باورچی خانے کا آرڈر",
-  "Customer invoice": "گاہک کا بل"
+  "Customer invoice": "گاہک کا بل",
+  "Finance & Accounts": "فنانس اور اکاؤنٹس",
+  "General Ledger": "جنرل لیجر",
+  "Chart of Accounts": "کھاتے",
+  "Expenses": "اخراجات"
 }
