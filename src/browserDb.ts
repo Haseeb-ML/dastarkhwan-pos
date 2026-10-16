@@ -1,5 +1,6 @@
 // @ts-nocheck
 import defaultState from "./initialState.json";
+import { fetchFirestoreState, saveFirestoreState } from "./firestoreSync";
 
 const DB_KEY = "dastarkhwan_standalone_db";
 const USER_KEY = "dastarkhwan_current_user";
@@ -18,6 +19,8 @@ export function getLocalState() {
 export function saveLocalState(state: any) {
   try {
     localStorage.setItem(DB_KEY, JSON.stringify(state));
+    // Sync to Cloud Firestore in background
+    saveFirestoreState(state).catch(() => {});
   } catch (e) {
     console.error("Failed to persist standalone state:", e);
   }
@@ -28,7 +31,9 @@ export function getCurrentUser() {
     const raw = localStorage.getItem(USER_KEY);
     if (raw) return JSON.parse(raw);
   } catch {}
-  return null;
+  const defaultOwner = { id: 1, name: "Ali Khan (Owner)", username: "owner", role: "Owner" };
+  setCurrentUser(defaultOwner);
+  return defaultOwner;
 }
 
 export function setCurrentUser(user: any) {
