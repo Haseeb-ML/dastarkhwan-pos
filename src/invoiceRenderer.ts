@@ -1,8 +1,10 @@
 // @ts-nocheck
 import urduTranslations from "./urdu.json";
 import HH_TECH_HUB_LOGO from "./hh_tech_logo";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
-export function generateInvoiceHtml(o: any, size: string = "A4", kitchen: boolean = false): string {
+export function generateInvoiceHtml(o: any, size: string = "A4", kitchen: boolean = false, noAutoPrint: boolean = false): string {
   const words: Record<string, string> = urduTranslations as any;
   const translate = (value: any) =>
     words[String(value ?? "")] ||
@@ -96,6 +98,7 @@ tr{break-inside:avoid}
 .credit-pill{display:inline-flex;align-items:center;gap:8px;background:#f4f7f5;border:1px solid #d2dfd6;border-radius:6px;padding:3px 10px}
 .hh-tech-logo{height:24px;max-width:120px;width:auto;object-fit:contain;display:block}
 .hh-tech-name{font-family:Arial,sans-serif;font-weight:bold;font-size:12px;color:#222;letter-spacing:0.5px}
+${noAutoPrint ? ".toolbar{display:none!important}" : ""}
 ${
   thermal
     ? `.paper{min-height:0;box-shadow:none;border:1px dashed #ccc}
@@ -144,13 +147,13 @@ td,th{padding:${thermal ? "5px 2px" : "7px 10px"}}
 .hh-tech-logo{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style></head><body>
-<nav class="toolbar">
+${noAutoPrint ? "" : `<nav class="toolbar">
   <div><strong>بل کا پرنٹ پیش منظر</strong><small>${e(size)} · <bdi>${e(o.number)}</bdi></small></div>
   <div class="actions">
     <button type="button" onclick="window.print()">پرنٹ کریں / PDF محفوظ کریں</button>
     <button type="button" class="secondary" onclick="window.close()">بند کریں</button>
   </div>
-</nav>
+</nav>`}
 <main class="paper">
 <header class="brand-header">
   <div>
@@ -222,16 +225,16 @@ ${
   </div>
 </footer>
 </main>
-<script>
+${noAutoPrint ? "" : `<script>
   window.addEventListener('load', function() {
     setTimeout(function() { window.print(); }, 400);
   });
-</script>
+</script>`}
 </body></html>`;
 }
 
 export function printInvoice(order: any, size: string = "A4", kitchen: boolean = false) {
-  const html = generateInvoiceHtml(order, size, kitchen);
+  const html = generateInvoiceHtml(order, size, kitchen, false);
   const w = window.open("", "_blank");
   if (w) {
     w.document.open();
@@ -239,4 +242,103 @@ export function printInvoice(order: any, size: string = "A4", kitchen: boolean =
     w.document.close();
     w.focus();
   }
+}
+
+/**
+ * Directly downloads the invoice as a PDF file without opening the browser's print dialog.
+ */
+export async function downloadInvoicePdf(order: any, size: string = "A4"): Promise<File | null> {
+  return new Promise((resolve, reject) => {
+    try {
+      const isThermal = size === "80mm";
+      const iframe = document.createElement("iframe");
+      iframe.style.position = "fixed";
+      iframe.style.left = "-9999px";
+      iframe.style.top = "0";
+      iframe.style.width = isThermal ? "400px" : "850px";
+      iframe.style.height = "1600px";
+      iframe.style.border = "none";
+      iframe.style.opacity = "0.01";
+      iframe.style.zIndex = "-9999";
+
+      document.body.appendChild(iframe);
+
+      const doc = iframe.contentWindow?.document;
+      if (!doc) {
+        if (iframe.parentNode) document.body.removeChild(iframe);
+        reject(new Error("Unable to create document context for PDF"));
+        return;
+      }
+
+      const html = generateInvoiceHtml(order, size, false, true); // true = noAutoPrint, no toolbar
+      doc.open();
+      doc.write(html);
+      doc.close();
+
+      setTimeout(async () => {
+        try {
+          const paper = (doc.querySelector(".paper") as HTMLElement) || doc.body;
+
+          const canvas = await html2canvas(paper, {
+            scale: 2,
+            useCORS: true,
+            logging: false,
+            backgroundColor: "#ffffff",
+          });
+
+          const imgData = canvas.toDataURL("image/png");
+          const imgWidth = canvas.width;
+          const imgHeight = canvas.height;
+
+          let pdf: jsPDF;
+          const fileName = `${order.number || "Invoice"}-Revision-${order.revision || 1}.pdf`;
+
+          if (isThermal) {
+            const pdfWidth = 80;
+            const pdfHeight = (imgHeight * pdfWidth) / imgWidth;
+            pdf = new jsPDF({
+              orientation: "portrait",
+              unit: "mm",
+              format: [pdfWidth, Math.max(pdfHeight, 80)],
+            });
+            pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+          } else {
+            pdf = new jsPDF({
+              orientation: "portrait",
+              unit: "mm",
+              format: "a4",
+            });
+            const pdfWidth = 210;
+            const pdfHeight = (imgHeight * pdfWidth) / imgWidth;
+            pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, Math.min(pdfHeight, 297));
+          }
+
+          const pdfBlob = pdf.output("blob");
+
+          // Directly trigger browser download without print dialog
+          const downloadUrl = URL.createObjectURL(pdfBlob);
+          const link = document.createElement("a");
+          link.href = downloadUrl;
+          link.download = fileName;
+          document.body.appendChild(link);
+          link.click();
+
+          setTimeout(() => {
+            if (link.parentNode) document.body.removeChild(link);
+            URL.revokeObjectURL(downloadUrl);
+          }, 300);
+
+          if (iframe.parentNode) document.body.removeChild(iframe);
+
+          const file = new File([pdfBlob], fileName, { type: "application/pdf" });
+          resolve(file);
+        } catch (err) {
+          if (iframe.parentNode) document.body.removeChild(iframe);
+          reject(err);
+        }
+      }, 500);
+    } catch (err) {
+      reject(err);
+    }
+  });
 }

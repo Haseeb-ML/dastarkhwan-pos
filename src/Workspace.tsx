@@ -18,7 +18,7 @@ import HH_TECH_HUB_LOGO from "./hh_tech_logo";
 import { apiUrl } from "./apiConfig";
 import ConnectionSettings from "./ConnectionSettings";
 import { handleStandaloneRequest } from "./browserDb";
-import { printInvoice } from "./invoiceRenderer";
+import { printInvoice, downloadInvoicePdf } from "./invoiceRenderer";
 import * as b from "react";
 import * as x from "react/jsx-runtime";
 function S({ name: e, size: t = 18 }) { let n = { grid: (0, x.jsxs)(x.Fragment, { children: urdu([(0, x.jsx)("rect", { x: `3`, y: `3`, width: `7`, height: `7`, rx: `2` }), (0, x.jsx)("rect", { x: `14`, y: `3`, width: `7`, height: `7`, rx: `2` }), (0, x.jsx)("rect", { x: `3`, y: `14`, width: `7`, height: `7`, rx: `2` }), (0, x.jsx)("rect", { x: `14`, y: `14`, width: `7`, height: `7`, rx: `2` })]) }), orders: (0, x.jsxs)(x.Fragment, { children: urdu([(0, x.jsx)("path", { d: `M6 3h12v18H6z` }), (0, x.jsx)("path", { d: `M9 8h6M9 12h6M9 16h4` })]) }), menu: (0, x.jsx)(x.Fragment, { children: urdu((0, x.jsx)("path", { d: `M4 6h16M4 12h16M4 18h16` })) }), users: (0, x.jsxs)(x.Fragment, { children: urdu([(0, x.jsx)("circle", { cx: `9`, cy: `8`, r: `3` }), (0, x.jsx)("path", { d: `M3 20c0-4 2-6 6-6s6 2 6 6M16 5c3 0 4 4 1 6M17 14c3 .5 4 2 4 5` })]) }), stock: (0, x.jsx)(x.Fragment, { children: urdu((0, x.jsx)("path", { d: `M4 7l8-4 8 4-8 4zM4 7v10l8 4 8-4V7M12 11v10` })) }), chart: (0, x.jsx)(x.Fragment, { children: urdu((0, x.jsx)("path", { d: `M4 20V10M10 20V4M16 20v-7M22 20H2` })) }), settings: (0, x.jsxs)(x.Fragment, { children: urdu([(0, x.jsx)("circle", { cx: `12`, cy: `12`, r: `3` }), (0, x.jsx)("path", { d: `M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.4 1a8 8 0 0 0-1.7-1L14.5 3h-5l-.3 3a8 8 0 0 0-1.7 1l-2.4-1-2 3.4L5.1 11a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.4-1a8 8 0 0 0 1.7 1l.3 3h5l.3-3a8 8 0 0 0 1.7-1l2.4 1 2-3.4-2-1.5a7 7 0 0 0 .1-1z` })]) }), search: (0, x.jsxs)(x.Fragment, { children: urdu([(0, x.jsx)("circle", { cx: `11`, cy: `11`, r: `7` }), (0, x.jsx)("path", { d: `M20 20l-4-4` })]) }), plus: (0, x.jsx)("path", { d: `M12 5v14M5 12h14` }), minus: (0, x.jsx)("path", { d: `M5 12h14` }), check: (0, x.jsx)("path", { d: `M5 12l4 4L19 6` }), clock: (0, x.jsxs)(x.Fragment, { children: urdu([(0, x.jsx)("circle", { cx: `12`, cy: `12`, r: `9` }), (0, x.jsx)("path", { d: `M12 7v5l3 2` })]) }), table: (0, x.jsx)(x.Fragment, { children: urdu((0, x.jsx)("path", { d: `M4 10h16M6 10V7h12v3M6 10v9M18 10v9` })) }), wifi: (0, x.jsxs)(x.Fragment, { children: urdu([(0, x.jsx)("path", { d: `M4 10a12 12 0 0 1 16 0M7 14a8 8 0 0 1 10 0M10 18a3 3 0 0 1 4 0` }), (0, x.jsx)("circle", { cx: `12`, cy: `20`, r: `.5` })]) }), printer: (0, x.jsx)(x.Fragment, { children: urdu((0, x.jsx)("path", { d: `M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z` })) }), download: (0, x.jsx)(x.Fragment, { children: urdu((0, x.jsx)("path", { d: `M12 3v12M7 10l5 5 5-5M4 21h16` })) }), send: (0, x.jsx)(x.Fragment, { children: urdu((0, x.jsx)("path", { d: `M22 2L9 15M22 2l-7 20-4-9-9-4z` })) }), card: (0, x.jsxs)(x.Fragment, { children: urdu([(0, x.jsx)("rect", { x: `2`, y: `5`, width: `20`, height: `14`, rx: `2` }), (0, x.jsx)("path", { d: `M2 10h20` })]) }), cash: (0, x.jsxs)(x.Fragment, { children: urdu([(0, x.jsx)("rect", { x: `2`, y: `6`, width: `20`, height: `13`, rx: `2` }), (0, x.jsx)("circle", { cx: `12`, cy: `12.5`, r: `3` }), (0, x.jsx)("path", { d: `M5 9h.1M19 16h.1` })]) }), arrow: (0, x.jsx)("path", { d: `M9 18l6-6-6-6` }), close: (0, x.jsx)("path", { d: `M6 6l12 12M18 6L6 18` }) }; return (0, x.jsx)("svg", { width: t, height: t, viewBox: `0 0 24 24`, fill: `none`, stroke: `currentColor`, strokeWidth: `1.8`, strokeLinecap: `round`, strokeLinejoin: `round`, "aria-hidden": `true`, children: urdu(n[e]) }); }
@@ -383,10 +383,12 @@ function ge({ id: e, onClose: t }) {
     async function k() {
         re(!0), v(``);
         try {
-            printInvoice(a, y, false);
+            const file = await downloadInvoicePdf(a, y);
+            if (file) g(file);
         }
-        catch (e) {
-            window.print();
+        catch (err: any) {
+            console.error("Direct PDF download error, fallback to print:", err);
+            printInvoice(a, y, false);
         }
         finally {
             re(!1);
