@@ -633,8 +633,8 @@ function findVariant(state: any, variantId: number) {
   // Handle Summary
   if (route === "summary") {
     const today = new Date().toISOString().slice(0, 10);
-    const from = (payload && payload.from) || today;
-    const to = (payload && payload.to) || today;
+    const from = (body && body.from) || today;
+    const to = (body && body.to) || today;
 
     const ordersInPeriod = (state.orders || []).filter((o: any) => {
       const bDate = (o.business_date || o.created || "").slice(0, 10);
