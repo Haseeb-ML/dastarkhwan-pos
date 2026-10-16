@@ -130,7 +130,8 @@ export function computeSummaryFromData(data: any, from: string, to: string) {
 
 export function ProfitReport({ api, data, navigate }: any) {
  const [from,setFrom]=useState(today()),[to,setTo]=useState(today()),[period,setPeriod]=useState('آج')
- const [result,setResult]=useState<any>(()=>computeSummaryFromData(data,today(),today()))
+ const localResult = computeSummaryFromData(data, from, to);
+ const [result,setResult]=useState<any>(()=>localResult)
  const [error,setError]=useState('')
  const [loading,setLoading]=useState(false)
 
@@ -156,7 +157,6 @@ export function ProfitReport({ api, data, navigate }: any) {
        }
      }).catch((err: any)=>{
        console.warn("Summary API update error (using calculated data):", err);
-       if(!local && active) setError('حساب نہیں کھل سکا۔ دوبارہ کوشش کریں۔');
      }).finally(()=>{
        if(active) setLoading(false);
      });
@@ -172,6 +172,8 @@ export function ProfitReport({ api, data, navigate }: any) {
    setFrom(date.toISOString().slice(0,10));
    setTo(end);
  }
+
+ const displayResult = result || localResult;
 
  return (
    <section className="easy-report">
@@ -195,22 +197,22 @@ export function ProfitReport({ api, data, navigate }: any) {
      </div>
      {ui(loading&&<p role="status">{ui("حساب کھل رہا ہے…")}</p>)}
      {ui(error&&<p role="alert" className="error">{ui(error)}</p>)}
-     {ui(result&& (
+     {ui(displayResult&& (
        <>
-         <div className={`easy-profit ${result.profit < 0 ? 'loss' : ''}`}>
+         <div className={`easy-profit ${displayResult.profit < 0 ? 'loss' : ''}`}>
            <div>
-             <span>{ui(result.profit < 0 ? 'اس مدت کا نقصان' : 'اس مدت کا منافع')}</span>
-             <strong>{ui(cash(result.profit < 0 ? -result.profit : result.profit))}</strong>
+             <span>{ui(displayResult.profit < 0 ? 'اس مدت کا نقصان' : 'اس مدت کا منافع')}</span>
+             <strong>{ui(cash(displayResult.profit < 0 ? -displayResult.profit : displayResult.profit))}</strong>
            </div>
            <p>{ui('منافع = کھانوں کی فروخت − کھانوں کی لاگت − دیگر اخراجات')}</p>
          </div>
          <div className="easy-metrics">
            {ui([
-             ['کھانوں کی فروخت', result.netSales],
-             ['کھانوں کی لاگت', result.foodCost],
-             ['دیگر اخراجات', result.expenses],
-             ['وصول شدہ رقم', result.collections],
-             ['واپس کی گئی رقم', result.refunds]
+             ['کھانوں کی فروخت', displayResult.netSales],
+             ['کھانوں کی لاگت', displayResult.foodCost],
+             ['دیگر اخراجات', displayResult.expenses],
+             ['وصول شدہ رقم', displayResult.collections],
+             ['واپس کی گئی رقم', displayResult.refunds]
            ].map(([label,value],index)=>(
              <article key={String(label)}>
                <DashboardIcon index={index+4}/>
@@ -220,12 +222,12 @@ export function ProfitReport({ api, data, navigate }: any) {
            )))}
          </div>
          <p className="easy-note">
-           {ui("اس مدت کے آرڈر: ")}<bdi>{ui(result.orderCount)}</bdi>{ui(" · فروخت آرڈر کی تاریخ کے مطابق، وصولی رقم ملنے کی تاریخ کے مطابق ہے۔")}
+           {ui("اس مدت کے آرڈر: ")}<bdi>{ui(displayResult.orderCount)}</bdi>{ui(" · فروخت آرڈر کی تاریخ کے مطابق، وصولی رقم ملنے کی تاریخ کے مطابق ہے۔")}
          </p>
          <div className="easy-breakdown">
            <section>
              <h3>{ui("روزانہ فروخت")}</h3>
-             {ui(Object.entries(result.daily || {}).length ? Object.entries(result.daily).map(([date,value])=>(
+             {ui(Object.entries(displayResult.daily || {}).length ? Object.entries(displayResult.daily).map(([date,value])=>(
                <div className="easy-list-row" key={date}>
                  <bdi dir="ltr">{ui(date)}</bdi>
                  <strong>{ui(cash(Number(value)))}</strong>
@@ -234,7 +236,7 @@ export function ProfitReport({ api, data, navigate }: any) {
            </section>
            <section>
              <h3>{ui("زیادہ فروخت ہونے والے کھانے")}</h3>
-             {ui((result.popular || []).length ? result.popular.map((item:any)=>(
+             {ui((displayResult.popular || []).length ? displayResult.popular.map((item:any)=>(
                <div className="easy-list-row" key={item.name}>
                  <span>{ui(urdu(item.name))}<small>{ui(item.qty/1000)}{ui(" عدد")}</small></span>
                  <strong>{ui(cash(item.amount))}</strong>
@@ -249,8 +251,8 @@ export function ProfitReport({ api, data, navigate }: any) {
 }
 
 export function Dashboard({data,api,navigate,openInvoice}:any){
- const [summary,setSummary]=useState<any>(()=>computeSummaryFromData(data,today(),today()))
- const [error,setError]=useState(false)
+ const localSummary = computeSummaryFromData(data, today(), today());
+ const [summary,setSummary]=useState<any>(()=>localSummary)
 
  useEffect(()=>{
    let active=true;
@@ -264,18 +266,101 @@ export function Dashboard({data,api,navigate,openInvoice}:any){
            value.profit = (value.netSales || 0) - (value.foodCost || 0) - (value.expenses || 0);
          }
          setSummary(value);
-         setError(false);
        }
      }).catch((err: any)=>{
        console.warn("Dashboard summary API error (using local data):", err);
-       if(!local && active) setError(true);
      });
    }
    return()=>{active=false};
  },[data])
 
+ const displaySummary = summary || localSummary || { netSales: 0, collections: 0, expenses: 0, profit: 0 };
  const active=data.orders.filter((o:any)=>o.state==='open'),unpaid=data.orders.filter((o:any)=>o.state!=='cancelled'&&o.balance>0),free=data.tables.filter((t:any)=>!t.orderId),low=data.ingredients.filter((i:any)=>i.stock<=i.low)
- return <div className="page-content easy-home"><div className="page-heading"><div><h2>{ui("آج ہوٹل میں کیا چل رہا ہے؟")}</h2><p>{ui("آرڈر، میزیں اور آج کا حساب ایک نظر میں۔")}</p></div><button className="primary compact" onClick={()=>navigate('New Order')}>{ui("+ نیا آرڈر بنائیں")}</button></div><div className="easy-shortcuts"><button onClick={()=>navigate('Orders & Kitchen')}>{ui("آرڈر اور باورچی خانہ")}</button><button onClick={()=>navigate('Tables')}>{ui("میزیں دیکھیں")}</button><button onClick={()=>navigate('Daily Summary')}>{ui("منافع اور نقصان")}</button></div><div className="easy-kitchen-status"><strong>{ui("باورچی خانے کی حالت")}</strong>{ui([["New","نئے آرڈر"],["Preparing","کھانا بن رہا ہے"],["Ready","کھانا تیار ہے"]].map(([state,label])=><button key={state} onClick={()=>navigate("Orders & Kitchen")}><span>{ui(label)}</span><bdi>{ui(active.filter((order:any)=>order.tickets?.some((ticket:any)=>ticket.state===state)).length)}</bdi></button>))}</div><div className="easy-metrics operational">{ui([['چل رہے آرڈر',active.length,'Orders & Kitchen'],['خالی میزیں',free.length,'Tables'],['باقی رقم والے بل',unpaid.length,'Orders & Kitchen'],['کم اسٹاک والی چیزیں',low.length,'Stock & Purchases']].map(([label,value,target],index)=><button key={String(label)} onClick={()=>navigate(target)}><DashboardIcon index={index}/><span>{ui(label)}</span><strong>{ui(value)}</strong><small>{ui("تفصیل دیکھیں ←")}</small></button>))}</div>{ui(error?<p className="error">{ui("آج کا حساب نہیں کھل سکا۔")}</p>:summary?<div className="easy-metrics"><article><DashboardIcon index={4}/><span>{ui("آج کی فروخت")}</span><strong>{ui(cash(summary.netSales))}</strong></article><article><DashboardIcon index={5}/><span>{ui("آج وصول شدہ رقم")}</span><strong>{ui(cash(summary.collections))}</strong></article><article><DashboardIcon index={6}/><span>{ui("آج کے اخراجات")}</span><strong>{ui(cash(summary.expenses))}</strong></article><article className={summary.profit<0?'loss':''}><DashboardIcon index={7}/><span>{ui(summary.profit<0?'آج کا نقصان':'آج کا منافع')}</span><strong>{ui(cash(Math.abs(summary.profit || 0)))}</strong></article></div>:<p role="status">{ui("آج کا حساب کھل رہا ہے…")}</p>)}<div className="easy-breakdown dashboard-panels"><section className="dashboard-orders"><h3><DashboardIcon index={0}/><span>{ui("چل رہے آرڈر")}</span><bdi className="dashboard-count">{active.length}</bdi></h3>{ui(active.length?active.slice(0,6).map((order:any)=><button className="easy-list-row easy-order" key={order.id} onClick={()=>openInvoice(order.id)}><span>{ui(urdu(order.place))}<small><bdi>{ui(order.number)}</bdi>{ui(" · ")}{ui(order.items.length)}{ui(" کھانے")}</small></span><strong>{ui(cash(order.total))}</strong></button>):<p>{ui("فی الحال کوئی آرڈر نہیں چل رہا۔")}</p>)}</section><section className="dashboard-attention"><h3><DashboardIcon index={3}/><span>{ui("جن کاموں پر توجہ چاہیے")}</span></h3><button className={`easy-alert ${low.length?"attention-needed":"attention-ok"}`} onClick={()=>navigate('Stock & Purchases')}>{ui(low.length?`${low.length} چیزوں کا اسٹاک کم ہے۔ خریداری دیکھیں۔`:'سامان کا اسٹاک کافی ہے۔')}</button><button className={`easy-alert ${unpaid.length?"attention-needed":"attention-ok"}`} onClick={()=>navigate('Orders & Kitchen')}>{ui(unpaid.length?`${unpaid.length} بلوں کی رقم وصول کرنا باقی ہے۔`:'تمام بلوں کی رقم وصول ہو چکی ہے۔')}</button>{ui(summary?.missingCosts>0&&<button className="easy-alert attention-needed" onClick={()=>navigate('Menu')}>{ui(summary.missingCosts)}{ui(" کھانوں کی لاگت لکھیں، تاکہ منافع معلوم ہو۔")}</button>)}</section></div></div>
+ return (
+   <div className="page-content easy-home">
+     <div className="page-heading">
+       <div>
+         <h2>{ui("آج ہوٹل میں کیا چل رہا ہے؟")}</h2>
+         <p>{ui("آرڈر، میزیں اور آج کا حساب ایک نظر میں۔")}</p>
+       </div>
+       <button className="primary compact" onClick={()=>navigate('New Order')}>{ui("+ نیا آرڈر بنائیں")}</button>
+     </div>
+     <div className="easy-shortcuts">
+       <button onClick={()=>navigate('Orders & Kitchen')}>{ui("آرڈر اور باورچی خانہ")}</button>
+       <button onClick={()=>navigate('Tables')}>{ui("میزیں دیکھیں")}</button>
+       <button onClick={()=>navigate('Daily Summary')}>{ui("منافع اور نقصان")}</button>
+     </div>
+     <div className="easy-kitchen-status">
+       <strong>{ui("باورچی خانے کی حالت")}</strong>
+       {ui([["New","نئے آرڈر"],["Preparing","کھانا بن رہا ہے"],["Ready","کھانا تیار ہے"]].map(([state,label])=>(
+         <button key={state} onClick={()=>navigate("Orders & Kitchen")}>
+           <span>{ui(label)}</span>
+           <bdi>{ui(active.filter((order:any)=>order.tickets?.some((ticket:any)=>ticket.state===state)).length)}</bdi>
+         </button>
+       )))}
+     </div>
+     <div className="easy-metrics operational">
+       {ui([['چل رہے آرڈر',active.length,'Orders & Kitchen'],['خالی میزیں',free.length,'Tables'],['باقی رقم والے بل',unpaid.length,'Orders & Kitchen'],['کم اسٹاک والی چیزیں',low.length,'Stock & Purchases']].map(([label,value,target],index)=>(
+         <button key={String(label)} onClick={()=>navigate(target)}>
+           <DashboardIcon index={index}/>
+           <span>{ui(label)}</span>
+           <strong>{ui(value)}</strong>
+           <small>{ui("تفصیل دیکھیں ←")}</small>
+         </button>
+       )))}
+     </div>
+     <div className="easy-metrics">
+       <article>
+         <DashboardIcon index={4}/>
+         <span>{ui("آج کی فروخت")}</span>
+         <strong>{ui(cash(displaySummary.netSales))}</strong>
+       </article>
+       <article>
+         <DashboardIcon index={5}/>
+         <span>{ui("آج وصول شدہ رقم")}</span>
+         <strong>{ui(cash(displaySummary.collections))}</strong>
+       </article>
+       <article>
+         <DashboardIcon index={6}/>
+         <span>{ui("آج کے اخراجات")}</span>
+         <strong>{ui(cash(displaySummary.expenses))}</strong>
+       </article>
+       <article className={displaySummary.profit<0?'loss':''}>
+         <DashboardIcon index={7}/>
+         <span>{ui(displaySummary.profit<0?'آج کا نقصان':'آج کا منافع')}</span>
+         <strong>{ui(cash(Math.abs(displaySummary.profit || 0)))}</strong>
+       </article>
+     </div>
+     <div className="easy-breakdown dashboard-panels">
+       <section className="dashboard-orders">
+         <h3>
+           <DashboardIcon index={0}/>
+           <span>{ui("چل رہے آرڈر")}</span>
+           <bdi className="dashboard-count">{active.length}</bdi>
+         </h3>
+         {ui(active.length?active.slice(0,6).map((order:any)=>(
+           <button className="easy-list-row easy-order" key={order.id} onClick={()=>openInvoice(order.id)}>
+             <span>{ui(urdu(order.place))}<small><bdi>{ui(order.number)}</bdi>{ui(" · ")}{ui(order.items.length)}{ui(" کھانے")}</small></span>
+             <strong>{ui(cash(order.total))}</strong>
+           </button>
+         )):<p>{ui("فی الحال کوئی آرڈر نہیں چل رہا۔")}</p>)}
+       </section>
+       <section className="dashboard-attention">
+         <h3>
+           <DashboardIcon index={3}/>
+           <span>{ui("جن کاموں پر توجہ چاہیے")}</span>
+         </h3>
+         <button className={`easy-alert ${low.length?"attention-needed":"attention-ok"}`} onClick={()=>navigate('Stock & Purchases')}>
+           {ui(low.length?`${low.length} چیزوں کا اسٹاک کم ہے۔ خریداری دیکھیں۔`:'سامان کا اسٹاک کافی ہے۔')}
+         </button>
+         <button className={`easy-alert ${unpaid.length?"attention-needed":"attention-ok"}`} onClick={()=>navigate('Orders & Kitchen')}>
+           {ui(unpaid.length?`${unpaid.length} بلوں کی رقم وصول کرنا باقی ہے۔`:'تمام بلوں کی رقم وصول ہو چکی ہے۔')}
+         </button>
+         {ui(displaySummary?.missingCosts>0&&<button className="easy-alert attention-needed" onClick={()=>navigate('Menu')}>{ui(displaySummary.missingCosts)}{ui(" کھانوں کی لاگت لکھیں، تاکہ منافع معلوم ہو۔")}</button>)}
+       </section>
+     </div>
+   </div>
+ );
 }
 export function TablesPage({data,mutate,notice}:any){
  const [adding,setAdding]=useState(false),[name,setName]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false)
