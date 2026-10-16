@@ -155,6 +155,133 @@ export async function fetchFirestoreState(): Promise<any | null> {
   return null;
 }
 
+export async function syncIngredientToFirestore(ing: any) {
+  try {
+    const docId = `ING-${ing.id}`;
+    const url = `${FIRESTORE_BASE}/ingredients/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: toFirestoreFields({
+          id: ing.id,
+          name: ing.name,
+          unit: ing.unit,
+          low: ing.low || 0,
+          stock: ing.stock || 0,
+          archived: ing.archived || 0,
+          updated: new Date().toISOString(),
+        }),
+      }),
+    });
+  } catch (e) {
+    console.warn("Failed to sync ingredient to Firestore:", e);
+  }
+}
+
+export async function syncSupplierToFirestore(supplier: any) {
+  try {
+    const docId = `SUP-${supplier.id}`;
+    const url = `${FIRESTORE_BASE}/suppliers/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: toFirestoreFields({
+          id: supplier.id,
+          name: supplier.name,
+          phone: supplier.phone || "",
+          balance: supplier.balance || 0,
+          updated: new Date().toISOString(),
+        }),
+      }),
+    });
+  } catch (e) {
+    console.warn("Failed to sync supplier to Firestore:", e);
+  }
+}
+
+export async function syncPurchaseToFirestore(purchase: any) {
+  try {
+    const docId = `PUR-${purchase.id}`;
+    const url = `${FIRESTORE_BASE}/purchases/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: toFirestoreFields({
+          id: purchase.id,
+          supplier_id: purchase.supplier_id,
+          total: purchase.total,
+          itemsCount: (purchase.items || []).length,
+          itemsJson: JSON.stringify(purchase.items || []),
+          created: purchase.created || new Date().toISOString(),
+          business_date: purchase.business_date || new Date().toISOString().slice(0, 10),
+          actor: purchase.actor || 1,
+          updated: new Date().toISOString(),
+        }),
+      }),
+    });
+  } catch (e) {
+    console.warn("Failed to sync purchase to Firestore:", e);
+  }
+}
+
+export async function syncStockMovementToFirestore(movement: any) {
+  try {
+    const docId = `MOV-${movement.id}`;
+    const url = `${FIRESTORE_BASE}/stock_movements/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: toFirestoreFields({
+          id: movement.id,
+          ingredient_id: movement.ingredient_id,
+          qty: movement.qty,
+          kind: movement.kind,
+          reference: movement.reference || "",
+          reason: movement.reason || "",
+          created: movement.created || new Date().toISOString(),
+          actor: movement.actor || 1,
+          actor_name: movement.actor_name || "",
+          name: movement.name || "",
+          unit: movement.unit || "",
+          updated: new Date().toISOString(),
+        }),
+      }),
+    });
+  } catch (e) {
+    console.warn("Failed to sync stock movement to Firestore:", e);
+  }
+}
+
+export async function syncSupplierPaymentToFirestore(pay: any) {
+  try {
+    const docId = `SPAY-${pay.id}`;
+    const url = `${FIRESTORE_BASE}/supplier_payments/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: toFirestoreFields({
+          id: pay.id,
+          supplier_id: pay.supplier_id,
+          purchase_id: pay.purchase_id || 0,
+          amount: pay.amount,
+          method: pay.method || "Cash",
+          created: pay.created || new Date().toISOString(),
+          business_date: pay.business_date || new Date().toISOString().slice(0, 10),
+          actor: pay.actor || 1,
+          updated: new Date().toISOString(),
+        }),
+      }),
+    });
+  } catch (e) {
+    console.warn("Failed to sync supplier payment to Firestore:", e);
+  }
+}
+
 export async function saveFirestoreState(state: any): Promise<boolean> {
   try {
     const url = `${FIRESTORE_BASE}/restaurant/state?key=${FIRESTORE_API_KEY}`;
@@ -165,6 +292,9 @@ export async function saveFirestoreState(state: any): Promise<boolean> {
         orderCount: { integerValue: String(state.orders?.length || 0) },
         customerCount: { integerValue: String(state.customers?.length || 0) },
         menuCount: { integerValue: String(state.menu?.length || 0) },
+        ingredientCount: { integerValue: String(state.ingredients?.length || 0) },
+        supplierCount: { integerValue: String(state.suppliers?.length || 0) },
+        purchaseCount: { integerValue: String(state.purchases?.length || 0) },
       },
     };
     const res = await fetch(url, {

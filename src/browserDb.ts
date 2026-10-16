@@ -7,6 +7,11 @@ import {
   syncCustomerToFirestore,
   syncMenuDishToFirestore,
   syncExpenseToFirestore,
+  syncIngredientToFirestore,
+  syncSupplierToFirestore,
+  syncPurchaseToFirestore,
+  syncStockMovementToFirestore,
+  syncSupplierPaymentToFirestore,
 } from "./firestoreSync";
 
 const DB_KEY = "dastarkhwan_standalone_db";
@@ -29,7 +34,14 @@ export async function syncWithFirestore() {
       const remoteUpdated = remote._firestoreUpdated ? new Date(remote._firestoreUpdated).getTime() : 0;
       
       // If remote is newer than local, or epoch changed, or local is missing data
-      if (remoteUpdated > localUpdated || !local._updated || remote.dataEpoch !== local.dataEpoch || (remote.orders?.length || 0) > (local.orders?.length || 0)) {
+      if (
+        remoteUpdated > localUpdated ||
+        !local._updated ||
+        remote.dataEpoch !== local.dataEpoch ||
+        (remote.orders?.length || 0) > (local.orders?.length || 0) ||
+        (remote.purchases?.length || 0) > (local.purchases?.length || 0) ||
+        (remote.suppliers?.length || 0) > (local.suppliers?.length || 0)
+      ) {
         localStorage.setItem(DB_KEY, JSON.stringify(remote));
       }
     }
@@ -57,6 +69,11 @@ export function getLocalState() {
         saveLocalState(fresh);
         return fresh;
       }
+      if (!parsed.ingredients) parsed.ingredients = defaultState.ingredients || [];
+      if (!parsed.movements) parsed.movements = defaultState.movements || [];
+      if (!parsed.suppliers) parsed.suppliers = defaultState.suppliers || [];
+      if (!parsed.purchases) parsed.purchases = defaultState.purchases || [];
+      if (!parsed.supplierPayments) parsed.supplierPayments = defaultState.supplierPayments || [];
       return parsed;
     }
   } catch (e) {
@@ -157,9 +174,24 @@ export function handleStandaloneRequest(route: string, body?: any): any {
       return { ...t, orderId: activeOrder ? activeOrder.id : null };
     });
 
+    // Ensure stock & supplier arrays exist
+    state.ingredients = state.ingredients || [];
+    state.movements = state.movements || [];
+    state.suppliers = state.suppliers || [];
+    state.purchases = state.purchases || [];
+    state.supplierPayments = state.supplierPayments || [];
+
+    // Recalculate supplier balances
+    const updatedSuppliers = (state.suppliers || []).map((s: any) => {
+      const totalPurchases = (state.purchases || []).filter((p: any) => p.supplier_id === s.id).reduce((sum: number, p: any) => sum + (Number(p.total) || 0), 0);
+      const totalPayments = (state.supplierPayments || []).filter((sp: any) => sp.supplier_id === s.id).reduce((sum: number, sp: any) => sum + (Number(sp.amount) || 0), 0);
+      return { ...s, balance: Math.max(0, totalPurchases - totalPayments) };
+    });
+
     return {
       ...state,
       tables: updatedTables,
+      suppliers: updatedSuppliers,
       user: currentUser,
       dataEpoch: state.dataEpoch || "standalone-1",
     };
@@ -638,6 +670,274 @@ function findVariant(state: any, variantId: number) {
   if (route === "cash/open" || route === "cash/close") {
     saveLocalState(state);
     return { ok: true };
+  }
+
+  // Handle Ingredients Save
+  if (route === "ingredients/save") {
+    state.ingredients = state.ingredients || [];
+    const name = String(body?.name || "").trim();
+    const unit = String(body?.unit || "kg").trim();
+    const low = Number(body?.low || 0);
+
+    if (body?.id) {
+      const iid = Number(body.id);
+      state.ingredients = state.ingredients.map((ing: any) =>
+        ing.id === iid
+          ? {
+              ...ing,
+              name: name || ing.name,
+              unit: unit || ing.unit,
+              low: body.low !== undefined ? low : ing.low,
+            }
+          : ing
+      );
+      const updated = state.ingredients.find((i: any) => i.id === iid);
+      saveLocalState(state);
+      if (updated) syncIngredientToFirestore(updated).catch(() => {});
+      return { id: iid };
+    } else {
+      const nextId = (state.ingredients.length ? Math.max(...state.ingredients.map((i: any) => i.id || 0)) : 0) + 1;
+      const newIng = {
+        id: nextId,
+        name,
+        unit,
+        low,
+        stock: 0,
+        archived: 0,
+      };
+      state.ingredients = [...state.ingredients, newIng];
+      saveLocalState(state);
+      syncIngredientToFirestore(newIng).catch(() => {});
+      return { id: nextId };
+    }
+  }
+
+  // Handle Stock Movement
+  if (route === "stock/move") {
+    state.ingredients = state.ingredients || [];
+    state.movements = state.movements || [];
+
+    const ingId = Number(body?.ingredientId);
+    const ing = state.ingredients.find((i: any) => i.id === ingId);
+    if (!ing) {
+      const err = new Error("Ingredient not found");
+      (err as any).status = 404;
+      throw err;
+    }
+
+    const kind = String(body?.kind || "consumption");
+    const raw = Math.abs(Number(body?.qty) || 0);
+    const delta = ["consumption", "wastage"].includes(kind)
+      ? -raw
+      : kind === "adjustment"
+        ? Number(body?.qty || 0)
+        : raw; // "in", "opening", etc.
+
+    ing.stock = (Number(ing.stock) || 0) + delta;
+
+    const nextMovId = (state.movements.length ? Math.max(...state.movements.map((m: any) => m.id || 0)) : 0) + 1;
+    const movement = {
+      id: nextMovId,
+      ingredient_id: ing.id,
+      qty: delta,
+      kind,
+      reference: body?.reference ? String(body.reference) : null,
+      reason: String(body?.reason || ""),
+      created: new Date().toISOString(),
+      business_date: new Date().toISOString().slice(0, 10),
+      actor: currentUser?.id || 1,
+      actor_name: currentUser?.name || "Ali Khan (Owner)",
+      name: ing.name,
+      unit: ing.unit,
+    };
+
+    state.movements = [movement, ...state.movements];
+    saveLocalState(state);
+    syncStockMovementToFirestore(movement).catch(() => {});
+    syncIngredientToFirestore(ing).catch(() => {});
+    return { stock: ing.stock };
+  }
+
+  // Handle Suppliers Save
+  if (route === "suppliers/save") {
+    state.suppliers = state.suppliers || [];
+    const name = String(body?.name || "").trim();
+    const phone = String(body?.phone || "").trim();
+
+    if (body?.id) {
+      const sid = Number(body.id);
+      state.suppliers = state.suppliers.map((s: any) =>
+        s.id === sid
+          ? {
+              ...s,
+              name: name || s.name,
+              phone: phone !== undefined ? phone : s.phone,
+            }
+          : s
+      );
+      const updated = state.suppliers.find((s: any) => s.id === sid);
+      saveLocalState(state);
+      if (updated) syncSupplierToFirestore(updated).catch(() => {});
+      return { id: sid };
+    } else {
+      const nextId = (state.suppliers.length ? Math.max(...state.suppliers.map((s: any) => s.id || 0)) : 0) + 1;
+      const newSup = {
+        id: nextId,
+        name,
+        phone,
+        balance: 0,
+        archived: 0,
+      };
+      state.suppliers = [...state.suppliers, newSup];
+      saveLocalState(state);
+      syncSupplierToFirestore(newSup).catch(() => {});
+      return { id: nextId };
+    }
+  }
+
+  // Handle Purchases (Receiving stock & supplier billing)
+  if (route === "purchases") {
+    state.ingredients = state.ingredients || [];
+    state.suppliers = state.suppliers || [];
+    state.purchases = state.purchases || [];
+    state.movements = state.movements || [];
+    state.supplierPayments = state.supplierPayments || [];
+
+    const supId = Number(body?.supplierId);
+    const supplier = state.suppliers.find((s: any) => s.id === supId);
+    if (!supplier) {
+      const err = new Error("Supplier not found");
+      (err as any).status = 404;
+      throw err;
+    }
+
+    const nextPurchaseId = (state.purchases.length ? Math.max(...state.purchases.map((p: any) => p.id || 0)) : 0) + 1;
+    let nextMovId = (state.movements.length ? Math.max(...state.movements.map((m: any) => m.id || 0)) : 0) + 1;
+    let nextItemId = 1;
+
+    const purchaseItems = (body?.items || []).map((it: any) => {
+      const ing = state.ingredients.find((i: any) => i.id === Number(it.ingredientId));
+      const ingName = ing ? ing.name : `Ingredient #${it.ingredientId}`;
+      const ingUnit = ing ? ing.unit : "kg";
+      const qty = Number(it.qty || 0);
+      const cost = Number(it.cost || 0); // cost per unit in paise
+      const amount = Math.round((qty * cost) / 1000); // amount in paise
+
+      // Increase stock
+      if (ing) {
+        ing.stock = (Number(ing.stock) || 0) + qty;
+        syncIngredientToFirestore(ing).catch(() => {});
+      }
+
+      // Record stock movement for this purchase line
+      const mov = {
+        id: nextMovId++,
+        ingredient_id: Number(it.ingredientId),
+        qty: qty,
+        kind: "purchase",
+        reference: `purchase:${nextPurchaseId}`,
+        reason: "Purchase received",
+        created: new Date().toISOString(),
+        business_date: new Date().toISOString().slice(0, 10),
+        actor: currentUser?.id || 1,
+        actor_name: currentUser?.name || "Ali Khan (Owner)",
+        name: ingName,
+        unit: ingUnit,
+      };
+      state.movements = [mov, ...state.movements];
+      syncStockMovementToFirestore(mov).catch(() => {});
+
+      return {
+        id: nextItemId++,
+        purchase_id: nextPurchaseId,
+        ingredient_id: Number(it.ingredientId),
+        name: ingName,
+        unit: ingUnit,
+        qty,
+        cost,
+        amount,
+      };
+    });
+
+    const total = purchaseItems.reduce((acc: number, it: any) => acc + (it.amount || 0), 0);
+    const paid = Number(body?.paid || 0);
+
+    const newPurchase = {
+      id: nextPurchaseId,
+      supplier_id: supId,
+      total,
+      created: new Date().toISOString(),
+      business_date: new Date().toISOString().slice(0, 10),
+      actor: currentUser?.id || 1,
+      items: purchaseItems,
+    };
+    state.purchases = [newPurchase, ...state.purchases];
+    syncPurchaseToFirestore(newPurchase).catch(() => {});
+
+    // If paid now
+    if (paid > 0) {
+      const nextPayId = (state.supplierPayments.length ? Math.max(...state.supplierPayments.map((p: any) => p.id || 0)) : 0) + 1;
+      const payRecord = {
+        id: nextPayId,
+        supplier_id: supId,
+        purchase_id: nextPurchaseId,
+        amount: paid,
+        method: body?.method || "Cash",
+        created: new Date().toISOString(),
+        business_date: new Date().toISOString().slice(0, 10),
+        actor: currentUser?.id || 1,
+      };
+      state.supplierPayments = [payRecord, ...state.supplierPayments];
+      syncSupplierPaymentToFirestore(payRecord).catch(() => {});
+    }
+
+    // Recalculate supplier balance
+    const totalPurchases = state.purchases.filter((p: any) => p.supplier_id === supId).reduce((s: number, p: any) => s + (Number(p.total) || 0), 0);
+    const totalPayments = state.supplierPayments.filter((sp: any) => sp.supplier_id === supId).reduce((s: number, sp: any) => s + (Number(sp.amount) || 0), 0);
+    supplier.balance = Math.max(0, totalPurchases - totalPayments);
+    syncSupplierToFirestore(supplier).catch(() => {});
+
+    saveLocalState(state);
+    return { id: nextPurchaseId, total };
+  }
+
+  // Handle Supplier Payment
+  if (route === "suppliers/pay") {
+    state.suppliers = state.suppliers || [];
+    state.purchases = state.purchases || [];
+    state.supplierPayments = state.supplierPayments || [];
+
+    const supId = Number(body?.supplierId);
+    const supplier = state.suppliers.find((s: any) => s.id === supId);
+    if (!supplier) {
+      const err = new Error("Supplier not found");
+      (err as any).status = 404;
+      throw err;
+    }
+
+    const amount = Number(body?.amount || 0);
+    const nextPayId = (state.supplierPayments.length ? Math.max(...state.supplierPayments.map((p: any) => p.id || 0)) : 0) + 1;
+    const payRecord = {
+      id: nextPayId,
+      supplier_id: supId,
+      purchase_id: null,
+      amount,
+      method: body?.method || "Cash",
+      created: new Date().toISOString(),
+      business_date: new Date().toISOString().slice(0, 10),
+      actor: currentUser?.id || 1,
+    };
+    state.supplierPayments = [payRecord, ...state.supplierPayments];
+
+    // Recalculate supplier balance
+    const totalPurchases = state.purchases.filter((p: any) => p.supplier_id === supId).reduce((s: number, p: any) => s + (Number(p.total) || 0), 0);
+    const totalPayments = state.supplierPayments.filter((sp: any) => sp.supplier_id === supId).reduce((s: number, sp: any) => s + (Number(sp.amount) || 0), 0);
+    supplier.balance = Math.max(0, totalPurchases - totalPayments);
+
+    saveLocalState(state);
+    syncSupplierPaymentToFirestore(payRecord).catch(() => {});
+    syncSupplierToFirestore(supplier).catch(() => {});
+    return { balance: supplier.balance };
   }
 
   // Handle Summary
