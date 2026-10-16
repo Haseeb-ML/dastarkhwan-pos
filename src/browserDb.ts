@@ -28,8 +28,8 @@ export async function syncWithFirestore() {
       const localUpdated = local._updated ? new Date(local._updated).getTime() : 0;
       const remoteUpdated = remote._firestoreUpdated ? new Date(remote._firestoreUpdated).getTime() : 0;
       
-      // If remote is newer than local, or if local is just default state
-      if (remoteUpdated > localUpdated || !local._updated) {
+      // If remote is newer than local, or epoch changed, or local is missing data
+      if (remoteUpdated > localUpdated || !local._updated || remote.dataEpoch !== local.dataEpoch || (remote.orders?.length || 0) > (local.orders?.length || 0)) {
         localStorage.setItem(DB_KEY, JSON.stringify(remote));
       }
     }
@@ -48,7 +48,17 @@ if (typeof window !== "undefined") {
 export function getLocalState() {
   try {
     const raw = localStorage.getItem(DB_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      // Upgrade local state if epoch changed or defaultState has newer dataset
+      if (parsed.dataEpoch !== defaultState.dataEpoch || (defaultState.orders?.length || 0) > (parsed.orders?.length || 0)) {
+        const fresh = JSON.parse(JSON.stringify(defaultState));
+        fresh._updated = new Date().toISOString();
+        saveLocalState(fresh);
+        return fresh;
+      }
+      return parsed;
+    }
   } catch (e) {
     console.error("Failed to read standalone state:", e);
   }

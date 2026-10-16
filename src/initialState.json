@@ -1,8 +1,6 @@
 {
   "user": {
     "id": 1,
-    "name": "Ali Khan",
-    "username": "owner",
     "role": "Owner"
   },
   "settings": {
@@ -77,7 +75,7 @@
       "id": 10,
       "name": "Table 10",
       "active": 1,
-      "orderId": null
+      "orderId": 29
     },
     {
       "id": 11,
@@ -92,7 +90,7 @@
       "orderId": 7
     }
   ],
-  "dataEpoch": "initial",
+  "dataEpoch": "epoch-2026-10-16-v2",
   "menu": [
     {
       "id": 1,
@@ -712,6 +710,89 @@
     }
   ],
   "orders": [
+    {
+      "id": 29,
+      "number": "INV-000029",
+      "created": "2026-10-16T10:26:14.914Z",
+      "business_date": "2026-10-16",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 10,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 39,
+          "order_id": 29,
+          "variant_id": 4,
+          "name": "Mutton Karahi",
+          "variant": "Full",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 351000,
+          "amount": 351000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 351000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 351000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "051 6122024",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 4
+      },
+      "place": "Table 10",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 29,
+      "invoiceId": 29,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 351000,
+      "balance": 351000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 30,
+          "order_id": 29,
+          "batch": 1,
+          "created": "2026-10-16T10:26:14.939Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-16T10:26:14.940Z"
+        }
+      ]
+    },
     {
       "id": 28,
       "number": "INV-000028",
@@ -3617,6 +3698,15 @@
   "expenses": [],
   "cash": [],
   "audit": [
+    {
+      "id": 66,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "29",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":10,\"customerId\":null,\"deliveryName\":\"\",\"deliveryPhone\":\"\",\"deliveryAddress\":\"\",\"discount\":0,\"items\":[{\"variantId\":4,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-16T10:26:14.940Z",
+      "actor_name": "Ali Khan"
+    },
     {
       "id": 65,
       "actor": 1,
