@@ -1,0 +1,3096 @@
+[
+  {
+    "id": "DESI-001",
+    "name": "چکن کڑاہی",
+    "english": "Chicken Karahi",
+    "aliases": [
+      "chikan karahi",
+      "chicken karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-002",
+    "name": "مٹن کڑاہی",
+    "english": "Mutton Karahi",
+    "aliases": [
+      "bakra karahi",
+      "mutton karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/mutton-karahi.jpg"
+  },
+  {
+    "id": "DESI-003",
+    "name": "بیف کڑاہی",
+    "english": "Beef Karahi",
+    "aliases": [
+      "beef karahi",
+      "beef karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-004",
+    "name": "سفید چکن کڑاہی",
+    "english": "White Chicken Karahi",
+    "aliases": [
+      "white chikan karahi",
+      "white chicken karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/white-chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-005",
+    "name": "سفید مٹن کڑاہی",
+    "english": "White Mutton Karahi",
+    "aliases": [
+      "white bakra karahi",
+      "white mutton karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/white-chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-006",
+    "name": "چکن اچاری کڑاہی",
+    "english": "Chicken Achari Karahi",
+    "aliases": [
+      "chikan achari karahi",
+      "chicken achari karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-007",
+    "name": "مٹن اچاری کڑاہی",
+    "english": "Mutton Achari Karahi",
+    "aliases": [
+      "bakra achari karahi",
+      "mutton achari karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-008",
+    "name": "چکن پشاوری کڑاہی",
+    "english": "Chicken Peshawari Karahi",
+    "aliases": [
+      "chikan peshawari karahi",
+      "chicken peshawari karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-009",
+    "name": "مٹن پشاوری کڑاہی",
+    "english": "Mutton Peshawari Karahi",
+    "aliases": [
+      "bakra peshawari karahi",
+      "mutton peshawari karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-010",
+    "name": "چکن شنواری کڑاہی",
+    "english": "Chicken Shinwari Karahi",
+    "aliases": [
+      "chikan shinwari karahi",
+      "chicken shinwari karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-011",
+    "name": "مٹن شنواری کڑاہی",
+    "english": "Mutton Shinwari Karahi",
+    "aliases": [
+      "bakra shinwari karahi",
+      "mutton shinwari karahi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-karahi.jpg"
+  },
+  {
+    "id": "DESI-012",
+    "name": "چکن ہانڈی",
+    "english": "Chicken Handi",
+    "aliases": [
+      "chikan handi",
+      "chicken handi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-handi.jpg"
+  },
+  {
+    "id": "DESI-013",
+    "name": "مٹن ہانڈی",
+    "english": "Mutton Handi",
+    "aliases": [
+      "bakra handi",
+      "mutton handi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-handi.jpg"
+  },
+  {
+    "id": "DESI-014",
+    "name": "چکن مکھنی ہانڈی",
+    "english": "Chicken Makhni Handi",
+    "aliases": [
+      "chikan makhni handi",
+      "chicken makhni handi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-handi.jpg"
+  },
+  {
+    "id": "DESI-015",
+    "name": "چکن بون لیس ہانڈی",
+    "english": "Chicken Boneless Handi",
+    "aliases": [
+      "chikan boneless handi",
+      "chicken boneless handi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-handi.jpg"
+  },
+  {
+    "id": "DESI-016",
+    "name": "چکن قورمہ",
+    "english": "Chicken Qorma",
+    "aliases": [
+      "chikan qorma",
+      "chicken korma"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-qorma.jpg"
+  },
+  {
+    "id": "DESI-017",
+    "name": "مٹن قورمہ",
+    "english": "Mutton Qorma",
+    "aliases": [
+      "bakra qorma",
+      "mutton korma"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-qorma.jpg"
+  },
+  {
+    "id": "DESI-018",
+    "name": "بیف قورمہ",
+    "english": "Beef Qorma",
+    "aliases": [
+      "beef qorma",
+      "beef korma"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-qorma.jpg"
+  },
+  {
+    "id": "DESI-019",
+    "name": "چکن جلفریزی",
+    "english": "Chicken Jalfrezi",
+    "aliases": [
+      "chikan jalfrezi",
+      "chicken jalfrezi"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-jalfrezi.jpg"
+  },
+  {
+    "id": "DESI-020",
+    "name": "چکن دو پیازہ",
+    "english": "Chicken Do Pyaza",
+    "aliases": [
+      "chikan do pyaza",
+      "chicken do pyaza"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-handi.jpg"
+  },
+  {
+    "id": "DESI-021",
+    "name": "چکن مصالحہ",
+    "english": "Chicken Masala",
+    "aliases": [
+      "chikan masala",
+      "chicken masala"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-handi.jpg"
+  },
+  {
+    "id": "DESI-022",
+    "name": "مٹن مصالحہ",
+    "english": "Mutton Masala",
+    "aliases": [
+      "bakra masala",
+      "mutton masala"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-handi.jpg"
+  },
+  {
+    "id": "DESI-023",
+    "name": "چکن کوفتہ",
+    "english": "Chicken Kofta",
+    "aliases": [
+      "chikan kofta",
+      "chicken kofta"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-kofta.jpg"
+  },
+  {
+    "id": "DESI-024",
+    "name": "بیف کوفتہ",
+    "english": "Beef Kofta",
+    "aliases": [
+      "beef kofta",
+      "beef kofta"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-kofta.jpg"
+  },
+  {
+    "id": "DESI-025",
+    "name": "چکن چنے",
+    "english": "Chicken Chanay",
+    "aliases": [
+      "chikan chanay",
+      "chicken chane"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-chana.jpg"
+  },
+  {
+    "id": "DESI-026",
+    "name": "چکن پالک",
+    "english": "Chicken Palak",
+    "aliases": [
+      "chikan palak",
+      "chicken palak"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-palak-paneer.jpg"
+  },
+  {
+    "id": "DESI-027",
+    "name": "مٹن پالک",
+    "english": "Mutton Palak",
+    "aliases": [
+      "bakra palak",
+      "mutton palak"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-palak-paneer.jpg"
+  },
+  {
+    "id": "DESI-028",
+    "name": "مٹن آلو",
+    "english": "Mutton Aloo",
+    "aliases": [
+      "bakra aloo",
+      "mutton aloo"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-qorma.jpg"
+  },
+  {
+    "id": "DESI-029",
+    "name": "مٹن کڑھی",
+    "english": "Mutton Curry",
+    "aliases": [
+      "bakra curry",
+      "mutton curry"
+    ],
+    "category": "Karahi & Handi",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-qorma.jpg"
+  },
+  {
+    "id": "DESI-030",
+    "name": "چکن بریانی",
+    "english": "Chicken Biryani",
+    "aliases": [
+      "chikan biryani",
+      "chicken biryani"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-biryani.jpg"
+  },
+  {
+    "id": "DESI-031",
+    "name": "بیف بریانی",
+    "english": "Beef Biryani",
+    "aliases": [
+      "beef biryani",
+      "beef biryani"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/beef-biryani.jpg"
+  },
+  {
+    "id": "DESI-032",
+    "name": "مٹن بریانی",
+    "english": "Mutton Biryani",
+    "aliases": [
+      "bakra biryani",
+      "mutton biryani"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-biryani.jpg"
+  },
+  {
+    "id": "DESI-033",
+    "name": "سندھی بریانی",
+    "english": "Sindhi Biryani",
+    "aliases": [
+      "sindhi biryani",
+      "sindhi biryani"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-biryani.jpg"
+  },
+  {
+    "id": "DESI-034",
+    "name": "چکن بمبئی بریانی",
+    "english": "Chicken Bombay Biryani",
+    "aliases": [
+      "chikan bombay biryani",
+      "chicken bombay biryani"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-biryani.jpg"
+  },
+  {
+    "id": "DESI-035",
+    "name": "چکن پلاؤ",
+    "english": "Chicken Pulao",
+    "aliases": [
+      "chikan pulao",
+      "chicken pulao"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-pulao.jpg"
+  },
+  {
+    "id": "DESI-036",
+    "name": "بیف پلاؤ",
+    "english": "Beef Pulao",
+    "aliases": [
+      "beef pulao",
+      "beef pulao"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-pulao.jpg"
+  },
+  {
+    "id": "DESI-037",
+    "name": "مٹن پلاؤ",
+    "english": "Mutton Pulao",
+    "aliases": [
+      "bakra pulao",
+      "mutton pulao"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-pulao.jpg"
+  },
+  {
+    "id": "DESI-038",
+    "name": "کابلی پلاؤ",
+    "english": "Kabuli Pulao",
+    "aliases": [
+      "kabuli pulao",
+      "kabuli pulao"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-pulao.jpg"
+  },
+  {
+    "id": "DESI-039",
+    "name": "چنے کا پلاؤ",
+    "english": "Chana Pulao",
+    "aliases": [
+      "chana pulao",
+      "chana pulao"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-pulao.jpg"
+  },
+  {
+    "id": "DESI-040",
+    "name": "سبزی پلاؤ",
+    "english": "Vegetable Pulao",
+    "aliases": [
+      "vegetable pulao",
+      "vegetable pulao"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-pulao.jpg"
+  },
+  {
+    "id": "DESI-041",
+    "name": "سادہ چاول",
+    "english": "Plain Rice",
+    "aliases": [
+      "plain rice",
+      "plain rice"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/plain-rice.jpg"
+  },
+  {
+    "id": "DESI-042",
+    "name": "زیرہ چاول",
+    "english": "Zeera Rice",
+    "aliases": [
+      "zeera rice",
+      "zeera rice"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/plain-rice.jpg"
+  },
+  {
+    "id": "DESI-043",
+    "name": "دال چاول",
+    "english": "Daal Chawal",
+    "aliases": [
+      "daal chawal",
+      "dal chawal"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/plain-rice.jpg"
+  },
+  {
+    "id": "DESI-044",
+    "name": "راجما چاول",
+    "english": "Rajma Chawal",
+    "aliases": [
+      "rajma chawal",
+      "rajma chawal"
+    ],
+    "category": "Biryani & Pulao",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/plain-rice.jpg"
+  },
+  {
+    "id": "DESI-045",
+    "name": "چکن تکہ",
+    "english": "Chicken Tikka",
+    "aliases": [
+      "chikan tikka",
+      "chicken tikka"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-046",
+    "name": "چکن ملائی تکہ",
+    "english": "Chicken Malai Tikka",
+    "aliases": [
+      "chikan malai tikka",
+      "chicken malai tikka"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-047",
+    "name": "چکن بوٹی",
+    "english": "Chicken Boti",
+    "aliases": [
+      "chikan boti",
+      "chicken boti"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-048",
+    "name": "چکن ملائی بوٹی",
+    "english": "Chicken Malai Boti",
+    "aliases": [
+      "chikan malai boti",
+      "chicken malai boti"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-049",
+    "name": "چکن اچاری بوٹی",
+    "english": "Chicken Achari Boti",
+    "aliases": [
+      "chikan achari boti",
+      "chicken achari boti"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-050",
+    "name": "بیف بوٹی",
+    "english": "Beef Boti",
+    "aliases": [
+      "beef boti",
+      "beef boti"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-051",
+    "name": "مٹن بوٹی",
+    "english": "Mutton Boti",
+    "aliases": [
+      "bakra boti",
+      "mutton boti"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-052",
+    "name": "چکن سیخ کباب",
+    "english": "Chicken Seekh Kabab",
+    "aliases": [
+      "chikan seekh kabab",
+      "chicken seekh kebab"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/seekh-kabab.jpg"
+  },
+  {
+    "id": "DESI-053",
+    "name": "بیف سیخ کباب",
+    "english": "Beef Seekh Kabab",
+    "aliases": [
+      "beef seekh kabab",
+      "beef seekh kebab"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/seekh-kabab.jpg"
+  },
+  {
+    "id": "DESI-054",
+    "name": "مٹن سیخ کباب",
+    "english": "Mutton Seekh Kabab",
+    "aliases": [
+      "bakra seekh kabab",
+      "mutton seekh kebab"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/seekh-kabab.jpg"
+  },
+  {
+    "id": "DESI-055",
+    "name": "چپلی کباب",
+    "english": "Chapli Kabab",
+    "aliases": [
+      "chapli kabab",
+      "chapli kebab"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-chapli-kabab.jpg"
+  },
+  {
+    "id": "DESI-056",
+    "name": "چکن چپلی کباب",
+    "english": "Chicken Chapli Kabab",
+    "aliases": [
+      "chikan chapli kabab",
+      "chicken chapli kebab"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-chapli-kabab.jpg"
+  },
+  {
+    "id": "DESI-057",
+    "name": "شامی کباب",
+    "english": "Shami Kabab",
+    "aliases": [
+      "shami kabab",
+      "shami kebab"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-shami-kabab.jpg"
+  },
+  {
+    "id": "DESI-058",
+    "name": "چکن ریشمی کباب",
+    "english": "Chicken Reshmi Kabab",
+    "aliases": [
+      "chikan reshmi kabab",
+      "chicken reshmi kebab"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/seekh-kabab.jpg"
+  },
+  {
+    "id": "DESI-059",
+    "name": "چکن گولا کباب",
+    "english": "Chicken Gola Kabab",
+    "aliases": [
+      "chikan gola kabab",
+      "chicken gola kebab"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/seekh-kabab.jpg"
+  },
+  {
+    "id": "DESI-060",
+    "name": "بیف گولا کباب",
+    "english": "Beef Gola Kabab",
+    "aliases": [
+      "beef gola kabab",
+      "beef gola kebab"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/seekh-kabab.jpg"
+  },
+  {
+    "id": "DESI-061",
+    "name": "چکن بہاری بوٹی",
+    "english": "Chicken Bihari Boti",
+    "aliases": [
+      "chikan bihari boti",
+      "chicken bihari boti"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-062",
+    "name": "بیف بہاری بوٹی",
+    "english": "Beef Bihari Boti",
+    "aliases": [
+      "beef bihari boti",
+      "beef bihari boti"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-063",
+    "name": "چکن سجی",
+    "english": "Chicken Sajji",
+    "aliases": [
+      "chikan sajji",
+      "chicken sajji"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-sajji.jpg"
+  },
+  {
+    "id": "DESI-064",
+    "name": "مٹن سجی",
+    "english": "Mutton Sajji",
+    "aliases": [
+      "bakra sajji",
+      "mutton sajji"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-sajji.jpg"
+  },
+  {
+    "id": "DESI-065",
+    "name": "چکن چرغہ",
+    "english": "Chicken Chargha",
+    "aliases": [
+      "chikan chargha",
+      "chicken chargha"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-chargha.jpg"
+  },
+  {
+    "id": "DESI-066",
+    "name": "چکن گرل",
+    "english": "Grilled Chicken",
+    "aliases": [
+      "grilled chikan",
+      "grilled chicken"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-067",
+    "name": "تندوری چکن",
+    "english": "Tandoori Chicken",
+    "aliases": [
+      "tandoori chikan",
+      "tandoori chicken"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "آدھی",
+        "unit": "portion"
+      },
+      {
+        "name": "پوری",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/chicken-tikka.jpg"
+  },
+  {
+    "id": "DESI-068",
+    "name": "مچھلی تکہ",
+    "english": "Fish Tikka",
+    "aliases": [
+      "fish tikka",
+      "fish tikka"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-fish-fry.jpg"
+  },
+  {
+    "id": "DESI-069",
+    "name": "فرائی مچھلی",
+    "english": "Fried Fish",
+    "aliases": [
+      "fried fish",
+      "fried fish"
+    ],
+    "category": "BBQ & Sajji",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-fish-fry.jpg"
+  },
+  {
+    "id": "DESI-070",
+    "name": "سادہ روٹی",
+    "english": "Plain Roti",
+    "aliases": [
+      "plain roti",
+      "plain roti"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-roti.jpg"
+  },
+  {
+    "id": "DESI-071",
+    "name": "تندوری روٹی",
+    "english": "Tandoori Roti",
+    "aliases": [
+      "tandoori roti",
+      "tandoori roti"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-roti.jpg"
+  },
+  {
+    "id": "DESI-072",
+    "name": "چپاتی",
+    "english": "Chapati",
+    "aliases": [
+      "chapati",
+      "chapati"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-roti.jpg"
+  },
+  {
+    "id": "DESI-073",
+    "name": "سادہ نان",
+    "english": "Plain Naan",
+    "aliases": [
+      "plain naan",
+      "plain naan"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-naan.jpg"
+  },
+  {
+    "id": "DESI-074",
+    "name": "روغنی نان",
+    "english": "Roghni Naan",
+    "aliases": [
+      "roghni naan",
+      "roghni naan"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/roghni-naan.jpg"
+  },
+  {
+    "id": "DESI-075",
+    "name": "تل والا نان",
+    "english": "Sesame Naan",
+    "aliases": [
+      "sesame naan",
+      "sesame naan"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-naan.jpg"
+  },
+  {
+    "id": "DESI-076",
+    "name": "لہسن نان",
+    "english": "Garlic Naan",
+    "aliases": [
+      "garlic naan",
+      "garlic naan"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-naan.jpg"
+  },
+  {
+    "id": "DESI-077",
+    "name": "کلونجی نان",
+    "english": "Kalonji Naan",
+    "aliases": [
+      "kalonji naan",
+      "kalonji naan"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-naan.jpg"
+  },
+  {
+    "id": "DESI-078",
+    "name": "پنیر نان",
+    "english": "Cheese Naan",
+    "aliases": [
+      "cheese naan",
+      "cheese naan"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-naan.jpg"
+  },
+  {
+    "id": "DESI-079",
+    "name": "قیمہ نان",
+    "english": "Qeema Naan",
+    "aliases": [
+      "qeema naan",
+      "qeema naan"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-naan.jpg"
+  },
+  {
+    "id": "DESI-080",
+    "name": "آلو نان",
+    "english": "Aloo Naan",
+    "aliases": [
+      "aloo naan",
+      "aloo naan"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-naan.jpg"
+  },
+  {
+    "id": "DESI-081",
+    "name": "کلچہ",
+    "english": "Kulcha",
+    "aliases": [
+      "kulcha",
+      "kulcha"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/catalog-kulcha.jpg"
+  },
+  {
+    "id": "DESI-082",
+    "name": "سادہ پراٹھا",
+    "english": "Plain Paratha",
+    "aliases": [
+      "plain paratha",
+      "plain paratha"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-paratha.jpg"
+  },
+  {
+    "id": "DESI-083",
+    "name": "آلو پراٹھا",
+    "english": "Aloo Paratha",
+    "aliases": [
+      "aloo paratha",
+      "aloo paratha"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/aloo-paratha.jpg"
+  },
+  {
+    "id": "DESI-084",
+    "name": "قیمہ پراٹھا",
+    "english": "Qeema Paratha",
+    "aliases": [
+      "qeema paratha",
+      "qeema paratha"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-paratha.jpg"
+  },
+  {
+    "id": "DESI-085",
+    "name": "چکن پراٹھا",
+    "english": "Chicken Paratha",
+    "aliases": [
+      "chikan paratha",
+      "chicken paratha"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-paratha.jpg"
+  },
+  {
+    "id": "DESI-086",
+    "name": "پنیر پراٹھا",
+    "english": "Cheese Paratha",
+    "aliases": [
+      "cheese paratha",
+      "cheese paratha"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-paratha.jpg"
+  },
+  {
+    "id": "DESI-087",
+    "name": "لچھا پراٹھا",
+    "english": "Lachha Paratha",
+    "aliases": [
+      "lachha paratha",
+      "lachha paratha"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/plain-paratha.jpg"
+  },
+  {
+    "id": "DESI-088",
+    "name": "مکئی کی روٹی",
+    "english": "Makki Roti",
+    "aliases": [
+      "makki roti",
+      "makki roti"
+    ],
+    "category": "Paratha & Breads",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/catalog-makki-roti.jpg"
+  },
+  {
+    "id": "DESI-089",
+    "name": "دال ماش",
+    "english": "Daal Mash",
+    "aliases": [
+      "daal mash",
+      "dal mash"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/daal-mash.jpg"
+  },
+  {
+    "id": "DESI-090",
+    "name": "دال مسور",
+    "english": "Daal Masoor",
+    "aliases": [
+      "daal masoor",
+      "dal masoor"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/daal-mash.jpg"
+  },
+  {
+    "id": "DESI-091",
+    "name": "دال چنا",
+    "english": "Daal Chana",
+    "aliases": [
+      "daal chana",
+      "dal chana"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/daal-mash.jpg"
+  },
+  {
+    "id": "DESI-092",
+    "name": "دال مونگ",
+    "english": "Daal Moong",
+    "aliases": [
+      "daal moong",
+      "dal moong"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/daal-mash.jpg"
+  },
+  {
+    "id": "DESI-093",
+    "name": "مکس دال",
+    "english": "Mix Daal",
+    "aliases": [
+      "mix daal",
+      "mix dal"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/daal-mash.jpg"
+  },
+  {
+    "id": "DESI-094",
+    "name": "دال تڑکا",
+    "english": "Daal Tarka",
+    "aliases": [
+      "daal tarka",
+      "dal tarka"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/daal-mash.jpg"
+  },
+  {
+    "id": "DESI-095",
+    "name": "چنے",
+    "english": "Chanay",
+    "aliases": [
+      "chanay",
+      "chane"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-chana.jpg"
+  },
+  {
+    "id": "DESI-096",
+    "name": "آلو چنے",
+    "english": "Aloo Chanay",
+    "aliases": [
+      "aloo chanay",
+      "aloo chane"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-chana.jpg"
+  },
+  {
+    "id": "DESI-097",
+    "name": "راجما",
+    "english": "Rajma",
+    "aliases": [
+      "rajma",
+      "rajma"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-rajma.jpg"
+  },
+  {
+    "id": "DESI-098",
+    "name": "آلو قیمہ",
+    "english": "Aloo Qeema",
+    "aliases": [
+      "aloo qeema",
+      "aloo qeema"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/aloo-qeema.jpg"
+  },
+  {
+    "id": "DESI-099",
+    "name": "مٹر قیمہ",
+    "english": "Matar Qeema",
+    "aliases": [
+      "matar qeema",
+      "matar qeema"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/aloo-qeema.jpg"
+  },
+  {
+    "id": "DESI-100",
+    "name": "بیف قیمہ",
+    "english": "Beef Qeema",
+    "aliases": [
+      "beef qeema",
+      "beef qeema"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/aloo-qeema.jpg"
+  },
+  {
+    "id": "DESI-101",
+    "name": "چکن قیمہ",
+    "english": "Chicken Qeema",
+    "aliases": [
+      "chikan qeema",
+      "chicken qeema"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/aloo-qeema.jpg"
+  },
+  {
+    "id": "DESI-102",
+    "name": "مکس سبزی",
+    "english": "Mix Sabzi",
+    "aliases": [
+      "mix sabzi",
+      "mix sabzi"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-103",
+    "name": "آلو پالک",
+    "english": "Aloo Palak",
+    "aliases": [
+      "aloo palak",
+      "aloo palak"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-palak-paneer.jpg"
+  },
+  {
+    "id": "DESI-104",
+    "name": "ساگ",
+    "english": "Saag",
+    "aliases": [
+      "saag",
+      "saag"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-saag.jpg"
+  },
+  {
+    "id": "DESI-105",
+    "name": "پالک پنیر",
+    "english": "Palak Paneer",
+    "aliases": [
+      "palak paneer",
+      "palak paneer"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-palak-paneer.jpg"
+  },
+  {
+    "id": "DESI-106",
+    "name": "آلو مٹر",
+    "english": "Aloo Matar",
+    "aliases": [
+      "aloo matar",
+      "aloo matar"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-aloo-matar.jpg"
+  },
+  {
+    "id": "DESI-107",
+    "name": "بھنڈی",
+    "english": "Bhindi",
+    "aliases": [
+      "bhindi",
+      "bhindi"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-108",
+    "name": "بینگن",
+    "english": "Baingan",
+    "aliases": [
+      "baingan",
+      "baingan"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-baingan.jpg"
+  },
+  {
+    "id": "DESI-109",
+    "name": "آلو گوبھی",
+    "english": "Aloo Gobi",
+    "aliases": [
+      "aloo gobi",
+      "aloo gobi"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-aloo-gobi.jpg"
+  },
+  {
+    "id": "DESI-110",
+    "name": "کڑھی پکوڑا",
+    "english": "Kadhi Pakora",
+    "aliases": [
+      "kadhi pakora",
+      "kadhi pakora"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-kadhi.jpg"
+  },
+  {
+    "id": "DESI-111",
+    "name": "ٹینڈے",
+    "english": "Tinday",
+    "aliases": [
+      "tinday",
+      "tinday"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-112",
+    "name": "لوکی",
+    "english": "Lauki",
+    "aliases": [
+      "lauki",
+      "lauki"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-113",
+    "name": "کریلے",
+    "english": "Karelay",
+    "aliases": [
+      "karelay",
+      "karelay"
+    ],
+    "category": "Daal & Sabzi",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-114",
+    "name": "رائتہ",
+    "english": "Raita",
+    "aliases": [
+      "raita",
+      "raita"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/raita.jpg"
+  },
+  {
+    "id": "DESI-115",
+    "name": "پودینہ رائتہ",
+    "english": "Mint Raita",
+    "aliases": [
+      "mint raita",
+      "mint raita"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/raita.jpg"
+  },
+  {
+    "id": "DESI-116",
+    "name": "کھیرے کا رائتہ",
+    "english": "Cucumber Raita",
+    "aliases": [
+      "cucumber raita",
+      "cucumber raita"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/raita.jpg"
+  },
+  {
+    "id": "DESI-117",
+    "name": "سلاد",
+    "english": "Salad",
+    "aliases": [
+      "salad",
+      "salad"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-salad.jpg"
+  },
+  {
+    "id": "DESI-118",
+    "name": "کچومر سلاد",
+    "english": "Kachumber Salad",
+    "aliases": [
+      "kachumber salad",
+      "kachumber salad"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-salad.jpg"
+  },
+  {
+    "id": "DESI-119",
+    "name": "اچار",
+    "english": "Achar",
+    "aliases": [
+      "achar",
+      "achar"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-achar.jpg"
+  },
+  {
+    "id": "DESI-120",
+    "name": "چٹنی",
+    "english": "Chutney",
+    "aliases": [
+      "chutney",
+      "chutney"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-chutney.jpg"
+  },
+  {
+    "id": "DESI-121",
+    "name": "پودینہ چٹنی",
+    "english": "Mint Chutney",
+    "aliases": [
+      "mint chutney",
+      "mint chutney"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-chutney.jpg"
+  },
+  {
+    "id": "DESI-122",
+    "name": "املی چٹنی",
+    "english": "Imli Chutney",
+    "aliases": [
+      "imli chutney",
+      "imli chutney"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-imli-chutney.jpg"
+  },
+  {
+    "id": "DESI-123",
+    "name": "دہی",
+    "english": "Dahi",
+    "aliases": [
+      "dahi",
+      "dahi"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-dahi.jpg"
+  },
+  {
+    "id": "DESI-124",
+    "name": "چکن یخنی",
+    "english": "Chicken Yakhni",
+    "aliases": [
+      "chikan yakhni",
+      "chicken yakhni"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-soup.jpg"
+  },
+  {
+    "id": "DESI-125",
+    "name": "چکن سوپ",
+    "english": "Chicken Soup",
+    "aliases": [
+      "chikan soup",
+      "chicken soup"
+    ],
+    "category": "Sides",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-soup.jpg"
+  },
+  {
+    "id": "DESI-126",
+    "name": "حلوہ پوری",
+    "english": "Halwa Puri",
+    "aliases": [
+      "halwa puri",
+      "halwa puri"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/halwa-puri.jpg"
+  },
+  {
+    "id": "DESI-127",
+    "name": "چنے پوری",
+    "english": "Chana Puri",
+    "aliases": [
+      "chana puri",
+      "chana puri"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/halwa-puri.jpg"
+  },
+  {
+    "id": "DESI-128",
+    "name": "نہاری",
+    "english": "Nihari",
+    "aliases": [
+      "nihari",
+      "nihari"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/nihari.jpg"
+  },
+  {
+    "id": "DESI-129",
+    "name": "بیف نہاری",
+    "english": "Beef Nihari",
+    "aliases": [
+      "beef nihari",
+      "beef nihari"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/nihari.jpg"
+  },
+  {
+    "id": "DESI-130",
+    "name": "مٹن نہاری",
+    "english": "Mutton Nihari",
+    "aliases": [
+      "bakra nihari",
+      "mutton nihari"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/nihari.jpg"
+  },
+  {
+    "id": "DESI-131",
+    "name": "پائے",
+    "english": "Paye",
+    "aliases": [
+      "paye",
+      "paye"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-paye.jpg"
+  },
+  {
+    "id": "DESI-132",
+    "name": "بیف پائے",
+    "english": "Beef Paye",
+    "aliases": [
+      "beef paye",
+      "beef paye"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-paye.jpg"
+  },
+  {
+    "id": "DESI-133",
+    "name": "مٹن پائے",
+    "english": "Mutton Paye",
+    "aliases": [
+      "bakra paye",
+      "mutton paye"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-paye.jpg"
+  },
+  {
+    "id": "DESI-134",
+    "name": "حلیم",
+    "english": "Haleem",
+    "aliases": [
+      "haleem",
+      "haleem"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/haleem.jpg"
+  },
+  {
+    "id": "DESI-135",
+    "name": "چکن حلیم",
+    "english": "Chicken Haleem",
+    "aliases": [
+      "chikan haleem",
+      "chicken haleem"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/haleem.jpg"
+  },
+  {
+    "id": "DESI-136",
+    "name": "مغز",
+    "english": "Maghaz",
+    "aliases": [
+      "maghaz",
+      "maghaz"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-137",
+    "name": "کلیجی",
+    "english": "Kaleji",
+    "aliases": [
+      "kaleji",
+      "kaleji"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-kaleji.jpg"
+  },
+  {
+    "id": "DESI-138",
+    "name": "آملیٹ",
+    "english": "Omelette",
+    "aliases": [
+      "omelette",
+      "omelette"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-omelette.jpg"
+  },
+  {
+    "id": "DESI-139",
+    "name": "فرائی انڈا",
+    "english": "Fried Egg",
+    "aliases": [
+      "fried egg",
+      "fried egg"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/catalog-fried-egg.jpg"
+  },
+  {
+    "id": "DESI-140",
+    "name": "انڈا پراٹھا",
+    "english": "Anda Paratha",
+    "aliases": [
+      "anda paratha",
+      "anda paratha"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/plain-paratha.jpg"
+  },
+  {
+    "id": "DESI-141",
+    "name": "چکن کچوری",
+    "english": "Chicken Kachori",
+    "aliases": [
+      "chikan kachori",
+      "chicken kachori"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/catalog-kachori.jpg"
+  },
+  {
+    "id": "DESI-142",
+    "name": "دال کچوری",
+    "english": "Daal Kachori",
+    "aliases": [
+      "daal kachori",
+      "dal kachori"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/daal-mash.jpg"
+  },
+  {
+    "id": "DESI-143",
+    "name": "آلو سموسہ",
+    "english": "Aloo Samosa",
+    "aliases": [
+      "aloo samosa",
+      "aloo samosa"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/catalog-samosa.jpg"
+  },
+  {
+    "id": "DESI-144",
+    "name": "چکن سموسہ",
+    "english": "Chicken Samosa",
+    "aliases": [
+      "chikan samosa",
+      "chicken samosa"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/catalog-samosa.jpg"
+  },
+  {
+    "id": "DESI-145",
+    "name": "پکوڑے",
+    "english": "Pakoray",
+    "aliases": [
+      "pakoray",
+      "pakoray"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-pakora.jpg"
+  },
+  {
+    "id": "DESI-146",
+    "name": "چنا چاٹ",
+    "english": "Chana Chaat",
+    "aliases": [
+      "chana chaat",
+      "chana chaat"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-chana.jpg"
+  },
+  {
+    "id": "DESI-147",
+    "name": "دہی بھلے",
+    "english": "Dahi Bhallay",
+    "aliases": [
+      "dahi bhallay",
+      "dahi bhallay"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-dahi-bhallay.jpg"
+  },
+  {
+    "id": "DESI-148",
+    "name": "فروٹ چاٹ",
+    "english": "Fruit Chaat",
+    "aliases": [
+      "fruit chaat",
+      "fruit chaat"
+    ],
+    "category": "Breakfast & Specials",
+    "variants": [
+      {
+        "name": "پلیٹ",
+        "unit": "portion"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-149",
+    "name": "کھیر",
+    "english": "Kheer",
+    "aliases": [
+      "kheer",
+      "kheer"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/kheer.jpg"
+  },
+  {
+    "id": "DESI-150",
+    "name": "فیرنی",
+    "english": "Firni",
+    "aliases": [
+      "firni",
+      "firni"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-firni.jpg"
+  },
+  {
+    "id": "DESI-151",
+    "name": "گلاب جامن",
+    "english": "Gulab Jamun",
+    "aliases": [
+      "gulab jamun",
+      "gulab jamun"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/catalog-gulab-jamun.jpg"
+  },
+  {
+    "id": "DESI-152",
+    "name": "رس ملائی",
+    "english": "Ras Malai",
+    "aliases": [
+      "ras malai",
+      "ras malai"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-ras-malai.jpg"
+  },
+  {
+    "id": "DESI-153",
+    "name": "جلیبی",
+    "english": "Jalebi",
+    "aliases": [
+      "jalebi",
+      "jalebi"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/catalog-jalebi.jpg"
+  },
+  {
+    "id": "DESI-154",
+    "name": "گاجر کا حلوہ",
+    "english": "Gajar Halwa",
+    "aliases": [
+      "gajar halwa",
+      "gajar halwa"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-gajar-halwa.jpg"
+  },
+  {
+    "id": "DESI-155",
+    "name": "سوجی کا حلوہ",
+    "english": "Suji Halwa",
+    "aliases": [
+      "suji halwa",
+      "suji halwa"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-156",
+    "name": "زردہ",
+    "english": "Zarda",
+    "aliases": [
+      "zarda",
+      "zarda"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-zarda.jpg"
+  },
+  {
+    "id": "DESI-157",
+    "name": "شاہی ٹکڑے",
+    "english": "Shahi Tukray",
+    "aliases": [
+      "shahi tukray",
+      "shahi tukray"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-158",
+    "name": "ربڑی",
+    "english": "Rabri",
+    "aliases": [
+      "rabri",
+      "rabri"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-rabri.jpg"
+  },
+  {
+    "id": "DESI-159",
+    "name": "کلفی",
+    "english": "Kulfi",
+    "aliases": [
+      "kulfi",
+      "kulfi"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "عدد",
+        "unit": "piece"
+      }
+    ],
+    "image": "/media/catalog-kulfi.jpg"
+  },
+  {
+    "id": "DESI-160",
+    "name": "فالودہ",
+    "english": "Falooda",
+    "aliases": [
+      "falooda",
+      "falooda"
+    ],
+    "category": "Desserts",
+    "variants": [
+      {
+        "name": "پیالی",
+        "unit": "bowl"
+      }
+    ],
+    "image": "/media/catalog-falooda.jpg"
+  },
+  {
+    "id": "DESI-161",
+    "name": "چائے",
+    "english": "Chai",
+    "aliases": [
+      "chai",
+      "chai"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "کپ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-chai.jpg"
+  },
+  {
+    "id": "DESI-162",
+    "name": "دودھ پتی",
+    "english": "Doodh Patti",
+    "aliases": [
+      "doodh patti",
+      "doodh patti"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "کپ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-chai.jpg"
+  },
+  {
+    "id": "DESI-163",
+    "name": "سبز چائے",
+    "english": "Green Tea",
+    "aliases": [
+      "green tea",
+      "green tea"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "کپ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-green-tea.jpg"
+  },
+  {
+    "id": "DESI-164",
+    "name": "کشمیری چائے",
+    "english": "Kashmiri Chai",
+    "aliases": [
+      "kashmiri chai",
+      "kashmiri chai"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "کپ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-kashmiri-chai.jpg"
+  },
+  {
+    "id": "DESI-165",
+    "name": "قہوہ",
+    "english": "Qahwa",
+    "aliases": [
+      "qahwa",
+      "qahwa"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "کپ",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-qahwa.jpg"
+  },
+  {
+    "id": "DESI-166",
+    "name": "میٹھی لسی",
+    "english": "Sweet Lassi",
+    "aliases": [
+      "sweet lassi",
+      "sweet lassi"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "گلاس",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-lassi.jpg"
+  },
+  {
+    "id": "DESI-167",
+    "name": "نمکین لسی",
+    "english": "Salted Lassi",
+    "aliases": [
+      "salted lassi",
+      "salted lassi"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "گلاس",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-lassi.jpg"
+  },
+  {
+    "id": "DESI-168",
+    "name": "سادہ لسی",
+    "english": "Plain Lassi",
+    "aliases": [
+      "plain lassi",
+      "plain lassi"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "گلاس",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-lassi.jpg"
+  },
+  {
+    "id": "DESI-169",
+    "name": "لیموں پانی",
+    "english": "Lemon Water",
+    "aliases": [
+      "lemon water",
+      "lemon water"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "گلاس",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-lemon-water.jpg"
+  },
+  {
+    "id": "DESI-170",
+    "name": "سکنجبین",
+    "english": "Sikanjabeen",
+    "aliases": [
+      "sikanjabeen",
+      "sikanjabeen"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "گلاس",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-lemon-water.jpg"
+  },
+  {
+    "id": "DESI-171",
+    "name": "روح افزا",
+    "english": "Rooh Afza",
+    "aliases": [
+      "rooh afza",
+      "rooh afza"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "گلاس",
+        "unit": "portion"
+      }
+    ],
+    "image": "/media/catalog-rooh-afza.jpg"
+  },
+  {
+    "id": "DESI-172",
+    "name": "دودھ سوڈا",
+    "english": "Doodh Soda",
+    "aliases": [
+      "doodh soda",
+      "doodh soda"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "گلاس",
+        "unit": "portion"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "DESI-173",
+    "name": "ٹھنڈا مشروب",
+    "english": "Cold Drink",
+    "aliases": [
+      "cold drink",
+      "cold drink"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "بوتل",
+        "unit": "bottle"
+      }
+    ],
+    "image": "/media/soft-drink.jpg"
+  },
+  {
+    "id": "DESI-174",
+    "name": "منرل واٹر",
+    "english": "Mineral Water",
+    "aliases": [
+      "mineral water",
+      "mineral water"
+    ],
+    "category": "Drinks",
+    "variants": [
+      {
+        "name": "بوتل",
+        "unit": "bottle"
+      }
+    ],
+    "image": "/media/catalog-water.jpg"
+  }
+]

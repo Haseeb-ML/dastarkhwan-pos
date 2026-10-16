@@ -1,0 +1,5 @@
+﻿import {chromium} from '@playwright/test';
+const b=await chromium.launch();const p=await b.newPage({viewport:{width:1536,height:650}});
+await p.goto('http://127.0.0.1:5173');await p.locator('input').first().fill('owner');await p.locator('input[type=password]').fill('Demo@2026!');await p.locator('.login-page button').last().click();await p.locator('.sidebar nav button').nth(3).click();await p.locator('.easy-tables').waitFor();await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(400);await p.screenshot({path:'output/tables-redesign.png'});
+for(const size of [{width:1536,height:650},{width:390,height:844}]){await p.setViewportSize(size);console.log(await p.evaluate(()=>({width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,cards:document.querySelectorAll('.easy-table-grid article').length,summary:document.querySelectorAll('.easy-table-summary article').length})));}
+await p.getByRole('button',{name:'+ نئی میز شامل کریں',exact:true}).click();console.log('Add table dialog:',await p.getByRole('dialog').isVisible());await b.close();

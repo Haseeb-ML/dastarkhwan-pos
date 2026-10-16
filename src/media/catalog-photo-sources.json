@@ -1,0 +1,454 @@
+[
+  {
+    "slug": "qorma",
+    "image": "/media/catalog-qorma.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicken_Korma.JPG",
+    "license": "CC0",
+    "artist": "Miansari66",
+    "title": "File:Chicken_Korma.JPG"
+  },
+  {
+    "slug": "jalfrezi",
+    "image": "/media/catalog-jalfrezi.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicken_Jalfrezi_(2103956162).jpg",
+    "license": "CC BY 2.0",
+    "artist": "David Pursehouse from Kawasaki, Japan",
+    "title": "File:Chicken_Jalfrezi_(2103956162).jpg"
+  },
+  {
+    "slug": "kofta",
+    "image": "/media/catalog-kofta.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Koofteh_tabrizi.jpg",
+    "license": "CC BY-SA 2.5",
+    "artist": "Fabienkhan",
+    "title": "File:Koofteh_tabrizi.jpg"
+  },
+  {
+    "slug": "chana",
+    "image": "/media/catalog-chana.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chana_masala.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Simon Law (sfllaw) from Montréal, QC, Canada",
+    "title": "File:Chana_masala.jpg"
+  },
+  {
+    "slug": "palak-paneer",
+    "image": "/media/catalog-palak-paneer.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Palakpaneer_Rayagada_Odisha_0009.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Lopanayak",
+    "title": "File:Palakpaneer_Rayagada_Odisha_0009.jpg"
+  },
+  {
+    "slug": "chapli-kabab",
+    "image": "/media/catalog-chapli-kabab.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chapli_Kebab.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Murcotipton",
+    "title": "File:Chapli_Kebab.jpg"
+  },
+  {
+    "slug": "shami-kabab",
+    "image": "/media/catalog-shami-kabab.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:4th_October_2012_Shami_Kebab.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Murcotipton",
+    "title": "File:4th_October_2012_Shami_Kebab.jpg"
+  },
+  {
+    "slug": "fish-fry",
+    "image": "/media/catalog-fish-fry.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fried_Fish_and_French_Fries.jpg",
+    "license": "Public domain",
+    "artist": "",
+    "title": "File:Fried_Fish_and_French_Fries.jpg"
+  },
+  {
+    "slug": "pulao",
+    "image": "/media/catalog-pulao.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Afghan_Palo.jpg",
+    "license": "CC BY-SA 1.0",
+    "artist": "Jost Wagner",
+    "title": "File:Afghan_Palo.jpg"
+  },
+  {
+    "slug": "roti",
+    "image": "/media/catalog-roti.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2_Chapati_warm_and_ready_to_be_eaten.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "KittyKaht from Hong Kong, Hong Kong",
+    "title": "File:2_Chapati_warm_and_ready_to_be_eaten.jpg"
+  },
+  {
+    "slug": "kulcha",
+    "image": "/media/catalog-kulcha.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chole_Kulcha_Meal_-_Order_Food_Online_in_Mumbai_(31013272937).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Gaurav Nemade",
+    "title": "File:Chole_Kulcha_Meal_-_Order_Food_Online_in_Mumbai_(31013272937).jpg"
+  },
+  {
+    "slug": "paratha",
+    "image": "/media/catalog-paratha.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Triangle_paratha_(cropped).JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Nithyasrm",
+    "title": "File:Triangle_paratha_(cropped).JPG"
+  },
+  {
+    "slug": "makki-roti",
+    "image": "/media/catalog-makki-roti.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Makki_Di_Roti.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Vsigamany",
+    "title": "File:Makki_Di_Roti.JPG"
+  },
+  {
+    "slug": "masoor-dal",
+    "image": "/media/catalog-masoor-dal.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:3_types_of_lentil.png",
+    "license": "CC BY-SA 2.5",
+    "artist": "User:Justinc",
+    "title": "File:3_types_of_lentil.png"
+  },
+  {
+    "slug": "chana-dal",
+    "error": "No free photograph"
+  },
+  {
+    "slug": "moong-dal",
+    "image": "/media/catalog-moong-dal.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Mung_beans_(Vigna_radiata).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ivar Leidus",
+    "title": "File:Mung_beans_(Vigna_radiata).jpg"
+  },
+  {
+    "slug": "rajma",
+    "image": "/media/catalog-rajma.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Rajma_Masala_(32081557778).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Gaurav Nemade",
+    "title": "File:Rajma_Masala_(32081557778).jpg"
+  },
+  {
+    "slug": "saag",
+    "image": "/media/catalog-saag.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Saagroti.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "w:en:User:Lokantha",
+    "title": "File:Saagroti.jpg"
+  },
+  {
+    "slug": "aloo-matar",
+    "image": "/media/catalog-aloo-matar.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Aloo_Mattar.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Quadell",
+    "title": "File:Aloo_Mattar.jpg"
+  },
+  {
+    "slug": "baingan",
+    "image": "/media/catalog-baingan.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Baigan_Bharta_from_Nagpur.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dheerajk88",
+    "title": "File:Baigan_Bharta_from_Nagpur.JPG"
+  },
+  {
+    "slug": "aloo-gobi",
+    "image": "/media/catalog-aloo-gobi.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Aloo_Ghobi.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Sapanabehl",
+    "title": "File:Aloo_Ghobi.jpg"
+  },
+  {
+    "slug": "kadhi",
+    "image": "/media/catalog-kadhi.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kadhi_Pakora.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ams4wiki",
+    "title": "File:Kadhi_Pakora.jpg"
+  },
+  {
+    "slug": "salad",
+    "image": "/media/catalog-salad.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kachumber_Salad.JPG",
+    "license": "CC0",
+    "artist": "Miansari66",
+    "title": "File:Kachumber_Salad.JPG"
+  },
+  {
+    "slug": "achar",
+    "image": "/media/catalog-achar.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chilli_pickle_in_a_plate_2.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Suyash.dwivedi",
+    "title": "File:Chilli_pickle_in_a_plate_2.jpg"
+  },
+  {
+    "slug": "chutney",
+    "image": "/media/catalog-chutney.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chutneykarnataka.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Charles Haynes",
+    "title": "File:Chutneykarnataka.jpg"
+  },
+  {
+    "slug": "mint-chutney",
+    "image": "/media/catalog-mint-chutney.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chutneykarnataka.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Charles Haynes",
+    "title": "File:Chutneykarnataka.jpg"
+  },
+  {
+    "slug": "imli-chutney",
+    "image": "/media/catalog-imli-chutney.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Aloo_Tikki_served_with_chutneys.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Raveesh Vyas from [Ahmedabad, Noida], India",
+    "title": "File:Aloo_Tikki_served_with_chutneys.jpg"
+  },
+  {
+    "slug": "dahi",
+    "image": "/media/catalog-dahi.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Curd_in_a_traditional_Manipuri_earthen_pot.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Goumisao",
+    "title": "File:Curd_in_a_traditional_Manipuri_earthen_pot.JPG"
+  },
+  {
+    "slug": "soup",
+    "image": "/media/catalog-soup.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicken_Noodle_Soup.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Hoyabird8",
+    "title": "File:Chicken_Noodle_Soup.jpg"
+  },
+  {
+    "slug": "paye",
+    "image": "/media/catalog-paye.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Paya_Curry.JPG",
+    "license": "Public domain",
+    "artist": "Miansari66",
+    "title": "File:Paya_Curry.JPG"
+  },
+  {
+    "slug": "omelette",
+    "image": "/media/catalog-omelette.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gorgonzola_%2B_Bacon_Omelette_@_Omelegg_@_Amsterdam_(16600947041).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Guilhem Vellut from Annecy, France",
+    "title": "File:Gorgonzola_+_Bacon_Omelette_@_Omelegg_@_Amsterdam_(16600947041).jpg"
+  },
+  {
+    "slug": "fried-egg",
+    "image": "/media/catalog-fried-egg.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fried_Egg_2.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Matthew Murdoch",
+    "title": "File:Fried_Egg_2.jpg"
+  },
+  {
+    "slug": "kachori",
+    "image": "/media/catalog-kachori.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Rajasthani_Raj_Kachori.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jaipuriamanasi",
+    "title": "File:Rajasthani_Raj_Kachori.jpg"
+  },
+  {
+    "slug": "samosa",
+    "image": "/media/catalog-samosa.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Samosas,_snack_food_at_Wikipedia%27s_16th_Birthday_celebration_in_Chittagong_(01).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Moheen Reeyad",
+    "title": "File:Samosas,_snack_food_at_Wikipedia's_16th_Birthday_celebration_in_Chittagong_(01).jpg"
+  },
+  {
+    "slug": "pakora",
+    "image": "/media/catalog-pakora.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Onion_pakora_-_a.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Babu iyer",
+    "title": "File:Onion_pakora_-_a.jpg"
+  },
+  {
+    "slug": "dahi-bhallay",
+    "image": "/media/catalog-dahi-bhallay.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dahi_bhalla_or_dahi_wada_or_dahi_bada.PNG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Akshay Sanjay Agrawal",
+    "title": "File:Dahi_bhalla_or_dahi_wada_or_dahi_bada.PNG"
+  },
+  {
+    "slug": "firni",
+    "image": "/media/catalog-firni.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Firni_Or_Phirni.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Sumit Surai",
+    "title": "File:Firni_Or_Phirni.jpg"
+  },
+  {
+    "slug": "gulab-jamun",
+    "image": "/media/catalog-gulab-jamun.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gulab-jamun-wallpaper-1.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Sapra5379",
+    "title": "File:Gulab-jamun-wallpaper-1.jpg"
+  },
+  {
+    "slug": "ras-malai",
+    "image": "/media/catalog-ras-malai.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ras_Malai_2.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Shaharbano",
+    "title": "File:Ras_Malai_2.JPG"
+  },
+  {
+    "slug": "jalebi",
+    "image": "/media/catalog-jalebi.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Basavanagudi_Kadalekai_Parishe_(2025)_Bangalore_(86).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Gpkp",
+    "title": "File:Basavanagudi_Kadalekai_Parishe_(2025)_Bangalore_(86).jpg"
+  },
+  {
+    "slug": "gajar-halwa",
+    "image": "/media/catalog-gajar-halwa.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cuisine_(268)_44.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "AmanAgrahari01",
+    "title": "File:Cuisine_(268)_44.jpg"
+  },
+  {
+    "slug": "zarda",
+    "image": "/media/catalog-zarda.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Coloured_Zarda_Chawal.JPG",
+    "license": "CC0",
+    "artist": "Miansari66",
+    "title": "File:Coloured_Zarda_Chawal.JPG"
+  },
+  {
+    "slug": "rabri",
+    "image": "/media/catalog-rabri.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Homemade_Rabri.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ravi Talwar",
+    "title": "File:Homemade_Rabri.jpg"
+  },
+  {
+    "slug": "kulfi",
+    "image": "/media/catalog-kulfi.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Matka_kulfi.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Commoner247",
+    "title": "File:Matka_kulfi.jpg"
+  },
+  {
+    "slug": "falooda",
+    "image": "/media/catalog-falooda.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Faluda.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Randhirreddy at English Wikipedia",
+    "title": "File:Faluda.JPG"
+  },
+  {
+    "slug": "chai",
+    "image": "/media/catalog-chai.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chai_In_Sakora.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Dadhichbittu007",
+    "title": "File:Chai_In_Sakora.jpg"
+  },
+  {
+    "slug": "green-tea",
+    "image": "/media/catalog-green-tea.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Green_tea_3_appearances.jpg",
+    "license": "CC0",
+    "artist": "Alessandro Martini",
+    "title": "File:Green_tea_3_appearances.jpg"
+  },
+  {
+    "slug": "kashmiri-chai",
+    "image": "/media/catalog-kashmiri-chai.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Great_Kashmiri_Salt_tea.png",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jamee937",
+    "title": "File:The_Great_Kashmiri_Salt_tea.png"
+  },
+  {
+    "slug": "qahwa",
+    "image": "/media/catalog-qahwa.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kashmir%27s_Kahwah_Tea.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Antara Sarkar",
+    "title": "File:Kashmir's_Kahwah_Tea.jpg"
+  },
+  {
+    "slug": "lassi",
+    "image": "/media/catalog-lassi.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Salt_lassi.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Raksanand",
+    "title": "File:Salt_lassi.jpg"
+  },
+  {
+    "slug": "lemon-water",
+    "image": "/media/catalog-lemon-water.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lemonade_-_27682817724.jpg",
+    "license": "CC BY 2.0",
+    "artist": "HarshLight",
+    "title": "File:Lemonade_-_27682817724.jpg"
+  },
+  {
+    "slug": "rooh-afza",
+    "image": "/media/catalog-rooh-afza.jpg",
+    "source": "https://en.wikipedia.org/wiki/File:Rooh_Afza_bottle.jpg",
+    "license": "CC-BY-SA-4.0",
+    "artist": "Anupam\n",
+    "title": "File:Rooh_Afza_bottle.jpg"
+  },
+  {
+    "slug": "water",
+    "image": "/media/catalog-water.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Stilles_Mineralwasser.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Walter J. Pilsak, Waldsassen, Germany",
+    "title": "File:Stilles_Mineralwasser.jpg"
+  },
+  {
+    "slug": "kaleji",
+    "image": "/media/catalog-kaleji.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tortillas_con_biste_de_higado.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Jdvillalobos",
+    "title": "File:Tortillas_con_biste_de_higado.jpg"
+  },
+  {
+    "slug": "chargha",
+    "image": "/media/catalog-chargha.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Marinated_whole_Chicken.JPG",
+    "license": "CC0",
+    "artist": "Miansari66",
+    "title": "File:Marinated_whole_Chicken.JPG"
+  },
+  {
+    "slug": "tinday",
+    "image": "/media/catalog-tinday.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tinda.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Tomaszrp",
+    "title": "File:Tinda.jpg"
+  },
+  {
+    "slug": "lauki",
+    "image": "/media/catalog-lauki.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Courge_encore_verte.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "撮影者はカールおじさんです。",
+    "title": "File:Courge_encore_verte.jpg"
+  }
+]

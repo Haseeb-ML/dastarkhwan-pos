@@ -1,0 +1,20 @@
+﻿from pathlib import Path
+p=Path('server.mjs');s=p.read_text(encoding='utf-8')
+s=s.replace("process.env.ERP_DB||'data/development.sqlite'","process.env.ERP_DB||(production?'data/production.sqlite':'data/development.sqlite')")
+s=s.replace("/^[a-z-]+\\.(jpg|woff2)$/","/^[a-z0-9-]+\\.(jpg|woff2|ttf)$/")
+s=s.replace("extname(file)==='.jpg'?'image/jpeg':'font/woff2'","extname(file)==='.jpg'?'image/jpeg':extname(file)==='.ttf'?'font/ttf':'font/woff2'")
+s=s.replace("mode:production?'production':'development'","mode:production?'production':'development',setupRequired:!app.one('SELECT id FROM users LIMIT 1')")
+p.write_text(s,encoding='utf-8')
+p=Path('erp.mjs');s=p.read_text(encoding='utf-8')
+s=s.replace("refunded?'Refunded':balance===0","balance===0")
+s=s.replace("paymentStatus:o.state","refundStatus:refunded?'Refunded':null,paymentStatus:o.state")
+s=s.replace("const total=lines.reduce((s,x)=>s+x.amount,0),paid=","const total=integer(lines.reduce((s,x)=>s+x.amount,0)),paid=")
+p.write_text(s,encoding='utf-8')
+p=Path('Workspace.tsx');s=p.read_text(encoding='utf-8')
+s=s.replace("(filter==='All'||o.paymentStatus===filter)","(filter==='All'||(filter==='Refunded'?o.refunded>0:o.paymentStatus===filter))")
+s=s.replace("<Pill value={o.paymentStatus}/><small>","<Pill value={o.paymentStatus}/>{o.refunded>0&&<Pill value='Refunded'/>}<small>")
+# Add expense business date without changing shift posting time.
+s=s.replace("[{name:'category',label:'Category'},{name:'amount'","[{name:'businessDate',label:'Expense business date',type:'date'},{name:'category',label:'Category'},{name:'amount'")
+s=s.replace("initial={{method:'Cash'}} submit={async v=>{if(dialog==='expense')","initial={{method:'Cash',businessDate:businessDate()}} submit={async v=>{if(dialog==='expense')")
+p.write_text(s,encoding='utf-8')
+

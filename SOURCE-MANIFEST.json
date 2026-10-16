@@ -1,0 +1,1282 @@
+[
+  {
+    "file": ".gitattributes",
+    "sha256": "fdd53ecc7bf79a69d3ef228ec98e0151f10e02702b90b553f04785b61db68354",
+    "bytes": 7728
+  },
+  {
+    "file": ".gitignore",
+    "sha256": "835594a88bcdbb3038d54624386630f076f518165bd80b088a36635d7e19ec2c",
+    "bytes": 536
+  },
+  {
+    "file": ".mise.toml",
+    "sha256": "6d2834ef5f78a7dc4c384570a62b895137fdf63df171d237f0747932bd001435",
+    "bytes": 43
+  },
+  {
+    "file": "AGENTS.md",
+    "sha256": "94a675323b3116acbb56b97cc163424f5c96ebec9cf2cc2fdafda3dc274fbb25",
+    "bytes": 2381
+  },
+  {
+    "file": "CLAUDE.md",
+    "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+    "bytes": 11
+  },
+  {
+    "file": "README.md",
+    "sha256": "a5b35ad03550c4df3c0e1fa1d595e3d8cb3c4a302b1998f0ae25acbbc198f795",
+    "bytes": 10079
+  },
+  {
+    "file": "index.html",
+    "sha256": "768eac67e6271681de61c23f1c94a6bf688607bbad2d0bccafd8f4bfe789a079",
+    "bytes": 440
+  },
+  {
+    "file": "package.json",
+    "sha256": "280364a05eec5161cb7e42bedb64735bbc6f33d6c37d66b4d986458a8a3e535c",
+    "bytes": 631
+  },
+  {
+    "file": "pnpm-lock.yaml",
+    "sha256": "4898ab91c6fe90782fb79b43995ba987b2b648464db013df5c770c0370959931",
+    "bytes": 29458
+  },
+  {
+    "file": "tsconfig.json",
+    "sha256": "9a1e96d63eaccd5416b2f78ecaccf2b3a27ca71e213fa5859cf5349c66123bf9",
+    "bytes": 556
+  },
+  {
+    "file": "vite.config.ts",
+    "sha256": "eead898cf48887e3627b6f16d9ac4a7a7251fcbcee64da34296a74500c08fc0a",
+    "bytes": 12135
+  },
+  {
+    "file": ".figma/make/analyze-routes",
+    "sha256": "7a81578bcfa5ba5f2105d7165e0cd2d8d1c6151d2a0c5ba766b3ef1c824ee788",
+    "bytes": 70
+  },
+  {
+    "file": ".figma/make/deploy",
+    "sha256": "fe35b0aff744f5aa8bb16eb1590c720ff6b0ff4bce9ede78f73e02bbfd7e7f3f",
+    "bytes": 88
+  },
+  {
+    "file": ".figma/make/deploy-preview",
+    "sha256": "3b82ce85bad03ce7b0e4e288a6e40e5caf119c41a392de3d3420ff17c42d0e8b",
+    "bytes": 163
+  },
+  {
+    "file": ".figma/make/dev",
+    "sha256": "91f795e632539988b0fe3de57084839f41a827ba5c274590388f7d0650ec2314",
+    "bytes": 52
+  },
+  {
+    "file": ".figma/make/dev.json",
+    "sha256": "e78b91a2a63456a6eab9756c3fb6d767dfe3673adcef1dcfe4f52c010238c3e7",
+    "bytes": 959
+  },
+  {
+    "file": ".figma/make/format",
+    "sha256": "254598ef0d1a61c3abc2a426c7065487ca140c8f9b90e4d66ea05dff20832335",
+    "bytes": 63
+  },
+  {
+    "file": ".figma/make/install",
+    "sha256": "90705d33ffd6b0700def7f2f304fd24ae04e17af5fc7d8437df44cf546d64891",
+    "bytes": 90
+  },
+  {
+    "file": ".figma/make/langserver",
+    "sha256": "e6b9034d28bbc82e6333a3b77f8d5fd593ac54eeed7e4e76569329fdbb534fff",
+    "bytes": 106
+  },
+  {
+    "file": ".figma/make/site.json",
+    "sha256": "bd9865537048e87318a22f5ef9fd5a6a9c19380af15d4b66d68ba35d23eeeef3",
+    "bytes": 375
+  },
+  {
+    "file": "src/.env.example",
+    "sha256": "43a981067300158197076019004ff9d542bcad69257f5dfd5ecb068459eaee63",
+    "bytes": 490
+  },
+  {
+    "file": "src/.gitignore",
+    "sha256": "5980e6ed5f4f8bd990241a34b5f6d8053e47d9aa9c4429bba2ce6e70fe5e61b1",
+    "bytes": 50
+  },
+  {
+    "file": "src/ASSETS.md",
+    "sha256": "34e4b4d46820c8452c1850ca1179c48f857f167a05f9da2cf31a8a81e0002243",
+    "bytes": 704
+  },
+  {
+    "file": "src/App.tsx",
+    "sha256": "d1166a1723b7c7b6d6cfadfebb882c445cf4087a87aa761ad93ab1de7326e853",
+    "bytes": 837
+  },
+  {
+    "file": "src/AppZoom.tsx",
+    "sha256": "07f23c6f6055cdcbd06af8b65047f3316d94fbbae4293cf0506761a14a5eafc4",
+    "bytes": 2172
+  },
+  {
+    "file": "src/AuditDisplay.ts",
+    "sha256": "1257a1647a640b01e1ef4af525e9571bdb3bafc4f3b33fa8c4221521cae7fd42",
+    "bytes": 2465
+  },
+  {
+    "file": "src/BottomClose.tsx",
+    "sha256": "898b79c88daf82f170137cea53497bc911896beab90461daccc4b9787669bb79",
+    "bytes": 369
+  },
+  {
+    "file": "src/CustomerForm.tsx",
+    "sha256": "944942e2f35068dfdd64d04f2adfe36a308c72e1ebc7966d770417850f9e6528",
+    "bytes": 3059
+  },
+  {
+    "file": "src/DataControls.tsx",
+    "sha256": "d0c27ab5ea8930d122a288bef25fd44223cc158cbfd0f8b6992182993757461b",
+    "bytes": 5324
+  },
+  {
+    "file": "src/Design.tsx",
+    "sha256": "cceab4275d65a0a497dbb9f9bb76d4a08085edb37df0a93a878c5d69e728c541",
+    "bytes": 4612
+  },
+  {
+    "file": "src/DishCatalog.tsx",
+    "sha256": "f259fa2bfef0f7503f6124945052d42a0991c9a2486720ec84e497669d7d9f36",
+    "bytes": 5306
+  },
+  {
+    "file": "src/EasyOverview.tsx",
+    "sha256": "95b619242e0c0240bd885b0b013f6f3836bdee7290008726fdc7258d2d8138c2",
+    "bytes": 13626
+  },
+  {
+    "file": "src/ImageUpload.tsx",
+    "sha256": "f5d3871a425ef6b4ed708514bef40bb41466243a7618e4da229298caf72922cb",
+    "bytes": 3458
+  },
+  {
+    "file": "src/IngredientEditor.tsx",
+    "sha256": "cc82ac0f49e7a0a88d0c6b8e360568ec8c730d4ecf3504235aad978dbf5e6736",
+    "bytes": 4480
+  },
+  {
+    "file": "src/LanguageCore.ts",
+    "sha256": "f3fa37fd29d0be3d559f93e99017d98ceb19e16eed919bd5ef308c19eb8a0b19",
+    "bytes": 2617
+  },
+  {
+    "file": "src/LanguageSwitch.tsx",
+    "sha256": "ebb997c9c11e03a82a535161644ea3fad9bd7475fc2a29749c8eebfd32251ade",
+    "bytes": 655
+  },
+  {
+    "file": "src/PaymentHistory.tsx",
+    "sha256": "a0140238680d5c86084dd2c07df939171e8d98d487576589fd9d1518770e4305",
+    "bytes": 2149
+  },
+  {
+    "file": "src/README.md",
+    "sha256": "956dbfbea1c3a9fc5dff93514245ad4e384b1d45e56434c82f67012a923dc0a9",
+    "bytes": 10092
+  },
+  {
+    "file": "src/REQUIREMENTS.md",
+    "sha256": "aaed449168435a6b98d8520b63be07172c9412154edf834b166bce0f6ec282a0",
+    "bytes": 2238
+  },
+  {
+    "file": "src/SidebarMore.tsx",
+    "sha256": "1018709cedf522321bf08336adb5f6cf5289ead6a167464c92a68fa9f87461eb",
+    "bytes": 954
+  },
+  {
+    "file": "src/TablePicker.tsx",
+    "sha256": "f8cb139c75d9a000cc69d4852df8682704b263e0263366bfacd5ccbcb3c1599d",
+    "bytes": 2976
+  },
+  {
+    "file": "src/Urdu.ts",
+    "sha256": "de85a5c5d9aad7f39835257bb23756983b6f0fce2a725efb69304250970f2fd1",
+    "bytes": 29248
+  },
+  {
+    "file": "src/UrduKeyboard.tsx",
+    "sha256": "0c464b30b0dc5569c0641fdb2e07bdcaac4b639e505c75603ba3fecf1d4b5e99",
+    "bytes": 6375
+  },
+  {
+    "file": "src/Workspace.recovered.tsx",
+    "sha256": "bd3902c1fde07bd88f9989efdf4d56568a5fc02c11de45822e62f52a376be83c",
+    "bytes": 83116
+  },
+  {
+    "file": "src/Workspace.tsx",
+    "sha256": "3f7858222d874230d5684eb3b16ff654f8aa409691b201e8914134eec9f62f2f",
+    "bytes": 95423
+  },
+  {
+    "file": "src/app-polish.css",
+    "sha256": "fc83fba9724ca5aed0e2d6716eb3ded81e2472bd96fabd21c5a787b01a9f1de8",
+    "bytes": 11809
+  },
+  {
+    "file": "src/apply_urdu.mjs",
+    "sha256": "5a70cb2d6d7055241a34c6d0264b59c954902af32d80c25b7f533f559522595e",
+    "bytes": 1381
+  },
+  {
+    "file": "src/arrange_urdu_cart.mjs",
+    "sha256": "9820f0d14e8e4279f30b4203d06bbb2f152ffd7153c1b33df4ecb3689e7be71b",
+    "bytes": 1512
+  },
+  {
+    "file": "src/audit-all-design.mjs",
+    "sha256": "8b37a4e7a54d15e54f6ccb8c2fa9cf3506531767ebd7845e99a9c3ff4f556dff",
+    "bytes": 3195
+  },
+  {
+    "file": "src/audit-secondary-design.mjs",
+    "sha256": "d7255e4731f6ddd5fe2efea1e5c3a5dad0cc5324f55ff41b15ed6a92162e1bff",
+    "bytes": 3065
+  },
+  {
+    "file": "src/audit_excel.mjs",
+    "sha256": "2ba83bcbf9bfe882ae5aacb623112161ef43879b0dfbceeaa8aedc5933a807f7",
+    "bytes": 4252
+  },
+  {
+    "file": "src/audit_text.mjs",
+    "sha256": "b1c36a32ebcb662d210bc26c29f9cc65ffee85060b7afccc4e58dbb5738a7da3",
+    "bytes": 3352
+  },
+  {
+    "file": "src/backup.mjs",
+    "sha256": "1c86efacf937f651c907cab5d46fcac112724a0fe89ca8916b6f4b5089ce0626",
+    "bytes": 861
+  },
+  {
+    "file": "src/build.mjs",
+    "sha256": "8e84ba106fc9b1ed120d3751fde7bfc790e8dc87d03c8c5c00494b8fced6c699",
+    "bytes": 281
+  },
+  {
+    "file": "src/cache_fonts.py",
+    "sha256": "803501d4c947cda04cd52435b5e6cf5d433ed21f5e6685c5af969a2b9d09258f",
+    "bytes": 1258
+  },
+  {
+    "file": "src/cache_photos.py",
+    "sha256": "d642a77732b963dd1b8f69868dbe6d18e0b19f140b5ac917ba4029e5a249acf9",
+    "bytes": 885
+  },
+  {
+    "file": "src/collect_urdu_labels.mjs",
+    "sha256": "67bae4aa1a0cc75716065b67952db9cadc709200a85ba74e311bf9a3b9c05833",
+    "bytes": 700
+  },
+  {
+    "file": "src/customers-design.css",
+    "sha256": "cc4dca92a8fe0163a8839a5e3b62aef48f09a0557e17d6a803e1fd9b6775f5d7",
+    "bytes": 6857
+  },
+  {
+    "file": "src/data_management.mjs",
+    "sha256": "df486f41ee25716d85b1b2d9083e2855d7fbd76b682696289f503699967bf263",
+    "bytes": 4408
+  },
+  {
+    "file": "src/demo_customers.mjs",
+    "sha256": "0dbb70551e7a59111463c932a9edceebca3d148410ba0679420a92afec13fcc3",
+    "bytes": 2095
+  },
+  {
+    "file": "src/desi-foods.json",
+    "sha256": "1f3279a946057334e3dd8b9d31141ff67953f32343a26b35774d4d5bd908570d",
+    "bytes": 62206
+  },
+  {
+    "file": "src/desi-ingredients.json",
+    "sha256": "3a48793d842642675aea4d428d75baf101346e1a6d4606a2fb161298d940783f",
+    "bytes": 24406
+  },
+  {
+    "file": "src/design-contact-sheet.py",
+    "sha256": "ddf9ef050a2d4e083009250131e338aaf58529685df3d9e78b2d4ccf8bc8d47c",
+    "bytes": 575
+  },
+  {
+    "file": "src/dish-editor-design.css",
+    "sha256": "677b3ce906350ff81be38f83eab8265e0915703ede4deb72dae9b8702ca03aca",
+    "bytes": 4810
+  },
+  {
+    "file": "src/erp.mjs",
+    "sha256": "e5a4c18d677a333b6c944d32cdc5d71df6612115f1f9ac369f06b686eb3b5dee",
+    "bytes": 47785
+  },
+  {
+    "file": "src/fetch_dish_photos.py",
+    "sha256": "e9445c1bbc0b3a4c266ab5a2c2b8c87135c8c64bbc0579378e4e2ed3424f5160",
+    "bytes": 3100
+  },
+  {
+    "file": "src/final-app-details.css",
+    "sha256": "40a6fe234c55e0f02c234cc09b1affd7c638830d991988f5a501efcf730356ff",
+    "bytes": 2833
+  },
+  {
+    "file": "src/final-density.css",
+    "sha256": "4d447bab37dd81a87650f94188445d8d128b6e436a0f369c89f6d81df6e28d54",
+    "bytes": 275
+  },
+  {
+    "file": "src/final_authorization.py",
+    "sha256": "03c2eff5463513ebecd49f56a256bc864f360b22e3be02357a6d6f5c0e52d0ee",
+    "bytes": 703
+  },
+  {
+    "file": "src/final_polish.py",
+    "sha256": "fe9678de39a2b98f0af1a22305632817a61634d9b5e87ef98fbacf209778deb1",
+    "bytes": 1085
+  },
+  {
+    "file": "src/final_recovery_guard.py",
+    "sha256": "9ee1ea0fac0f9e369dd5bc7ffa7953deff4b89814e8397641fdeeb750411bf20",
+    "bytes": 1406
+  },
+  {
+    "file": "src/final_tables.py",
+    "sha256": "5d296a0920ffb87e457b3f88e1710291bfd90612816614f2e6e57db02ed17d47",
+    "bytes": 563
+  },
+  {
+    "file": "src/final_viewport.py",
+    "sha256": "834a151e175b9f2f05c053f7bc949574896805717a52dd4462fa58a958166afe",
+    "bytes": 370
+  },
+  {
+    "file": "src/finalize_defaults.py",
+    "sha256": "c91457e6dbbde1064ff2080e129e63db224083fefcd301729ce4f0b2a0c36c15",
+    "bytes": 1808
+  },
+  {
+    "file": "src/finalize_ui.py",
+    "sha256": "ad57452441103527d29b04f6265c15eb09d37d4a78a0365adebf83a03cb675e8",
+    "bytes": 4514
+  },
+  {
+    "file": "src/finish_simple_ui.py",
+    "sha256": "6151e960624525897c676872081109f520b43afeb8c7ae36ddc435501a9c714b",
+    "bytes": 4228
+  },
+  {
+    "file": "src/finish_simple_urdu.py",
+    "sha256": "7a4b77f5de0c7c0b7dfe9bf3663b4f588427d0f2c6c7e29d4ee9bbeb13c9deaf",
+    "bytes": 4543
+  },
+  {
+    "file": "src/finish_urdu.py",
+    "sha256": "8a21434861ef12f4c8c1fe702e490fb6adce68f74c0907a44d5bf1a5e8c296cc",
+    "bytes": 3092
+  },
+  {
+    "file": "src/finish_urdu_layout.py",
+    "sha256": "9fc3a2a9993992988d3aed77b96a75c643edabb9e4fe29e09b65e45715f764a8",
+    "bytes": 2196
+  },
+  {
+    "file": "src/fix-audit-script.py",
+    "sha256": "aec0233d011648d93c16fe8743f4ac5b676422c51227114969e78580ff15f61c",
+    "bytes": 470
+  },
+  {
+    "file": "src/fix-dish-sizes.py",
+    "sha256": "4b84e79a17a3ba52730d6e9dadd7101dcc77f34514523d892be5e0069bdf9300",
+    "bytes": 2588
+  },
+  {
+    "file": "src/fix_encoding.py",
+    "sha256": "c6bfdfdd216360f7c907b54e63bfdfa1b5d2e7abc6f9e6187bd169f0fcc70b84",
+    "bytes": 1661
+  },
+  {
+    "file": "src/fix_production_test.py",
+    "sha256": "562d737d7593760a06ee9ddb615ec8725d4e0be6d241309ffe2058ebd97c288f",
+    "bytes": 415
+  },
+  {
+    "file": "src/fix_runtime.py",
+    "sha256": "23c828b5e2c90a41e4d7afc08b91723df9b3fd319c75a4595ff3a8f395f61a5d",
+    "bytes": 705
+  },
+  {
+    "file": "src/fix_thermal.py",
+    "sha256": "a60b38a8edcff1133ab1d1f98f968c6ce107bd94a96a0c5309638be6e7a190a8",
+    "bytes": 861
+  },
+  {
+    "file": "src/fix_urdu_fixture.py",
+    "sha256": "2ab25f20666672555867a36a188abb9ba8992dce17b4d7314fe118f8924cee45",
+    "bytes": 349
+  },
+  {
+    "file": "src/improve_ledger.py",
+    "sha256": "fefa8f5a1cdf3e19d404a369287793e0da2c4f25a07e3031f9817dec872ec22c",
+    "bytes": 3796
+  },
+  {
+    "file": "src/improve_recovery.py",
+    "sha256": "cd0cefbfe222a839f73ccd11378af6006c41d9eff14238c723345b04ddf0f7c9",
+    "bytes": 5096
+  },
+  {
+    "file": "src/index.css",
+    "sha256": "1ba353589d89296f9f4f60bd2bcdf47ef285727875e3597eaa8c0853fd47ab5d",
+    "bytes": 194210
+  },
+  {
+    "file": "src/inspect_structure.mjs",
+    "sha256": "55c34cd5820108da73bd595b287654ff98c16665700395426b37d69cb9659dde",
+    "bytes": 568
+  },
+  {
+    "file": "src/inspect_urdu.mjs",
+    "sha256": "02d46916cfb13a3e8f74b14d659764ed402fed9c043de2d84eb43de002560542",
+    "bytes": 626
+  },
+  {
+    "file": "src/integrate_media.py",
+    "sha256": "d94cc4ef4165ee052d090802e1b18d4406f7b28dcc98c6e26cc2321185099883",
+    "bytes": 2027
+  },
+  {
+    "file": "src/invoice-polish.css",
+    "sha256": "13a7307c78ac257eac4c5f9045c8f1ec24471348ddbe17b9bd3fce900d722e2e",
+    "bytes": 520
+  },
+  {
+    "file": "src/invoice_pdf.py",
+    "sha256": "035cfe9e7b62380684c87ed0e9617be6bfe68a194c8f2acdc5669b175d28ba6a",
+    "bytes": 14814
+  },
+  {
+    "file": "src/invoice_print.mjs",
+    "sha256": "3bb302f365cbdb16d7e83bd9a8ff6071c19cae6aab972ae5c6e1e34d750188bf",
+    "bytes": 8120
+  },
+  {
+    "file": "src/keyboard-check.mjs",
+    "sha256": "5dc79452879a8288fa179c051713769dd16e8c562db099c6e04cf79bc6baaa4a",
+    "bytes": 2165
+  },
+  {
+    "file": "src/last_urdu_labels.py",
+    "sha256": "7fb8659f34e5e57de89de51acf41ea83df5468d4a649179c616c937d5453c7cb",
+    "bytes": 1787
+  },
+  {
+    "file": "src/main.tsx",
+    "sha256": "5f49dce6e6cc4b5d678cf529ef892af0ab7dfa6afb300b11ad559224019b8b05",
+    "bytes": 232
+  },
+  {
+    "file": "src/menu-design.css",
+    "sha256": "60ac2ebfd6982446cde3a4148fbf23574363e212294a8427081f88eada693c96",
+    "bytes": 4925
+  },
+  {
+    "file": "src/normalize-size.py",
+    "sha256": "c7c7c68976780372c2121b61c41c79916084a06e0211e395fade4f6814275f8d",
+    "bytes": 463
+  },
+  {
+    "file": "src/package-lock.json",
+    "sha256": "41bbe008c8b585d43391a6971d1a7f7a6fb671147c2f2d7ccad14939ab698b91",
+    "bytes": 1695
+  },
+  {
+    "file": "src/package.json",
+    "sha256": "9e3b4ebeb1c5744827c893486641a9e33681d2b0cad356b4e75731ffcf432dd8",
+    "bytes": 370
+  },
+  {
+    "file": "src/playwright.config.mjs",
+    "sha256": "1159cc8378a6011b702dbabd28639ed2268059c6b2d9b650d7a977d0a3a4a706",
+    "bytes": 548
+  },
+  {
+    "file": "src/polish-translations.py",
+    "sha256": "9f362fc42af837b014c97704d0798e87463d71e6228ba62ea7c553e5ae56000b",
+    "bytes": 1209
+  },
+  {
+    "file": "src/polish_urdu_cart.py",
+    "sha256": "12ebc5f7705b72c76a59a967853d69c1cf2bafb132f65e5c7170a665f2bd9983",
+    "bytes": 610
+  },
+  {
+    "file": "src/premium-invoice.css",
+    "sha256": "dd7e1564f18749af95bf7c5097b571706ad4fd186a846cb7f28aea9787c2dde2",
+    "bytes": 9442
+  },
+  {
+    "file": "src/preview_order_panel.mjs",
+    "sha256": "a23c58a6f1cc815534e237789f1e4c8166b8783977c2c016b6aef44ec141f38d",
+    "bytes": 1254
+  },
+  {
+    "file": "src/recover_workspace.mjs",
+    "sha256": "36d85323ea8920f515070babab1eb449f36ae58a58d58f27d5b72495a6f41513",
+    "bytes": 1029
+  },
+  {
+    "file": "src/redesign-customers.py",
+    "sha256": "1a86fd9b76c9a92bb84fa272b81f8b2a4583d3c35c92adc1354bea819d7dc16d",
+    "bytes": 1842
+  },
+  {
+    "file": "src/redesign-dish-editor.py",
+    "sha256": "5d26210db447b9cf032364e2572f2529cfba51ed77953462b1758bb368f0158e",
+    "bytes": 651
+  },
+  {
+    "file": "src/redesign-invoice.py",
+    "sha256": "481ae949a7e2af0a627ba5758a290fc5489f39b7d850387e3f8613e7101d4991",
+    "bytes": 1225
+  },
+  {
+    "file": "src/redesign-menu.py",
+    "sha256": "4fd3c68c08daa7f29025064b47f8af6dfbae6bb135fd0529b6425fb2d8d89a32",
+    "bytes": 1399
+  },
+  {
+    "file": "src/redesign-stock.py",
+    "sha256": "c9c400e80ba89d26492d71412546a98bda6af83a101466208d1bd01c0b97eca2",
+    "bytes": 1606
+  },
+  {
+    "file": "src/redesign-tables.py",
+    "sha256": "5a7800c64f93c0984cff22e89978f1ee735b299b9ed753dc36462727c7cbacfd",
+    "bytes": 1236
+  },
+  {
+    "file": "src/refine_urdu.py",
+    "sha256": "188ccfa5ab724994a3d02935179a4946e7c6a5d187f3fc2b43b98d37aa85a06f",
+    "bytes": 5977
+  },
+  {
+    "file": "src/repair_type_separators.py",
+    "sha256": "76e9c149998477337810566c9fcead54e22369bfe2bb16b0fb05b02d8114e2f7",
+    "bytes": 633
+  },
+  {
+    "file": "src/requirements.txt",
+    "sha256": "853b9c778591e40c7cf33b0a85dc1f13b91d174f0242fbe4c78e68f7f1e85f41",
+    "bytes": 95
+  },
+  {
+    "file": "src/schema.sql",
+    "sha256": "4ffc99769f2beb88bb50317b00f01bdefe439a80a6214ed4004bbcefa0961768",
+    "bytes": 7770
+  },
+  {
+    "file": "src/secondary-dialog-polish.css",
+    "sha256": "40e1ccb56b4b543b530a6be45285c0fc270119cc787dd3030ab27bbcf87575df",
+    "bytes": 3200
+  },
+  {
+    "file": "src/server.mjs",
+    "sha256": "913836a2b39c2a0d62e6010ea4f79b5d8aec753048e6de58312581b49f915265",
+    "bytes": 15289
+  },
+  {
+    "file": "src/simplify_erp.py",
+    "sha256": "d7e35834c9e881af5fb185933f4b9dc460dd8848821beedc4ce2be983cac12b8",
+    "bytes": 8454
+  },
+  {
+    "file": "src/simplify_menu.py",
+    "sha256": "4b717efe07b31421b87ac4269ac82466e2e83c24de900f46c76426879ae511ed",
+    "bytes": 3815
+  },
+  {
+    "file": "src/stock-design.css",
+    "sha256": "5fb27dceca1b535c91e47286e6f007ac10b44ce2ae07dfd10be714ca4082cf37",
+    "bytes": 6319
+  },
+  {
+    "file": "src/stock-width-fix.css",
+    "sha256": "acb81e5502783bf7abe2ec1f4f862a93d5688c73dfb1e55ca38d9238a69261c7",
+    "bytes": 491
+  },
+  {
+    "file": "src/support_urdu.py",
+    "sha256": "fd34dfd66509d8c8db4e91f35a365be88bd9e913259c9be732d2a00461adc279",
+    "bytes": 3654
+  },
+  {
+    "file": "src/translate_workspace.mjs",
+    "sha256": "0fccf4096efad9410200bc587989714e1c5ddddef8abdb0391fab667e46a6af4",
+    "bytes": 3309
+  },
+  {
+    "file": "src/ui-english.json",
+    "sha256": "d74a649d674f3c3974df49c74e1fea2a9882af067f75679d07bf0e0c4863fb4c",
+    "bytes": 24298
+  },
+  {
+    "file": "src/urdu.json",
+    "sha256": "7102aef52274e45300ea60de8fe158f16fdc6bb81cb685e8be8a3c46d1f53e56",
+    "bytes": 23631
+  },
+  {
+    "file": "src/urdu_documents.py",
+    "sha256": "c74934795092efb3f344c1ea972c4ef0e7113fbe37560d17c316ed2e3db398a7",
+    "bytes": 2501
+  },
+  {
+    "file": "src/verify-customer-design.mjs",
+    "sha256": "0db23e946d744f1470e4719763818a6996f5ba8b317f2267b51835e33440c812",
+    "bytes": 1722
+  },
+  {
+    "file": "src/verify-density.mjs",
+    "sha256": "a52edbf43a2349666221ac936717be7449d8902d95d905ec2577fd21114f1422",
+    "bytes": 1310
+  },
+  {
+    "file": "src/verify-dish-editor.mjs",
+    "sha256": "e4dbc2eafa85273d4c1b675905749fa941898360775af3a2a48d9530ebe5c2d1",
+    "bytes": 1153
+  },
+  {
+    "file": "src/verify-dish-sizes.mjs",
+    "sha256": "47efeb6a922a7ba5d2bf4ece51e89cc3f079cfa42058bf70d921b91c53c131de",
+    "bytes": 1109
+  },
+  {
+    "file": "src/verify-menu-design.mjs",
+    "sha256": "806d917b54d5688b7d9d0206fd654eee670ddfd697d3293c80c83155d761bcfb",
+    "bytes": 1152
+  },
+  {
+    "file": "src/verify-premium-invoice.mjs",
+    "sha256": "1b1ed2dbb1728f7b397f1d4cf63cf9ca9664d9cbb9d83014cdea909b1d6b99a4",
+    "bytes": 1314
+  },
+  {
+    "file": "src/verify-stock-design.mjs",
+    "sha256": "580f8aebf188ebac3347482fd2c7db390742ee360bf862f95f9c643ae2e07feb",
+    "bytes": 1234
+  },
+  {
+    "file": "src/verify-tables-design.mjs",
+    "sha256": "68d90c1e20ce80b13668d9ae5d192764ca99675995aa77b98930160c1100854a",
+    "bytes": 1093
+  },
+  {
+    "file": "src/vite-env.d.ts",
+    "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+    "bytes": 38
+  },
+  {
+    "file": "src/write_urdu.py",
+    "sha256": "a7d29093d5864664b4c060396706feed05a18c2d24b439fff3516d8604b1923e",
+    "bytes": 17335
+  },
+  {
+    "file": "src/media/NotoNastaliqUrdu-LICENSE.txt",
+    "sha256": "e90279e3fb2003c4d54f8685e25274bd7838b1b21c891520d71dbdb1d4a98907",
+    "bytes": 4384
+  },
+  {
+    "file": "src/media/PHOTO_CREDITS.md",
+    "sha256": "e1d71c6bd33a0542cdc5f29112d66657c0f5c216121b0e83f376c240dc97c048",
+    "bytes": 11580
+  },
+  {
+    "file": "src/media/additional-photo-candidates.json",
+    "sha256": "8ac455ebca227e4c18a947c0630e6ab2bd8d9f027adb83843d10ce305c49227c",
+    "bytes": 24548
+  },
+  {
+    "file": "src/media/aloo-paratha.jpg",
+    "sha256": "332bf169a3e959bc0ce0b6b50478b9586714675c9de3e1969fa04edbdd9bb176",
+    "bytes": 161379
+  },
+  {
+    "file": "src/media/aloo-qeema.jpg",
+    "sha256": "6d1a285fde4579071042dd71913b254638e4fe8845594a87aaa84e73a7cb4a40",
+    "bytes": 192556
+  },
+  {
+    "file": "src/media/bbq.jpg",
+    "sha256": "62ecb67e2af9eb141e3db8d62e4bb174b20a8f036974b7712f7337a3653b1a30",
+    "bytes": 55275
+  },
+  {
+    "file": "src/media/beef-biryani.jpg",
+    "sha256": "5dc67838c3b6c1f3861ac96ebb1243cdcfc9b2073cb4692c3e465507ffe07060",
+    "bytes": 253684
+  },
+  {
+    "file": "src/media/biryani.jpg",
+    "sha256": "760ace8faea76030ac2001b18e3fa2db03fa9ff1183a84632b9fee2a4b7682a5",
+    "bytes": 56784
+  },
+  {
+    "file": "src/media/catalog-achar.jpg",
+    "sha256": "f77421981c92303baa13d040b75803493db59a4139e81d17a4b4cbd16490e3dd",
+    "bytes": 83790
+  },
+  {
+    "file": "src/media/catalog-aloo-gobi.jpg",
+    "sha256": "3706a3d557e9d0ad3dfd6379591cddcab57fb8c2edbc9d107a04f549f9fe0860",
+    "bytes": 93595
+  },
+  {
+    "file": "src/media/catalog-aloo-matar.jpg",
+    "sha256": "764891b6055b5af5484b3ca04f54580436af12791b9b883120436fd2802fb385",
+    "bytes": 87718
+  },
+  {
+    "file": "src/media/catalog-baingan.jpg",
+    "sha256": "16127c286dd6bef9899e4e400f174903332765870fde11d399b17b3784a56c15",
+    "bytes": 89806
+  },
+  {
+    "file": "src/media/catalog-chai.jpg",
+    "sha256": "dfddb89679a7000ff283bcb2af6eae7f1b7f41b1e4bfec546299ca9aa8ae9b9f",
+    "bytes": 57744
+  },
+  {
+    "file": "src/media/catalog-chana.jpg",
+    "sha256": "bae2051fb8ce1b22a4d7ea90d3561fb98d1bd0f52ced35929cd4992e08e735c7",
+    "bytes": 84271
+  },
+  {
+    "file": "src/media/catalog-chapli-kabab.jpg",
+    "sha256": "942f8ae7158810f591086ef0e3ebccaa7115393e8f27292977a451578252e063",
+    "bytes": 75061
+  },
+  {
+    "file": "src/media/catalog-chargha.jpg",
+    "sha256": "d05de532d377ea2353ddcc2604fed431692b576554a22ab3f0545963efbcf2ed",
+    "bytes": 70891
+  },
+  {
+    "file": "src/media/catalog-chutney.jpg",
+    "sha256": "5dc19502e0e9a40e65a6779323184c154fb0cbd27f6c4ecdcb918ed96ebbff93",
+    "bytes": 59232
+  },
+  {
+    "file": "src/media/catalog-dahi-bhallay.jpg",
+    "sha256": "c776e7549bc3961694906abfdf37f608a0b74ddf86595e962da706f26b349986",
+    "bytes": 81967
+  },
+  {
+    "file": "src/media/catalog-dahi.jpg",
+    "sha256": "ce0e8f73cc6c0f09986f54d774551051139331e6eb8fab7ab5b4dda68dc6f54f",
+    "bytes": 42556
+  },
+  {
+    "file": "src/media/catalog-falooda.jpg",
+    "sha256": "1a7d14b9a30ab7dbfbbf1be4aa847487ce2f5f96b8561ff262c1bbbe60b204d0",
+    "bytes": 56623
+  },
+  {
+    "file": "src/media/catalog-firni.jpg",
+    "sha256": "a4751efae6b68f7dfce2f00caede77406c5e6024e609eebae2e2be3d291d3b22",
+    "bytes": 58730
+  },
+  {
+    "file": "src/media/catalog-fish-fry.jpg",
+    "sha256": "cfce671f54e19986bcb41670b227f51d750dcc5d423bff2f28c2d644dc315f23",
+    "bytes": 76614
+  },
+  {
+    "file": "src/media/catalog-fried-egg.jpg",
+    "sha256": "7955fbf1ac1423583dbbb2baa2e480f2b78566e1293f2c2b77cd3316942a2d73",
+    "bytes": 32753
+  },
+  {
+    "file": "src/media/catalog-gajar-halwa.jpg",
+    "sha256": "f31072b69c9a6b7e085795d12e98980e14957d91bc8391298aa8955179d68aa6",
+    "bytes": 70320
+  },
+  {
+    "file": "src/media/catalog-green-tea.jpg",
+    "sha256": "afdd0ab6a9def3c483dfbc00eb23d8818aba0680faf59ff646650c7bd72677ac",
+    "bytes": 39902
+  },
+  {
+    "file": "src/media/catalog-gulab-jamun.jpg",
+    "sha256": "4d5eac12990a8bfd31edf5148ba4619d5ed330cae0894a600e584e3603227327",
+    "bytes": 44625
+  },
+  {
+    "file": "src/media/catalog-imli-chutney.jpg",
+    "sha256": "68b213c1b6a86c7d3cf6084319f7e7803ede0dace9ca91c254f2ae1a1c1b898c",
+    "bytes": 122560
+  },
+  {
+    "file": "src/media/catalog-jalebi.jpg",
+    "sha256": "6291e4c1fca24a36fbf958affce0f5cb1a1c9b83b8c3c61fb94bafb69a23c23b",
+    "bytes": 115134
+  },
+  {
+    "file": "src/media/catalog-jalfrezi.jpg",
+    "sha256": "b8fb2a8824c37884ced7123bc61c65671353e3977ee721f96905ff88d0b64f38",
+    "bytes": 104975
+  },
+  {
+    "file": "src/media/catalog-kachori.jpg",
+    "sha256": "01fe0c78ac6ed29b91350f02f60ab79eb06cc6048de00bfbb844594b7d9c2251",
+    "bytes": 86638
+  },
+  {
+    "file": "src/media/catalog-kadhi.jpg",
+    "sha256": "d6153ab168480277292333058649e8ac60f25f8fcb96d5f41bc24a1dfd34911f",
+    "bytes": 87828
+  },
+  {
+    "file": "src/media/catalog-kaleji.jpg",
+    "sha256": "8eea5baf9cb1d22e3a6878213cdad6195add1439fb064e59d8ab154cd77c6d2b",
+    "bytes": 10526
+  },
+  {
+    "file": "src/media/catalog-kashmiri-chai.jpg",
+    "sha256": "b0ea6ac00a1ff88e7cb9e3c5454f677a4a2efe7ac8bb23269e5013ce4ee1ef6a",
+    "bytes": 125059
+  },
+  {
+    "file": "src/media/catalog-kofta.jpg",
+    "sha256": "9f1fc4a68cd3e66b0bfa2fef03735fc133382457bc5b4b6eeff648a02bcc96e5",
+    "bytes": 113669
+  },
+  {
+    "file": "src/media/catalog-kulcha.jpg",
+    "sha256": "8e5910136514f5ccdb5ad8d701416243f960d52989107d504a86b293492ee26b",
+    "bytes": 92229
+  },
+  {
+    "file": "src/media/catalog-kulfi.jpg",
+    "sha256": "b0c42848ef66896679952611996f207d61c86c9a25915db4ce10dbc23881aa90",
+    "bytes": 48609
+  },
+  {
+    "file": "src/media/catalog-lassi.jpg",
+    "sha256": "d84278f4a4306c440c36c4a9f82a2a3c3e1f149d2abdd84084899f0a7935da09",
+    "bytes": 51733
+  },
+  {
+    "file": "src/media/catalog-lauki.jpg",
+    "sha256": "28ab8522b67bef395afc6b88affd8e5eac615c692320c06650a5bbd79576d706",
+    "bytes": 84694
+  },
+  {
+    "file": "src/media/catalog-lemon-water.jpg",
+    "sha256": "e5f3b59c5f40df196c214a20b34f63c60728126ba448ecaa2599b07d26dd7f3f",
+    "bytes": 42088
+  },
+  {
+    "file": "src/media/catalog-makki-roti.jpg",
+    "sha256": "28e11f350478fd7e3412fa0c13f8e118c054bce2bb055014b4d8302589202fd0",
+    "bytes": 59906
+  },
+  {
+    "file": "src/media/catalog-masoor-dal.jpg",
+    "sha256": "484db560c69b3620c50131ae9e44c59e3c03004ec7297fe28680cabcfa06f1e6",
+    "bytes": 79620
+  },
+  {
+    "file": "src/media/catalog-mint-chutney.jpg",
+    "sha256": "5dc19502e0e9a40e65a6779323184c154fb0cbd27f6c4ecdcb918ed96ebbff93",
+    "bytes": 59232
+  },
+  {
+    "file": "src/media/catalog-moong-dal.jpg",
+    "sha256": "96084b0dca3a9e219ddc944bc8870dd2085f28f5ec9211f8371ddec644fdcb23",
+    "bytes": 44262
+  },
+  {
+    "file": "src/media/catalog-omelette.jpg",
+    "sha256": "faccf941e309d86f30fa71c5a2c37da7af4a5dfc04b16cf218cc53066cac241c",
+    "bytes": 65122
+  },
+  {
+    "file": "src/media/catalog-pakora.jpg",
+    "sha256": "2cc0240631b9028f3bdfa819a1e47e6616eb7094518eac3fa689f2eef78a75d7",
+    "bytes": 75134
+  },
+  {
+    "file": "src/media/catalog-palak-paneer.jpg",
+    "sha256": "dfde0e000c268a2289e10ce8d49b964c2149309a119d172d518bbacc6725d6b8",
+    "bytes": 118256
+  },
+  {
+    "file": "src/media/catalog-paratha.jpg",
+    "sha256": "9db54af25ddec7455a8df7f513ad7a35f0ea5e60e38f77220f20af6d2a37affa",
+    "bytes": 83142
+  },
+  {
+    "file": "src/media/catalog-paye.jpg",
+    "sha256": "c6681857f8b83ba237afa80389d2cbad990c3b457d6b851bcb18a4260656ef0e",
+    "bytes": 81630
+  },
+  {
+    "file": "src/media/catalog-photo-sources.json",
+    "sha256": "924f31a0a33fe7f86c28136eca0a9f9a9cf1426906fc744552c3098b777ad41a",
+    "bytes": 15644
+  },
+  {
+    "file": "src/media/catalog-pulao.jpg",
+    "sha256": "44bf5c730bd3a7a58fea61b2b4b2ba0773e9c658b4765fca40699e7e39c58b2c",
+    "bytes": 60917
+  },
+  {
+    "file": "src/media/catalog-qahwa.jpg",
+    "sha256": "a97931024d5192712ee23a63bed9e974537b5228afd8a624c7a2884fe4e191cf",
+    "bytes": 30724
+  },
+  {
+    "file": "src/media/catalog-qorma.jpg",
+    "sha256": "8d3ec8a0e7a168c981a006f898e491460b43ea36149153870d31216cdc1a0b25",
+    "bytes": 98131
+  },
+  {
+    "file": "src/media/catalog-rabri.jpg",
+    "sha256": "83b254065d0a19ab2c6686c8afae1d02c8e262ca82ddf4f627b8c1a1cd9a805e",
+    "bytes": 79714
+  },
+  {
+    "file": "src/media/catalog-rajma.jpg",
+    "sha256": "2bf366f541917409d478eed9bfeb539a3005dc2be53648405dff5ea81346a9c8",
+    "bytes": 82143
+  },
+  {
+    "file": "src/media/catalog-ras-malai.jpg",
+    "sha256": "ea699ef81db35bde300377f57346f7106134810944ed9d9187d4541136120dd6",
+    "bytes": 71929
+  },
+  {
+    "file": "src/media/catalog-rooh-afza.jpg",
+    "sha256": "4527f1723c491e35d5ba3be77b7e0cc0a209f4b7c215787c96254c71909ea1e1",
+    "bytes": 60952
+  },
+  {
+    "file": "src/media/catalog-roti.jpg",
+    "sha256": "5eaf2babb2b48b221928453c866e5f16a17f14f205aef1932aef589e4c7aed7f",
+    "bytes": 58030
+  },
+  {
+    "file": "src/media/catalog-saag.jpg",
+    "sha256": "449778432268a0a110749b2452b6b98c464a01e78d00f1aa0a3d7ff1567da5c7",
+    "bytes": 52669
+  },
+  {
+    "file": "src/media/catalog-salad.jpg",
+    "sha256": "1facefc7ee5dc9d58bd8bd3c82b48d936e44d66e5d2f149f642dbf5b54781c08",
+    "bytes": 125243
+  },
+  {
+    "file": "src/media/catalog-samosa.jpg",
+    "sha256": "3fd40520d828daf485cc0d02fc1cdb9c79a28a27a652d5e7f7b4533f21d21276",
+    "bytes": 125463
+  },
+  {
+    "file": "src/media/catalog-shami-kabab.jpg",
+    "sha256": "7207bf324564acccbccf7c992803c46c664a33f3b14a09d4e0b2d935151d7fa4",
+    "bytes": 91871
+  },
+  {
+    "file": "src/media/catalog-soup.jpg",
+    "sha256": "80a33b59377ab7335dcc3191200503cb53afd7252d0f588a745d70f396ac7da0",
+    "bytes": 63472
+  },
+  {
+    "file": "src/media/catalog-tinday.jpg",
+    "sha256": "ab695e428a830e96aa146fb2803c2c567a3ed4886fa83ab633b2dbc6ffa1989c",
+    "bytes": 42487
+  },
+  {
+    "file": "src/media/catalog-water.jpg",
+    "sha256": "46af03eb7bf65884a04c8344dd3ac76236c74e685915a56fc53615fd889189fc",
+    "bytes": 28503
+  },
+  {
+    "file": "src/media/catalog-zarda.jpg",
+    "sha256": "1be90d11666a15b60f93e94ba7eb47778be664826080775211686382a0e7c6f0",
+    "bytes": 129429
+  },
+  {
+    "file": "src/media/chicken-biryani.jpg",
+    "sha256": "a05e2d2207b7f7cdfef35b1d5d204b11ff6a8dd064ee3cf6a7c8544f9366307b",
+    "bytes": 212921
+  },
+  {
+    "file": "src/media/chicken-handi.jpg",
+    "sha256": "6959503b6502cae5695651607820a80d630c2d31b59d027450a7a9b54fe5eb31",
+    "bytes": 247713
+  },
+  {
+    "file": "src/media/chicken-karahi.jpg",
+    "sha256": "a73da003422867ed65f8c82a093b43d59813559a4e0373b04e172ca130806e31",
+    "bytes": 103701
+  },
+  {
+    "file": "src/media/chicken-pulao.jpg",
+    "sha256": "a6236eba2566aa96933a3113e7b269d76cb736bbfd9beb6de991c25613a7cd77",
+    "bytes": 129372
+  },
+  {
+    "file": "src/media/chicken-sajji.jpg",
+    "sha256": "05971d7512e39c6a5a1c9d0a38b55888c4cbdc316c6b7c4afd51ac161844f752",
+    "bytes": 156287
+  },
+  {
+    "file": "src/media/chicken-tikka.jpg",
+    "sha256": "d85e7ad487d8def338a08faf0b1faa628f24f023f92c51aec254a04f52eefa55",
+    "bytes": 386922
+  },
+  {
+    "file": "src/media/curry.jpg",
+    "sha256": "eae55410dc35a977dfd20a94e9c7e56356356cee94c1c6bdf2c0ef567670b66d",
+    "bytes": 116574
+  },
+  {
+    "file": "src/media/daal-mash.jpg",
+    "sha256": "3cde6775ec32218246cbd630cfd8076c1701af402d08eb27b927a48b7b6c8f21",
+    "bytes": 200027
+  },
+  {
+    "file": "src/media/dastarkhwan-icon.svg",
+    "sha256": "f8c1f38f6e6ac6eee7c29e0522782927370156fc21be6450654db3e22c4c21d9",
+    "bytes": 323
+  },
+  {
+    "file": "src/media/dish-photos.json",
+    "sha256": "4621d315f7fd07c4020fa2ac08e7a3e89d4d98818698cdbf6661a0130089f489",
+    "bytes": 9106
+  },
+  {
+    "file": "src/media/dm-sans-400.ttf",
+    "sha256": "b0ae3e89a7d3ef2b1838bb4b1ceb0b17cc3435af061eee809d76aa623ff116e9",
+    "bytes": 48280
+  },
+  {
+    "file": "src/media/dm-sans-500.ttf",
+    "sha256": "376427b5322148d8de1e03f263bcca4935a2d60ba71d9f94f4947ab664c711ae",
+    "bytes": 48308
+  },
+  {
+    "file": "src/media/dm-sans-600.ttf",
+    "sha256": "b79a2ea7a38f33fd96a282fadb9ce97626bb0724a44d21075859f0e50239993a",
+    "bytes": 48280
+  },
+  {
+    "file": "src/media/dm-sans-700.ttf",
+    "sha256": "2a8e7f713ee79fbccdef3cef5c787aff47580299f7da60144961e7db2ec08211",
+    "bytes": 48200
+  },
+  {
+    "file": "src/media/dmsans-OFL.txt",
+    "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1",
+    "bytes": 4482
+  },
+  {
+    "file": "src/media/fonts-source.css",
+    "sha256": "413986884c02c7415d8a29d2c371edd6c6a08a4224350db0592619ea2d882ec6",
+    "bytes": 1422
+  },
+  {
+    "file": "src/media/haleem.jpg",
+    "sha256": "e249bc3e00c31e0d70b0178fb421c2544b249903c6902f8b63fb9b0740735cac",
+    "bytes": 158153
+  },
+  {
+    "file": "src/media/halwa-puri.jpg",
+    "sha256": "8a320aff434f2081e4528f06b009e0ba3342af8b5df1419ad3fdb1e7c6bc224c",
+    "bytes": 172293
+  },
+  {
+    "file": "src/media/karahi.jpg",
+    "sha256": "7a732fcc14f8f26ebac8f3b97a1a3f64e8044c0ca888acf66c531bcd9a7484a3",
+    "bytes": 165712
+  },
+  {
+    "file": "src/media/kheer.jpg",
+    "sha256": "33250c28e3af7fa111c73b0da39102821fd177168f2830bb52a0d8b9af59a298",
+    "bytes": 78792
+  },
+  {
+    "file": "src/media/libre-franklin-600.ttf",
+    "sha256": "04f71a680a400bb36a367d4347b243bb23867288c21e11705aa766968939fb96",
+    "bytes": 106412
+  },
+  {
+    "file": "src/media/libre-franklin-700.ttf",
+    "sha256": "0e8948888ff7e981ed6d702510413ef6813875087c4dd51933b7d9e27a1671f4",
+    "bytes": 106528
+  },
+  {
+    "file": "src/media/librefranklin-OFL.txt",
+    "sha256": "2710268527181a27b8e938617551bae29e714e6525247be6679bf897a9942a60",
+    "bytes": 4495
+  },
+  {
+    "file": "src/media/mutton-karahi.jpg",
+    "sha256": "40149f7d39b454a1d3d7fc7edfa80ac92c7911182eecee36f5b4300fbd2c64a0",
+    "bytes": 308360
+  },
+  {
+    "file": "src/media/naan.jpg",
+    "sha256": "2af21a8e9785354d2fc1b7404f7f1fee36fcfc9187b8f5f6162ec483d661c0e2",
+    "bytes": 62442
+  },
+  {
+    "file": "src/media/nihari.jpg",
+    "sha256": "d9d106c52995e81bbfcc4bf8c05a31449a028cb6abc4a6c3a719aa9e6d247669",
+    "bytes": 228935
+  },
+  {
+    "file": "src/media/noto-nastaliq-urdu.ttf",
+    "sha256": "98a4787f34eb6fde57fb9a1121a8f216301196ab0da98ea110cad581be8abbcd",
+    "bytes": 690304
+  },
+  {
+    "file": "src/media/noto-sans-arabic.ttf",
+    "sha256": "63111b5b2e074dd48cc67692e0a2726d86ee94c1c37fe8598257b7b4e87e869e",
+    "bytes": 844676
+  },
+  {
+    "file": "src/media/notosansarabic-OFL.txt",
+    "sha256": "07fc70bfeb985cc1a87a8587d0a0c80bab11c86c9dc3fd95b6f0cb332f983e96",
+    "bytes": 4382
+  },
+  {
+    "file": "src/media/photo-credits.html",
+    "sha256": "2198b548a7a4324069273866ae8d832cd8214b9e3f4040daa94ea78d88e9d863",
+    "bytes": 18938
+  },
+  {
+    "file": "src/media/plain-naan.jpg",
+    "sha256": "3391a6757bc6b724eabaf9aace0d8d2df62290917321b3e35efa95c88392ae01",
+    "bytes": 107414
+  },
+  {
+    "file": "src/media/plain-paratha.jpg",
+    "sha256": "499debc3e817f1d3e07172667d2eeda1eb307b5e263dafc78dce0be637357c7b",
+    "bytes": 119019
+  },
+  {
+    "file": "src/media/plain-rice.jpg",
+    "sha256": "2b2c58e155baf8fb7c2a7b879575fa97d163e326764e13526b18aaaa52645274",
+    "bytes": 186043
+  },
+  {
+    "file": "src/media/plain-roti.jpg",
+    "sha256": "5fceb9fbfa90dd96f5687985a7902788476b24b0f123300af94c062a0cea92a8",
+    "bytes": 169130
+  },
+  {
+    "file": "src/media/raita.jpg",
+    "sha256": "679a9b9741ca09e722708186d9355c6f361d18ad5f7507d626cc7743e83e673f",
+    "bytes": 129959
+  },
+  {
+    "file": "src/media/roghni-naan.jpg",
+    "sha256": "59504ad5eb77258ccf662de3c416e1feed0d874ae179f93c0ef44e567a2cd3d5",
+    "bytes": 179037
+  },
+  {
+    "file": "src/media/seekh-kabab.jpg",
+    "sha256": "10d6d6f200b2162c251fed5676e5a8b74092e66b3d6f9efa52c266ed9171101f",
+    "bytes": 150059
+  },
+  {
+    "file": "src/media/soft-drink.jpg",
+    "sha256": "0e7bb90bc0f3c6f2f1bcd86efe9f48fcb48f679632617b13146caca6ec72723b",
+    "bytes": 244544
+  },
+  {
+    "file": "src/media/white-chicken-karahi.jpg",
+    "sha256": "1057fde13dd090ca2e2efa699862a5db3cc62a96e5f9d99b4cf130970926235a",
+    "bytes": 173982
+  },
+  {
+    "file": "src/media/wiki-photo-candidates.json",
+    "sha256": "db1861652ec3de3468e69ef0a6b26952a22f988fd688740a7a0fe57bce555366",
+    "bytes": 4186
+  },
+  {
+    "file": "src/tests/business.test.mjs",
+    "sha256": "90895cc50f2fd72e311a0d74c11fdb8e5c6f476fea3efa367677af6bccc8b1ed",
+    "bytes": 22998
+  },
+  {
+    "file": "src/tests/demo-customers.test.mjs",
+    "sha256": "dc04511891c164d686ab91fe26606fa5e1893bbdc12879791f1852f9e678c941",
+    "bytes": 1605
+  },
+  {
+    "file": "src/tests/documents.test.mjs",
+    "sha256": "1a2a52b085e5d9ba355c51aed6828cc8779ed8cc4f6686498cdae47e70b092c8",
+    "bytes": 3491
+  },
+  {
+    "file": "src/tests/maintenance.test.mjs",
+    "sha256": "e2a7fbbb2585ddc8e093876ff9a64e710926f2b4ac7b546db49b6b366cf0ab97",
+    "bytes": 2155
+  },
+  {
+    "file": "src/tests/production.test.mjs",
+    "sha256": "873a601b7408d57b455c8ac70b905ee098d99a664790f68ef8082678f578ed69",
+    "bytes": 5866
+  },
+  {
+    "file": "src/tests/serve.mjs",
+    "sha256": "a31d6dcdaa0139262532538daafbc5af49dfaf86ba504ae52cda74dd8dc7f3ce",
+    "bytes": 267
+  },
+  {
+    "file": "src/tests/browser/app-zoom.spec.mjs",
+    "sha256": "961adee1d943524165049764bc737ad4b3ed1916552c164d949f33f855c8dcad",
+    "bytes": 2520
+  },
+  {
+    "file": "src/tests/browser/language.spec.mjs",
+    "sha256": "8411ba6f407d4a6c329b00ed9d11955500e2129caa6906c623fceeb7ca6c62ff",
+    "bytes": 6174
+  },
+  {
+    "file": "src/tests/browser/order-dialogs.spec.mjs",
+    "sha256": "61295a5959fd0fe9eb764bb68abc99ac9456666a43f892668c1ae705279e92fa",
+    "bytes": 2727
+  },
+  {
+    "file": "src/tests/browser/orders-design.spec.mjs",
+    "sha256": "c316b2988a5399f9e2046186f170c7efb9b2463cdce665b2f8e519f8b4864307",
+    "bytes": 2950
+  },
+  {
+    "file": "src/tests/browser/visual-polish.spec.mjs",
+    "sha256": "241c10c75ea61501a95af0fa533e31cb8514dab102014f721450cf983da3dea5",
+    "bytes": 2051
+  },
+  {
+    "file": "src/tests/browser/workflows.spec.mjs",
+    "sha256": "a4c77efa2c78bc7a207e6777d37c5b6fa623066176e869bf7e4b03d92c0f330f",
+    "bytes": 25574
+  }
+]

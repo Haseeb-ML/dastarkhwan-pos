@@ -1,0 +1,2 @@
+﻿from pathlib import Path
+p=Path('audit-secondary-design.mjs');s=p.read_text(encoding='utf-8-sig');a=s.index("await p.locator('.menu-workspace>.search .uk-trigger').click();");b=s.index("await p.locator('.uk-close').click();",a)+len("await p.locator('.uk-close').click();");s=s[:a]+"if(lang==='ur'){await p.locator('.menu-workspace>.search .uk-trigger').click();await shot('ur-keyboard');await p.locator('.uk-close').click();}"+s[b:];p.write_text(s,encoding='utf-8')

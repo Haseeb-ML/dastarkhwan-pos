@@ -1,0 +1,38 @@
+DASTARKHWAN - FULL SOURCE CODE HANDOFF
+
+Requirements: Node.js 24+, npm, Python 3.10+.
+Extract the ZIP first. Open a terminal in Dastarkhwan-Full-Source.
+
+Install and start:
+  npm install
+  cd src
+  npm ci
+  python -m pip install -r requirements.txt
+  npm start
+
+Open http://localhost:5173
+Demo users: owner, cashier, kitchen
+Demo password: Demo@2026!
+A fresh development database is created automatically on first start.
+
+The frontend and Node/SQLite backend must run together through src/server.mjs.
+Do not use only the root Vite dev command for the complete ERP.
+
+Checks from src:
+  npm run check
+  npm test
+  npm run build
+For browser tests: npx playwright install chromium, then npm run test:browser.
+
+Files: React UI in src/App.tsx and src/Workspace.tsx; CSS in src/index.css
+and companion CSS files; API in src/server.mjs; business logic in src/erp.mjs;
+schema in src/schema.sql; PDF dependencies in src/requirements.txt.
+See src/README.md, src/REQUIREMENTS.md and src/.env.example for details.
+Environment variables must be set in the shell; .env is not loaded automatically.
+
+Includes all source files, configuration, tests, local media/fonts and licenses.
+Includes the latest cash drawer and active-order heading text contrast fixes.
+Excludes installed dependencies, generated builds/reports, Git history, logs,
+and the existing restaurant databases/backups/uploads in src/data.
+Install dependencies using the commands above. This is a source-code package,
+not an installer or an export of live restaurant records.

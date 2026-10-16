@@ -1,0 +1,4 @@
+﻿.premium-invoice.invoice-modal>header{min-height:92px;padding:10px 24px}
+.premium-invoice>header>div>div{display:grid;gap:2px}.premium-invoice>header>div>div :is(h2,p,small){margin:0!important}
+.premium-invoice .receipt-brand{padding-bottom:14px}.premium-invoice .receipt-meta{gap:10px;padding:12px 0}.premium-invoice .invoice-actions{top:100px}
+@media(min-width:801px){.premium-invoice .receipt-meta{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.premium-invoice .receipt-meta b{font-size:13px!important}}

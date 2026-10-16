@@ -1,0 +1,2 @@
+﻿from pathlib import Path
+p=Path('Workspace.tsx');s=p.read_text(encoding='utf-8');s=s.replace('const sizeKey = (name: string) => String(urdu(name)).trim().toLowerCase();','''const sizeKey = (name: string) => { const key=String(name).trim().toLowerCase(); const aliases:Record<string,string>={"آدھا":"half","آدھی":"half","پورا":"full","پوری":"full","ایک پلیٹ":"regular"}; return aliases[key]||key; };''');p.write_text(s,encoding='utf-8')

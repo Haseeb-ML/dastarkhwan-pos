@@ -1,0 +1,15 @@
+{
+  "description": "Dastarkhwan: khanon, orders, bills, saman aur hotel ke hisab ka asan software.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  },
+  "title": "Dastarkhwan — Restaurant Management",
+  "language": "ur",
+  "icons": {
+    "icon": "/media/dastarkhwan-icon.svg"
+  }
+}

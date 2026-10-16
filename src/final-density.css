@@ -1,0 +1,2 @@
+﻿.login-language .language-switch button{background:transparent;color:#28533c}.login-language .language-switch button[aria-pressed=true]{background:#1d543c;color:white}
+@media(min-width:801px){.app-shell .settings-form form{grid-template-columns:repeat(3,minmax(0,1fr))}}

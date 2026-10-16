@@ -1,0 +1,29 @@
+﻿.menu-workspace{max-width:1480px;margin:auto;padding:24px 28px 32px}
+.menu-workspace>.page-heading{padding:20px 24px;margin:0 0 18px;border:1px solid #dce5d8;border-inline-start:4px solid #c49759;border-radius:16px;background:linear-gradient(120deg,#fff,#f0f5ea);gap:20px}
+.menu-workspace>.page-heading h2{font-size:27px!important;line-height:1.8!important;margin:0;color:#164b3b}
+.menu-workspace>.page-heading p{font-size:15px!important;line-height:1.9!important;margin:4px 0 0;color:#627363}
+.menu-workspace>.page-heading>.primary{min-height:46px;font-size:16px!important;padding:8px 18px;border-radius:11px;flex-shrink:0}
+.menu-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:16px}
+.menu-overview article{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:#fff;border:1px solid #dde5da;border-radius:12px;border-inline-start:3px solid #96af90}
+.menu-overview article:nth-child(2){border-inline-start-color:#41845e}.menu-overview article:nth-child(3){border-inline-start-color:#c39859}
+.menu-overview span{font-size:16px!important;line-height:1.8!important;color:#627363}.menu-overview bdi{font:600 26px/1.3 Arial,sans-serif!important;color:#244f38}.menu-overview article:nth-child(3) bdi{color:#ac7c36}
+.menu-workspace .catalog-menu-entry{margin:0 0 14px;display:flex;justify-content:flex-start}.menu-workspace .catalog-menu-entry button{border-radius:10px;font-size:15px!important;min-height:42px;padding:6px 14px;background:#edf5ed;border:1px solid #c8ddca;color:#24583e}
+.menu-workspace>.search{height:48px;min-height:48px;margin-bottom:18px;border-radius:12px;border-color:#d3dfd2}.menu-workspace>.search input{font-size:16px!important;min-height:38px}
+.menu-workspace .managed-menu{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.menu-workspace .managed-menu .food-card{border:1px solid #dde5d9;border-radius:15px;box-shadow:0 4px 16px #164b3b07;cursor:default;display:flex;flex-direction:column;background:#fff}
+.menu-workspace .managed-menu .food-card:hover{transform:none;box-shadow:0 7px 22px #164b3b12;border-color:#b8ceb8}
+.menu-workspace .managed-menu .food-photo{height:150px;flex-shrink:0;border-bottom:1px solid #e7ecdf}
+.menu-workspace .managed-menu .food-info{padding:14px 16px;display:flex;flex-direction:column;flex:1;min-width:0}
+.menu-workspace .managed-menu h3{font-size:22px!important;line-height:1.8!important;min-height:0;margin:0 0 5px;color:#224c36;white-space:normal}
+.menu-workspace .managed-menu .menu-category{align-self:flex-start;padding:2px 9px;margin:0 0 9px;background:#eef4e9;color:#688059;border-radius:7px;font-size:13px!important;line-height:1.8!important}
+.menu-workspace .managed-menu .menu-price-line{font-size:15px!important;line-height:1.9!important;margin:0;padding:6px 0;border-bottom:1px solid #edf0e7;color:#55674d}
+.menu-workspace .managed-menu .food-info>.badge{align-self:flex-start;margin-top:12px;padding:3px 10px;border-radius:20px;font-size:12px!important;background:#edf6eb;color:#477344}
+.menu-workspace .managed-menu [data-available=false] .food-info>.badge{background:#fff0db;color:#9b7035}
+.menu-workspace .managed-menu .row-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;padding-top:12px}
+.menu-workspace .managed-menu .row-actions button{min-height:40px;padding:5px 8px;font-size:14px!important;line-height:1.8!important;border-radius:9px;border:1px solid #d7e2d1;background:#f6f8f1;color:#627354;white-space:normal}
+.menu-workspace .managed-menu .row-actions button:first-child{background:#e9f2e6;border-color:#ccddc6;color:#295c3c;font-weight:600}
+.menu-workspace .managed-menu .row-actions button:hover{border-color:#8faa81;background:#e2edda}
+.menu-workspace>.muted{font-size:12px!important;line-height:1.8!important;margin-top:18px;color:#78826c}
+@media(min-width:1400px){.menu-workspace .managed-menu{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1000px) and (min-width:801px){.menu-workspace .managed-menu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.menu-workspace{padding:16px 14px 130px}.menu-workspace>.page-heading{padding:16px;gap:12px}.menu-workspace>.page-heading h2{font-size:24px!important}.menu-overview{gap:8px}.menu-overview article{padding:10px 8px;flex-direction:column;gap:3px}.menu-overview span{font-size:13px!important}.menu-overview bdi{font-size:23px!important}.menu-workspace .managed-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.menu-workspace .managed-menu .food-photo{height:110px}.menu-workspace .managed-menu .food-info{padding:10px}.menu-workspace .managed-menu h3{font-size:19px!important}.menu-workspace .managed-menu .menu-price-line{font-size:13px!important}.menu-workspace .managed-menu .row-actions{grid-template-columns:1fr}.menu-workspace .managed-menu .row-actions button{font-size:13px!important}}

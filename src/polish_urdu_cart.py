@@ -1,0 +1,2 @@
+﻿from pathlib import Path
+p=Path('Workspace.tsx');s=p.read_text(encoding='utf8');s=s.replace('toLocaleDateString(`en-PK`','toLocaleDateString(`ur-PK`');s=s.replace('`Naam / mobile add karein (zaroori nahi)`','`گاہک کا نام، اگر ضرورت ہو`');s=s.replace('`Bill banayein aur payment lein`','`بل بنائیں اور پیسے وصول کریں`');s=s.replace('`Kitchen and payment states remain independent.`','`باورچی کو آرڈر پہنچ گیا ہے۔ اب پیسے وصول کریں۔`');s=s.replace('` · Occupied #`','` — جاری آرڈر `');p.write_text(s,encoding='utf8')

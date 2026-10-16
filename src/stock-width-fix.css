@@ -1,0 +1,4 @@
+﻿/* Stock workspace fills the main content area, including its scroll surface. */
+.app-shell .main-shell>.stock-workspace{width:100%;max-width:none;margin:0;align-self:stretch;min-width:0}
+@media(min-width:801px){.app-shell .stock-workspace{padding-inline:24px}.app-shell .stock-workspace>.kitchen-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:801px) and (max-width:1050px){.app-shell .stock-workspace>.kitchen-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

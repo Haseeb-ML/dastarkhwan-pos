@@ -1,0 +1,1074 @@
+[
+  {
+    "id": "ING-001",
+    "name": "چکن",
+    "english": "Chicken",
+    "aliases": "murghi",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-002",
+    "name": "چکن بغیر ہڈی",
+    "english": "Boneless Chicken",
+    "aliases": "boneless",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-003",
+    "name": "مٹن",
+    "english": "Mutton",
+    "aliases": "bakra",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-004",
+    "name": "بیف",
+    "english": "Beef",
+    "aliases": "bara gosht",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-005",
+    "name": "چکن قیمہ",
+    "english": "Chicken Mince",
+    "aliases": "qeema",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-006",
+    "name": "بیف قیمہ",
+    "english": "Beef Mince",
+    "aliases": "qeema",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-007",
+    "name": "مٹن قیمہ",
+    "english": "Mutton Mince",
+    "aliases": "qeema",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-008",
+    "name": "مچھلی",
+    "english": "Fish",
+    "aliases": "machli",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-009",
+    "name": "جھینگے",
+    "english": "Prawns",
+    "aliases": "jheenga",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-010",
+    "name": "کلیجی",
+    "english": "Liver",
+    "aliases": "kaleji",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-011",
+    "name": "پائے",
+    "english": "Trotters",
+    "aliases": "paye",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-012",
+    "name": "مغز",
+    "english": "Brain",
+    "aliases": "maghaz",
+    "category": "گوشت اور انڈے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-013",
+    "name": "باسمتی چاول",
+    "english": "Basmati Rice",
+    "aliases": "chawal rice",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-014",
+    "name": "سیلا چاول",
+    "english": "Sella Rice",
+    "aliases": "chawal",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-015",
+    "name": "ٹوٹا چاول",
+    "english": "Broken Rice",
+    "aliases": "chawal",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-016",
+    "name": "آٹا",
+    "english": "Wheat Flour",
+    "aliases": "atta",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-017",
+    "name": "میدہ",
+    "english": "Plain Flour",
+    "aliases": "maida",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-018",
+    "name": "بیسن",
+    "english": "Gram Flour",
+    "aliases": "besan",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-019",
+    "name": "سوجی",
+    "english": "Semolina",
+    "aliases": "suji",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-020",
+    "name": "دال ماش",
+    "english": "Urad Dal",
+    "aliases": "mash",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-021",
+    "name": "دال مسور",
+    "english": "Red Lentils",
+    "aliases": "masoor",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-022",
+    "name": "دال چنا",
+    "english": "Chana Dal",
+    "aliases": "chana",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-023",
+    "name": "دال مونگ",
+    "english": "Mung Dal",
+    "aliases": "moong",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-024",
+    "name": "سفید چنے",
+    "english": "Chickpeas",
+    "aliases": "chanay",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-025",
+    "name": "کالے چنے",
+    "english": "Black Chickpeas",
+    "aliases": "chanay",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-026",
+    "name": "لوبیا",
+    "english": "Black Eyed Beans",
+    "aliases": "lobia",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-027",
+    "name": "راجما",
+    "english": "Kidney Beans",
+    "aliases": "rajma",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-028",
+    "name": "جو کا دلیہ",
+    "english": "Barley",
+    "aliases": "daliya",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-029",
+    "name": "کارن فلور",
+    "english": "Corn Flour",
+    "aliases": "cornflour",
+    "category": "چاول، آٹا اور دالیں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-030",
+    "name": "پیاز",
+    "english": "Onion",
+    "aliases": "pyaz",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-031",
+    "name": "ٹماٹر",
+    "english": "Tomato",
+    "aliases": "tamatar",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-032",
+    "name": "آلو",
+    "english": "Potato",
+    "aliases": "aloo",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-033",
+    "name": "لہسن",
+    "english": "Garlic",
+    "aliases": "lehsan",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-034",
+    "name": "ادرک",
+    "english": "Ginger",
+    "aliases": "adrak",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-035",
+    "name": "ہری مرچ",
+    "english": "Green Chilli",
+    "aliases": "hari mirch",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-036",
+    "name": "دھنیا",
+    "english": "Coriander Leaves",
+    "aliases": "dhaniya",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-037",
+    "name": "پودینہ",
+    "english": "Mint",
+    "aliases": "podina",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-038",
+    "name": "لیموں",
+    "english": "Lemon",
+    "aliases": "lemon",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-039",
+    "name": "کھیرہ",
+    "english": "Cucumber",
+    "aliases": "kheera",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-040",
+    "name": "گاجر",
+    "english": "Carrot",
+    "aliases": "gajar",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-041",
+    "name": "مولی",
+    "english": "Radish",
+    "aliases": "mooli",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-042",
+    "name": "بند گوبھی",
+    "english": "Cabbage",
+    "aliases": "gobhi",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-043",
+    "name": "پھول گوبھی",
+    "english": "Cauliflower",
+    "aliases": "gobi",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-044",
+    "name": "پالک",
+    "english": "Spinach",
+    "aliases": "palak",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-045",
+    "name": "ساگ",
+    "english": "Mustard Greens",
+    "aliases": "saag",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-046",
+    "name": "بھنڈی",
+    "english": "Okra",
+    "aliases": "bhindi",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-047",
+    "name": "بینگن",
+    "english": "Aubergine",
+    "aliases": "baingan",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-048",
+    "name": "مٹر",
+    "english": "Peas",
+    "aliases": "matar",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-049",
+    "name": "ٹینڈے",
+    "english": "Apple Gourd",
+    "aliases": "tinday",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-050",
+    "name": "لوکی",
+    "english": "Bottle Gourd",
+    "aliases": "lauki",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-051",
+    "name": "کریلے",
+    "english": "Bitter Gourd",
+    "aliases": "karelay",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-052",
+    "name": "شملہ مرچ",
+    "english": "Capsicum",
+    "aliases": "shimla mirch",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-053",
+    "name": "سلاد کے پتے",
+    "english": "Lettuce",
+    "aliases": "salad",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-054",
+    "name": "کیلا",
+    "english": "Banana",
+    "aliases": "kela",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-055",
+    "name": "سیب",
+    "english": "Apple",
+    "aliases": "saib",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-056",
+    "name": "مالٹا",
+    "english": "Orange",
+    "aliases": "malta",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-057",
+    "name": "انگور",
+    "english": "Grapes",
+    "aliases": "angoor",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-058",
+    "name": "آم",
+    "english": "Mango",
+    "aliases": "aam",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-059",
+    "name": "کھجور",
+    "english": "Dates",
+    "aliases": "khajoor",
+    "category": "سبزیاں اور پھل",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-060",
+    "name": "نمک",
+    "english": "Salt",
+    "aliases": "namak",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-061",
+    "name": "لال مرچ پاؤڈر",
+    "english": "Red Chilli Powder",
+    "aliases": "lal mirch",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-062",
+    "name": "کٹی لال مرچ",
+    "english": "Chilli Flakes",
+    "aliases": "kuti mirch",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-063",
+    "name": "ہلدی",
+    "english": "Turmeric",
+    "aliases": "haldi",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-064",
+    "name": "دھنیا پاؤڈر",
+    "english": "Coriander Powder",
+    "aliases": "dhaniya",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-065",
+    "name": "ثابت دھنیا",
+    "english": "Coriander Seeds",
+    "aliases": "dhaniya",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-066",
+    "name": "سفید زیرہ",
+    "english": "Cumin",
+    "aliases": "zeera",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-067",
+    "name": "کالا زیرہ",
+    "english": "Black Cumin",
+    "aliases": "zeera",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-068",
+    "name": "گرم مسالا",
+    "english": "Garam Masala",
+    "aliases": "garam",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-069",
+    "name": "کالی مرچ",
+    "english": "Black Pepper",
+    "aliases": "kali mirch",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-070",
+    "name": "سفید مرچ",
+    "english": "White Pepper",
+    "aliases": "safed mirch",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-071",
+    "name": "دار چینی",
+    "english": "Cinnamon",
+    "aliases": "dalchini",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-072",
+    "name": "لونگ",
+    "english": "Cloves",
+    "aliases": "laung",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-073",
+    "name": "بڑی الائچی",
+    "english": "Black Cardamom",
+    "aliases": "elaichi",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-074",
+    "name": "چھوٹی الائچی",
+    "english": "Green Cardamom",
+    "aliases": "elaichi",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-075",
+    "name": "تیز پات",
+    "english": "Bay Leaves",
+    "aliases": "tez patta",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-076",
+    "name": "بادیاں",
+    "english": "Star Anise",
+    "aliases": "badyan",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-077",
+    "name": "اجوائن",
+    "english": "Carom Seeds",
+    "aliases": "ajwain",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-078",
+    "name": "میتھی دانہ",
+    "english": "Fenugreek Seeds",
+    "aliases": "methi",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-079",
+    "name": "کسوری میتھی",
+    "english": "Dried Fenugreek",
+    "aliases": "kasuri",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-080",
+    "name": "کلونجی",
+    "english": "Nigella Seeds",
+    "aliases": "kalonji",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-081",
+    "name": "رائی",
+    "english": "Mustard Seeds",
+    "aliases": "rai",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-082",
+    "name": "امچور",
+    "english": "Mango Powder",
+    "aliases": "amchoor",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-083",
+    "name": "چاٹ مسالا",
+    "english": "Chaat Masala",
+    "aliases": "chaat",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-084",
+    "name": "بریانی مسالا",
+    "english": "Biryani Masala",
+    "aliases": "biryani",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-085",
+    "name": "قورمہ مسالا",
+    "english": "Qorma Masala",
+    "aliases": "qorma",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-086",
+    "name": "کڑاہی مسالا",
+    "english": "Karahi Masala",
+    "aliases": "karahi",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-087",
+    "name": "تکہ مسالا",
+    "english": "Tikka Masala",
+    "aliases": "tikka",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-088",
+    "name": "نہاری مسالا",
+    "english": "Nihari Masala",
+    "aliases": "nihari",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-089",
+    "name": "فوڈ کلر",
+    "english": "Food Colour",
+    "aliases": "rang",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-090",
+    "name": "بیکنگ پاؤڈر",
+    "english": "Baking Powder",
+    "aliases": "baking",
+    "category": "مسالے",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-091",
+    "name": "دہی",
+    "english": "Yogurt",
+    "aliases": "dahi",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-092",
+    "name": "مکھن",
+    "english": "Butter",
+    "aliases": "makhan",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-093",
+    "name": "پنیر",
+    "english": "Paneer",
+    "aliases": "paneer",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-094",
+    "name": "کریم",
+    "english": "Cream",
+    "aliases": "cream",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-095",
+    "name": "گھی",
+    "english": "Ghee",
+    "aliases": "ghee",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-096",
+    "name": "ٹماٹر کیچپ",
+    "english": "Tomato Ketchup",
+    "aliases": "ketchup",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-097",
+    "name": "مایونیز",
+    "english": "Mayonnaise",
+    "aliases": "mayo",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-098",
+    "name": "چلی ساس",
+    "english": "Chilli Sauce",
+    "aliases": "sauce",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-099",
+    "name": "اچار",
+    "english": "Pickle",
+    "aliases": "achar",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-100",
+    "name": "املی",
+    "english": "Tamarind",
+    "aliases": "imli",
+    "category": "دودھ، تیل اور چٹنیاں",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-101",
+    "name": "چینی",
+    "english": "Sugar",
+    "aliases": "cheeni",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-102",
+    "name": "گڑ",
+    "english": "Jaggery",
+    "aliases": "gur",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-103",
+    "name": "شہد",
+    "english": "Honey",
+    "aliases": "shehad",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-104",
+    "name": "بادام",
+    "english": "Almonds",
+    "aliases": "badam",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-105",
+    "name": "پستہ",
+    "english": "Pistachios",
+    "aliases": "pista",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-106",
+    "name": "کاجو",
+    "english": "Cashews",
+    "aliases": "kaju",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-107",
+    "name": "کشمش",
+    "english": "Raisins",
+    "aliases": "kishmish",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-108",
+    "name": "اخروٹ",
+    "english": "Walnuts",
+    "aliases": "akhrot",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-109",
+    "name": "ناریل",
+    "english": "Coconut",
+    "aliases": "nariyal",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-110",
+    "name": "سویاں",
+    "english": "Vermicelli",
+    "aliases": "seviyan",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-111",
+    "name": "کھویا",
+    "english": "Milk Solids",
+    "aliases": "khoya",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-112",
+    "name": "چائے کی پتی",
+    "english": "Tea Leaves",
+    "aliases": "chai patti",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-113",
+    "name": "کافی",
+    "english": "Coffee",
+    "aliases": "coffee",
+    "category": "میٹھا اور خشک میوہ",
+    "unit": "kg"
+  },
+  {
+    "id": "ING-114",
+    "name": "دودھ",
+    "english": "Milk",
+    "aliases": "doodh",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-115",
+    "name": "کوکنگ آئل",
+    "english": "Cooking Oil",
+    "aliases": "oil tel",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-116",
+    "name": "سرسوں کا تیل",
+    "english": "Mustard Oil",
+    "aliases": "sarson",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-117",
+    "name": "زیتون کا تیل",
+    "english": "Olive Oil",
+    "aliases": "olive",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-118",
+    "name": "سرکہ",
+    "english": "Vinegar",
+    "aliases": "sirka",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-119",
+    "name": "سویا ساس",
+    "english": "Soy Sauce",
+    "aliases": "soya",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-120",
+    "name": "روح افزا",
+    "english": "Rooh Afza",
+    "aliases": "sharbat",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-121",
+    "name": "منرل واٹر",
+    "english": "Mineral Water",
+    "aliases": "pani",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-122",
+    "name": "کولڈ ڈرنک",
+    "english": "Soft Drink",
+    "aliases": "cold drink",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-123",
+    "name": "جوس",
+    "english": "Juice",
+    "aliases": "juice",
+    "category": "پینے کی چیزیں",
+    "unit": "litre"
+  },
+  {
+    "id": "ING-124",
+    "name": "انڈا",
+    "english": "Egg",
+    "aliases": "anda",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-125",
+    "name": "پانی کی بوتل",
+    "english": "Water Bottle",
+    "aliases": "pani",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-126",
+    "name": "کولڈ ڈرنک کی بوتل",
+    "english": "Drink Bottle",
+    "aliases": "cold drink",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-127",
+    "name": "کھانے کا ڈبہ",
+    "english": "Food Box",
+    "aliases": "packing dabba",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-128",
+    "name": "فوائل ڈبہ",
+    "english": "Foil Container",
+    "aliases": "foil",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-129",
+    "name": "شاپر",
+    "english": "Carry Bag",
+    "aliases": "shopper",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-130",
+    "name": "کاغذی کپ",
+    "english": "Paper Cup",
+    "aliases": "cup",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-131",
+    "name": "چمچ",
+    "english": "Disposable Spoon",
+    "aliases": "chamach",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-132",
+    "name": "ٹشو کا پیکٹ",
+    "english": "Tissue Pack",
+    "aliases": "tissue",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-133",
+    "name": "فوائل رول",
+    "english": "Foil Roll",
+    "aliases": "foil",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  },
+  {
+    "id": "ING-134",
+    "name": "کلنگ فلم رول",
+    "english": "Cling Film Roll",
+    "aliases": "plastic",
+    "category": "انڈے اور پیکنگ",
+    "unit": "piece"
+  }
+]

@@ -1,0 +1,38 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE IF NOT EXISTS migrations(version INTEGER PRIMARY KEY, applied_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, username TEXT NOT NULL UNIQUE, name TEXT NOT NULL, role TEXT NOT NULL CHECK(role IN ('Owner','Cashier','Kitchen')), password TEXT NOT NULL, active INTEGER NOT NULL DEFAULT 1 CHECK(active IN (0,1)));
+CREATE TABLE IF NOT EXISTS sessions(token TEXT PRIMARY KEY, user_id INTEGER NOT NULL REFERENCES users(id), expires INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS settings(id INTEGER PRIMARY KEY CHECK(id=1), data TEXT NOT NULL, version INTEGER NOT NULL DEFAULT 1);
+CREATE TABLE IF NOT EXISTS dining_tables(id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE, active INTEGER NOT NULL DEFAULT 1);
+CREATE TABLE IF NOT EXISTS menu(id INTEGER PRIMARY KEY, name TEXT NOT NULL, category TEXT NOT NULL, image TEXT NOT NULL DEFAULT '', available INTEGER NOT NULL DEFAULT 1, archived INTEGER NOT NULL DEFAULT 0, version INTEGER NOT NULL DEFAULT 1);
+CREATE TABLE IF NOT EXISTS variants(id INTEGER PRIMARY KEY, menu_id INTEGER NOT NULL REFERENCES menu(id), name TEXT NOT NULL, unit TEXT NOT NULL, price INTEGER NOT NULL CHECK(price>=0), step INTEGER NOT NULL CHECK(step>0), portions INTEGER CHECK(portions IS NULL OR portions>=0), cost INTEGER CHECK(cost IS NULL OR cost>=0), active INTEGER NOT NULL DEFAULT 1);
+CREATE TABLE IF NOT EXISTS customers(id INTEGER PRIMARY KEY, name TEXT NOT NULL, phone TEXT NOT NULL UNIQUE, note TEXT NOT NULL DEFAULT '', archived INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS orders(id INTEGER PRIMARY KEY AUTOINCREMENT, number TEXT UNIQUE, created TEXT NOT NULL, business_date TEXT NOT NULL, actor INTEGER NOT NULL REFERENCES users(id), service TEXT NOT NULL CHECK(service IN ('Dine-in','Takeaway','Delivery')), table_id INTEGER REFERENCES dining_tables(id), customer_id INTEGER REFERENCES customers(id), customer_snapshot TEXT, state TEXT NOT NULL DEFAULT 'open' CHECK(state IN ('open','closed','cancelled')), version INTEGER NOT NULL DEFAULT 1, discount INTEGER NOT NULL DEFAULT 0, tax_bps INTEGER NOT NULL, service_bps INTEGER NOT NULL, reason TEXT, preparation TEXT CHECK(preparation IS NULL OR preparation IN ('Prepared','Not prepared')));
+CREATE UNIQUE INDEX IF NOT EXISTS occupied_table ON orders(table_id) WHERE state='open' AND table_id IS NOT NULL;
+CREATE TABLE IF NOT EXISTS order_items(id INTEGER PRIMARY KEY, order_id INTEGER NOT NULL REFERENCES orders(id), variant_id INTEGER NOT NULL REFERENCES variants(id), name TEXT NOT NULL, variant TEXT NOT NULL, unit TEXT NOT NULL, qty INTEGER NOT NULL CHECK(qty>0), price INTEGER NOT NULL CHECK(price>=0), amount INTEGER NOT NULL CHECK(amount>=0), note TEXT NOT NULL DEFAULT '', batch INTEGER NOT NULL, cost INTEGER CHECK(cost IS NULL OR cost>=0));
+CREATE TABLE IF NOT EXISTS invoices(id INTEGER PRIMARY KEY, order_id INTEGER NOT NULL UNIQUE REFERENCES orders(id), number TEXT NOT NULL UNIQUE);
+CREATE TABLE IF NOT EXISTS invoice_revisions(id INTEGER PRIMARY KEY, invoice_id INTEGER NOT NULL REFERENCES invoices(id), revision INTEGER NOT NULL, created TEXT NOT NULL, snapshot TEXT NOT NULL, UNIQUE(invoice_id,revision));
+CREATE TABLE IF NOT EXISTS tickets(id INTEGER PRIMARY KEY, order_id INTEGER NOT NULL REFERENCES orders(id), batch INTEGER NOT NULL, created TEXT NOT NULL, state TEXT NOT NULL DEFAULT 'New' CHECK(state IN ('New','Preparing','Ready','Served','Cancelled')), UNIQUE(order_id,batch));
+CREATE TABLE IF NOT EXISTS payments(id INTEGER PRIMARY KEY, order_id INTEGER NOT NULL REFERENCES orders(id), amount INTEGER NOT NULL CHECK(amount>0), tendered INTEGER NOT NULL, change INTEGER NOT NULL CHECK(change>=0), method TEXT NOT NULL CHECK(method IN ('Cash','Card','Bank/Wallet')), created TEXT NOT NULL, business_date TEXT NOT NULL, actor INTEGER NOT NULL REFERENCES users(id));
+CREATE TABLE IF NOT EXISTS refunds(id INTEGER PRIMARY KEY, order_id INTEGER NOT NULL REFERENCES orders(id), amount INTEGER NOT NULL CHECK(amount>0), method TEXT NOT NULL CHECK(method IN ('Cash','Card','Bank/Wallet')), reason TEXT NOT NULL, created TEXT NOT NULL, business_date TEXT NOT NULL, actor INTEGER NOT NULL REFERENCES users(id));
+CREATE TABLE IF NOT EXISTS drafts(id INTEGER PRIMARY KEY, actor INTEGER NOT NULL REFERENCES users(id), data TEXT NOT NULL, created TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS ingredients(id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE, unit TEXT NOT NULL CHECK(unit IN ('kg','litre','piece')), low INTEGER NOT NULL CHECK(low>=0), archived INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS suppliers(id INTEGER PRIMARY KEY, name TEXT NOT NULL, phone TEXT NOT NULL DEFAULT '', archived INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS purchases(id INTEGER PRIMARY KEY, supplier_id INTEGER NOT NULL REFERENCES suppliers(id), total INTEGER NOT NULL CHECK(total>=0), created TEXT NOT NULL, business_date TEXT NOT NULL, actor INTEGER NOT NULL REFERENCES users(id));
+CREATE TABLE IF NOT EXISTS purchase_items(id INTEGER PRIMARY KEY, purchase_id INTEGER NOT NULL REFERENCES purchases(id), ingredient_id INTEGER NOT NULL REFERENCES ingredients(id), qty INTEGER NOT NULL CHECK(qty>0), cost INTEGER NOT NULL CHECK(cost>=0), amount INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS supplier_payments(id INTEGER PRIMARY KEY, supplier_id INTEGER NOT NULL REFERENCES suppliers(id), purchase_id INTEGER REFERENCES purchases(id), amount INTEGER NOT NULL CHECK(amount>0), method TEXT NOT NULL CHECK(method IN ('Cash','Card','Bank/Wallet')), created TEXT NOT NULL, business_date TEXT NOT NULL, actor INTEGER NOT NULL REFERENCES users(id));
+CREATE TABLE IF NOT EXISTS stock_movements(id INTEGER PRIMARY KEY, ingredient_id INTEGER NOT NULL REFERENCES ingredients(id), qty INTEGER NOT NULL CHECK(qty!=0), kind TEXT NOT NULL, reference TEXT, reason TEXT NOT NULL, created TEXT NOT NULL, business_date TEXT NOT NULL, actor INTEGER NOT NULL REFERENCES users(id));
+CREATE UNIQUE INDEX IF NOT EXISTS purchase_receipt_once ON stock_movements(ingredient_id,reference) WHERE kind='purchase';
+CREATE TABLE IF NOT EXISTS expenses(id INTEGER PRIMARY KEY, category TEXT NOT NULL, amount INTEGER NOT NULL CHECK(amount>0), method TEXT NOT NULL CHECK(method IN ('Cash','Card','Bank/Wallet')), note TEXT NOT NULL, created TEXT NOT NULL, business_date TEXT NOT NULL, actor INTEGER NOT NULL REFERENCES users(id));
+CREATE TABLE IF NOT EXISTS cash_sessions(id INTEGER PRIMARY KEY, opened TEXT NOT NULL, closed TEXT, opening INTEGER NOT NULL CHECK(opening>=0), expected INTEGER, counted INTEGER, difference INTEGER, actor INTEGER NOT NULL REFERENCES users(id));
+CREATE UNIQUE INDEX IF NOT EXISTS one_cash_session ON cash_sessions((1)) WHERE closed IS NULL;
+CREATE TABLE IF NOT EXISTS audit(id INTEGER PRIMARY KEY, actor INTEGER REFERENCES users(id), action TEXT NOT NULL, entity TEXT NOT NULL, data TEXT NOT NULL, created TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS idempotency(actor INTEGER NOT NULL REFERENCES users(id), key TEXT NOT NULL, route TEXT NOT NULL, hash TEXT NOT NULL, result TEXT NOT NULL, PRIMARY KEY(actor,key));
+CREATE INDEX IF NOT EXISTS order_date ON orders(business_date);
+CREATE INDEX IF NOT EXISTS payment_date ON payments(business_date);
+CREATE INDEX IF NOT EXISTS movements_ingredient ON stock_movements(ingredient_id);
+INSERT OR IGNORE INTO migrations VALUES(1,strftime('%Y-%m-%dT%H:%M:%fZ','now'));
+
+
+CREATE TABLE IF NOT EXISTS cash_movements(id INTEGER PRIMARY KEY,session_id INTEGER REFERENCES cash_sessions(id),source_type TEXT NOT NULL,source_id INTEGER NOT NULL,amount INTEGER NOT NULL,created TEXT NOT NULL,actor INTEGER NOT NULL REFERENCES users(id),UNIQUE(source_type,source_id));
+CREATE INDEX IF NOT EXISTS cash_movement_session ON cash_movements(session_id);
