@@ -60,6 +60,28 @@ function ae() {
 }
 function A(e) { localStorage.setItem(`erp-pending-` + k, JSON.stringify(e)); }
 async function j(e, t, n) {
+    const isCloudHosted = typeof window !== "undefined" && (
+        window.location.hostname.endsWith(".web.app") ||
+        window.location.hostname.endsWith(".firebaseapp.com") ||
+        window.location.hostname.endsWith(".github.io")
+    );
+    const hasCustomBackend = typeof localStorage !== "undefined" && !!localStorage.getItem("dastarkhwan_api_url");
+
+    // Fast-path for Cloud Firestore on Firebase Hosting
+    if (isCloudHosted && !hasCustomBackend) {
+        const res = handleStandaloneRequest(e, t);
+        if (e === `bootstrap` && res?.user?.id) k = res.user.id;
+        if (e === `auth/login` && res?.id) {
+            k = res.id;
+            if (res.token) localStorage.setItem("erp_token", res.token);
+        }
+        if (e === `auth/logout`) {
+            k = null;
+            localStorage.removeItem("erp_token");
+        }
+        return res;
+    }
+
     let r = ae(), i = e + JSON.stringify(t || {}), a = [`summary`, `order`].includes(e), o = !!t && !e.startsWith(`auth/`) && !a && e !== `uploads`, s = !1, c = i;
     if (o) {
         let i = e => String(e.id ?? e.supplierId ?? e.ingredientId ?? `new`);
@@ -68,11 +90,16 @@ async function j(e, t, n) {
             a && (c = a[0], t = a[1].body, n = a[1].key, s = !0);
         }
         if (n ||= safeUUID(), e !== `tickets`) {
-            let e = await fetch(apiUrl(`api/operations/` + encodeURIComponent(n)), { credentials: `include` });
-            if (e.ok) {
-                let t = await e.json();
-                if (t.found)
-                    return delete r[c], A(r), { ...t.result, _recovered: !0 };
+            try {
+                let op = await fetch(apiUrl(`api/operations/` + encodeURIComponent(n)), { credentials: `include` });
+                const ct = op.headers?.get("content-type");
+                if (op.ok && ct && ct.includes("application/json")) {
+                    let opJson = await op.json();
+                    if (opJson.found)
+                        return delete r[c], A(r), { ...opJson.result, _recovered: !0 };
+                }
+            } catch {
+                // Ignore operations recovery check failure
             }
         }
         r[c] = { route: e, body: t, key: n }, A(r);
@@ -85,6 +112,10 @@ async function j(e, t, n) {
             ...(token ? { "Authorization": `Bearer ${token}` } : {})
         };
         l = await fetch(apiUrl(`api/` + e), { method: t ? `POST` : `GET`, credentials: `include`, headers: reqHeaders, body: t ? JSON.stringify(t) : void 0 });
+        const ct = l.headers?.get("content-type");
+        if (!ct || !ct.includes("application/json")) {
+            return handleStandaloneRequest(e, t);
+        }
     }
     catch {
         return handleStandaloneRequest(e, t);
@@ -304,10 +335,31 @@ function ge({ id: e, onClose: t }) {
                 o(i);
                 return;
             }
-            return fetch(apiUrl(`api/invoices/` + e + `/data?revision=` + w), { credentials: `include` }).then(async (e) => {
-                if (!e.ok)
-                    throw Error((await e.json()).error);
-                return e.json();
+            const isCloudHosted = typeof window !== "undefined" && (
+                window.location.hostname.endsWith(".web.app") ||
+                window.location.hostname.endsWith(".firebaseapp.com") ||
+                window.location.hostname.endsWith(".github.io")
+            );
+            const hasCustomBackend = typeof localStorage !== "undefined" && !!localStorage.getItem("dastarkhwan_api_url");
+
+            if (isCloudHosted && !hasCustomBackend) {
+                try {
+                    const fallback = handleStandaloneRequest(`invoices/${e}/data`);
+                    if (fallback && t) o(fallback);
+                } catch (err) {
+                    if (t) v(err.message);
+                }
+                return;
+            }
+
+            return fetch(apiUrl(`api/invoices/` + e + `/data?revision=` + w), { credentials: `include` }).then(async (res) => {
+                const ct = res.headers.get("content-type");
+                if (!res.ok || !ct || !ct.includes("application/json")) {
+                    const fallback = handleStandaloneRequest(`invoices/${e}/data`);
+                    if (fallback) return fallback;
+                    throw Error("Failed to load invoice data");
+                }
+                return res.json();
             }).then(e => { t && o(e); }).catch(err => {
                 try {
                     const fallback = handleStandaloneRequest(`invoices/${e}/data`);
