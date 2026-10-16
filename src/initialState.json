@@ -1,0 +1,4206 @@
+{
+  "user": {
+    "id": 1,
+    "name": "Ali Khan",
+    "username": "owner",
+    "role": "Owner"
+  },
+  "settings": {
+    "name": "Dastarkhwan",
+    "tagline": "Desi Kitchen",
+    "address": "Rawalpindi, Pakistan",
+    "phone": "051 6122024",
+    "logo": "",
+    "taxId": "",
+    "taxBps": 0,
+    "serviceBps": 0,
+    "footer": "Thank you for dining with us.",
+    "receipt": "A4",
+    "version": 4
+  },
+  "tables": [
+    {
+      "id": 1,
+      "name": "Table 01",
+      "active": 1,
+      "orderId": null
+    },
+    {
+      "id": 2,
+      "name": "Table 02",
+      "active": 1,
+      "orderId": 27
+    },
+    {
+      "id": 3,
+      "name": "Table 03",
+      "active": 1,
+      "orderId": null
+    },
+    {
+      "id": 4,
+      "name": "Table 04",
+      "active": 1,
+      "orderId": null
+    },
+    {
+      "id": 5,
+      "name": "Table 05",
+      "active": 1,
+      "orderId": null
+    },
+    {
+      "id": 6,
+      "name": "Table 06",
+      "active": 1,
+      "orderId": 28
+    },
+    {
+      "id": 7,
+      "name": "Table 07",
+      "active": 1,
+      "orderId": null
+    },
+    {
+      "id": 8,
+      "name": "Table 08",
+      "active": 1,
+      "orderId": 6
+    },
+    {
+      "id": 9,
+      "name": "Table 09",
+      "active": 1,
+      "orderId": null
+    },
+    {
+      "id": 10,
+      "name": "Table 10",
+      "active": 1,
+      "orderId": null
+    },
+    {
+      "id": 11,
+      "name": "Table 11",
+      "active": 1,
+      "orderId": 8
+    },
+    {
+      "id": 12,
+      "name": "Table 12",
+      "active": 1,
+      "orderId": 7
+    }
+  ],
+  "dataEpoch": "initial",
+  "menu": [
+    {
+      "id": 1,
+      "name": "Chicken Karahi",
+      "category": "Karahi & Handi",
+      "image": "/media/chicken-karahi.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 1,
+          "menu_id": 1,
+          "name": "Half",
+          "unit": "portion",
+          "price": 120000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        },
+        {
+          "id": 2,
+          "menu_id": 1,
+          "name": "Full",
+          "unit": "portion",
+          "price": 216000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mutton Karahi",
+      "category": "Karahi & Handi",
+      "image": "/media/mutton-karahi.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 3,
+          "menu_id": 2,
+          "name": "Half",
+          "unit": "portion",
+          "price": 195000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        },
+        {
+          "id": 4,
+          "menu_id": 2,
+          "name": "Full",
+          "unit": "portion",
+          "price": 351000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "White Chicken Karahi",
+      "category": "Karahi & Handi",
+      "image": "/media/white-chicken-karahi.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 5,
+          "menu_id": 3,
+          "name": "Half",
+          "unit": "portion",
+          "price": 135000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        },
+        {
+          "id": 6,
+          "menu_id": 3,
+          "name": "Full",
+          "unit": "portion",
+          "price": 243000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Chicken Handi",
+      "category": "Karahi & Handi",
+      "image": "/media/chicken-handi.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 7,
+          "menu_id": 4,
+          "name": "Half",
+          "unit": "portion",
+          "price": 145000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        },
+        {
+          "id": 8,
+          "menu_id": 4,
+          "name": "Full",
+          "unit": "portion",
+          "price": 261000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Chicken Biryani",
+      "category": "Biryani & Pulao",
+      "image": "/media/chicken-biryani.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 9,
+          "menu_id": 5,
+          "name": "Plate",
+          "unit": "portion",
+          "price": 38000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Beef Biryani",
+      "category": "Biryani & Pulao",
+      "image": "/media/beef-biryani.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 10,
+          "menu_id": 6,
+          "name": "Plate",
+          "unit": "portion",
+          "price": 46000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Chicken Pulao",
+      "category": "Biryani & Pulao",
+      "image": "/media/chicken-pulao.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 11,
+          "menu_id": 7,
+          "name": "Plate",
+          "unit": "portion",
+          "price": 35000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Chicken Tikka",
+      "category": "BBQ & Sajji",
+      "image": "/media/chicken-tikka.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 12,
+          "menu_id": 8,
+          "name": "Piece",
+          "unit": "piece",
+          "price": 48000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Seekh Kabab",
+      "category": "BBQ & Sajji",
+      "image": "/media/seekh-kabab.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 13,
+          "menu_id": 9,
+          "name": "Piece",
+          "unit": "piece",
+          "price": 22000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Chicken Sajji",
+      "category": "BBQ & Sajji",
+      "image": "/media/chicken-sajji.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 14,
+          "menu_id": 10,
+          "name": "Half",
+          "unit": "portion",
+          "price": 115000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        },
+        {
+          "id": 15,
+          "menu_id": 10,
+          "name": "Full",
+          "unit": "portion",
+          "price": 207000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Roghni Naan",
+      "category": "Paratha & Breads",
+      "image": "/media/roghni-naan.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 16,
+          "menu_id": 11,
+          "name": "Piece",
+          "unit": "piece",
+          "price": 8000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Plain Naan",
+      "category": "Paratha & Breads",
+      "image": "/media/plain-naan.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 17,
+          "menu_id": 12,
+          "name": "Piece",
+          "unit": "piece",
+          "price": 5000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Daal Mash",
+      "category": "Daal & Sabzi",
+      "image": "/media/daal-mash.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 18,
+          "menu_id": 13,
+          "name": "Plate",
+          "unit": "portion",
+          "price": 42000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Aloo Qeema",
+      "category": "Daal & Sabzi",
+      "image": "/media/aloo-qeema.jpg",
+      "available": 0,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 19,
+          "menu_id": 14,
+          "name": "Plate",
+          "unit": "portion",
+          "price": 52000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Raita",
+      "category": "Sides",
+      "image": "/media/raita.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 20,
+          "menu_id": 15,
+          "name": "Bowl",
+          "unit": "bowl",
+          "price": 10000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Halwa Puri",
+      "category": "Breakfast & Specials",
+      "image": "/media/halwa-puri.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 21,
+          "menu_id": 16,
+          "name": "Plate",
+          "unit": "portion",
+          "price": 25000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Kheer",
+      "category": "Desserts",
+      "image": "/media/kheer.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 22,
+          "menu_id": 17,
+          "name": "Bowl",
+          "unit": "bowl",
+          "price": 18000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Soft Drink",
+      "category": "Drinks",
+      "image": "/media/soft-drink.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 23,
+          "menu_id": 18,
+          "name": "Bottle",
+          "unit": "bottle",
+          "price": 12000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Plain Roti",
+      "category": "Paratha & Breads",
+      "image": "/media/plain-roti.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 24,
+          "menu_id": 19,
+          "name": "Piece",
+          "unit": "piece",
+          "price": 2000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Plain Paratha",
+      "category": "Paratha & Breads",
+      "image": "/media/plain-paratha.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 25,
+          "menu_id": 20,
+          "name": "Piece",
+          "unit": "piece",
+          "price": 10000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Aloo Paratha",
+      "category": "Paratha & Breads",
+      "image": "/media/aloo-paratha.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 26,
+          "menu_id": 21,
+          "name": "Piece",
+          "unit": "piece",
+          "price": 18000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Plain Rice",
+      "category": "Biryani & Pulao",
+      "image": "/media/plain-rice.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 27,
+          "menu_id": 22,
+          "name": "Plate",
+          "unit": "portion",
+          "price": 15000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Nihari",
+      "category": "Breakfast & Specials",
+      "image": "/media/nihari.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 28,
+          "menu_id": 23,
+          "name": "Plate",
+          "unit": "portion",
+          "price": 50000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Haleem",
+      "category": "Breakfast & Specials",
+      "image": "/media/haleem.jpg",
+      "available": 1,
+      "archived": 0,
+      "version": 1,
+      "variants": [
+        {
+          "id": 29,
+          "menu_id": 24,
+          "name": "Plate",
+          "unit": "portion",
+          "price": 30000,
+          "step": 1000,
+          "portions": null,
+          "cost": null,
+          "active": 1
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "محھلی",
+      "category": "چکن",
+      "image": "",
+      "available": 1,
+      "archived": 0,
+      "version": 2,
+      "variants": [
+        {
+          "id": 30,
+          "menu_id": 25,
+          "name": "Half",
+          "unit": "portion",
+          "price": 150000,
+          "step": 1000,
+          "portions": null,
+          "cost": 120000,
+          "active": 1
+        },
+        {
+          "id": 31,
+          "menu_id": 25,
+          "name": "Regular",
+          "unit": "portion",
+          "price": 290000,
+          "step": 1000,
+          "portions": null,
+          "cost": 250000,
+          "active": 1
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 28,
+      "number": "INV-000028",
+      "created": "2026-10-16T07:42:08.510Z",
+      "business_date": "2026-10-16",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 6,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 38,
+          "order_id": 28,
+          "variant_id": 8,
+          "name": "Chicken Handi",
+          "variant": "Full",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 261000,
+          "amount": 261000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 261000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 261000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "051 6122024",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 4
+      },
+      "place": "Table 06",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 28,
+      "invoiceId": 28,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 261000,
+      "balance": 261000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 29,
+          "order_id": 28,
+          "batch": 1,
+          "created": "2026-10-16T07:42:08.521Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-16T07:42:08.522Z"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "number": "INV-000027",
+      "created": "2026-10-16T07:11:37.478Z",
+      "business_date": "2026-10-16",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 2,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 37,
+          "order_id": 27,
+          "variant_id": 7,
+          "name": "Chicken Handi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 145000,
+          "amount": 145000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 145000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 145000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "051 6122024",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 4
+      },
+      "place": "Table 02",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 27,
+      "invoiceId": 27,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 145000,
+      "balance": 145000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 28,
+          "order_id": 27,
+          "batch": 1,
+          "created": "2026-10-16T07:11:37.480Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-16T07:11:37.481Z"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "number": "INV-000026",
+      "created": "2026-10-16T07:11:23.488Z",
+      "business_date": "2026-10-16",
+      "actor": 1,
+      "service": "Takeaway",
+      "table_id": null,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 36,
+          "order_id": 26,
+          "variant_id": 3,
+          "name": "Mutton Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 195000,
+          "amount": 195000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 195000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 195000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "051 6122024",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 4
+      },
+      "place": "Token T-0026",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 26,
+      "invoiceId": 26,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 195000,
+      "balance": 195000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 27,
+          "order_id": 26,
+          "batch": 1,
+          "created": "2026-10-16T07:11:23.543Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-16T07:11:23.544Z"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "number": "INV-000025",
+      "created": "2026-10-16T06:39:20.086Z",
+      "business_date": "2026-10-16",
+      "actor": 1,
+      "service": "Delivery",
+      "table_id": null,
+      "customer_id": 2,
+      "customer_snapshot": "{\"id\":2,\"name\":\"Tariq Mahmood\",\"phone\":\"923215551234\",\"note\":\"Delivery customer\",\"archived\":0,\"address\":\"House 12, Street 7, Sector F-6, Islamabad\",\"city\":\"\",\"email\":\"\"}",
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 35,
+          "order_id": 25,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "urgent delivery",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Delivery D-0025",
+      "customer": {
+        "id": 2,
+        "name": "Tariq Mahmood",
+        "phone": "923215551234",
+        "note": "Delivery customer",
+        "archived": 0,
+        "address": "House 12, Street 7, Sector F-6, Islamabad",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 25,
+      "invoiceId": 25,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 26,
+          "order_id": 25,
+          "batch": 1,
+          "created": "2026-10-16T06:39:20.088Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-16T06:39:20.089Z"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "number": "INV-000024",
+      "created": "2026-10-16T06:39:20.059Z",
+      "business_date": "2026-10-16",
+      "actor": 1,
+      "service": "Takeaway",
+      "table_id": null,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 34,
+          "order_id": 24,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "parcel test",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Token T-0024",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 24,
+      "invoiceId": 24,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 25,
+          "order_id": 24,
+          "batch": 1,
+          "created": "2026-10-16T06:39:20.064Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-16T06:39:20.065Z"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "number": "INV-000023",
+      "created": "2026-10-16T05:42:37.443Z",
+      "business_date": "2026-10-16",
+      "actor": 1,
+      "service": "Delivery",
+      "table_id": null,
+      "customer_id": 2,
+      "customer_snapshot": "{\"id\":2,\"name\":\"Tariq Mahmood\",\"phone\":\"923215551234\",\"note\":\"Delivery customer\",\"archived\":0,\"address\":\"House 12, Street 7, Sector F-6, Islamabad\",\"city\":\"\",\"email\":\"\"}",
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 33,
+          "order_id": 23,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "urgent delivery",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Delivery D-0023",
+      "customer": {
+        "id": 2,
+        "name": "Tariq Mahmood",
+        "phone": "923215551234",
+        "note": "Delivery customer",
+        "archived": 0,
+        "address": "House 12, Street 7, Sector F-6, Islamabad",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 23,
+      "invoiceId": 23,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 24,
+          "order_id": 23,
+          "batch": 1,
+          "created": "2026-10-16T05:42:37.446Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-16T05:42:37.448Z"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "number": "INV-000022",
+      "created": "2026-10-16T05:42:37.389Z",
+      "business_date": "2026-10-16",
+      "actor": 1,
+      "service": "Takeaway",
+      "table_id": null,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 32,
+          "order_id": 22,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "parcel test",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Token T-0022",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 22,
+      "invoiceId": 22,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 23,
+          "order_id": 22,
+          "batch": 1,
+          "created": "2026-10-16T05:42:37.412Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-16T05:42:37.416Z"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "number": "INV-000021",
+      "created": "2026-10-15T13:45:54.505Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Delivery",
+      "table_id": null,
+      "customer_id": 2,
+      "customer_snapshot": "{\"id\":2,\"name\":\"Tariq Mahmood\",\"phone\":\"923215551234\",\"note\":\"Delivery customer\",\"archived\":0,\"address\":\"House 12, Street 7, Sector F-6, Islamabad\",\"city\":\"\",\"email\":\"\"}",
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 31,
+          "order_id": 21,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "urgent delivery",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Delivery D-0021",
+      "customer": {
+        "id": 2,
+        "name": "Tariq Mahmood",
+        "phone": "923215551234",
+        "note": "Delivery customer",
+        "archived": 0,
+        "address": "House 12, Street 7, Sector F-6, Islamabad",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 21,
+      "invoiceId": 21,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 22,
+          "order_id": 21,
+          "batch": 1,
+          "created": "2026-10-15T13:45:54.506Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T13:45:54.507Z"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "number": "INV-000020",
+      "created": "2026-10-15T13:45:54.480Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Takeaway",
+      "table_id": null,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 30,
+          "order_id": 20,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "parcel test",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Token T-0020",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 20,
+      "invoiceId": 20,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 21,
+          "order_id": 20,
+          "batch": 1,
+          "created": "2026-10-15T13:45:54.482Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T13:45:54.482Z"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "number": "INV-000019",
+      "created": "2026-10-15T13:35:42.225Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Delivery",
+      "table_id": null,
+      "customer_id": 2,
+      "customer_snapshot": "{\"id\":2,\"name\":\"Tariq Mahmood\",\"phone\":\"923215551234\",\"note\":\"Delivery customer\",\"archived\":0,\"address\":\"House 12, Street 7, Sector F-6, Islamabad\",\"city\":\"\",\"email\":\"\"}",
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 29,
+          "order_id": 19,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "urgent delivery",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Delivery D-0019",
+      "customer": {
+        "id": 2,
+        "name": "Tariq Mahmood",
+        "phone": "923215551234",
+        "note": "Delivery customer",
+        "archived": 0,
+        "address": "House 12, Street 7, Sector F-6, Islamabad",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 19,
+      "invoiceId": 19,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 20,
+          "order_id": 19,
+          "batch": 1,
+          "created": "2026-10-15T13:35:42.226Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T13:35:42.227Z"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "number": "INV-000018",
+      "created": "2026-10-15T13:35:42.197Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Takeaway",
+      "table_id": null,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 28,
+          "order_id": 18,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "parcel test",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Token T-0018",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 18,
+      "invoiceId": 18,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 19,
+          "order_id": 18,
+          "batch": 1,
+          "created": "2026-10-15T13:35:42.203Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T13:35:42.205Z"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "number": "INV-000017",
+      "created": "2026-10-15T13:15:44.048Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Delivery",
+      "table_id": null,
+      "customer_id": 3,
+      "customer_snapshot": "{\"id\":3,\"name\":\"Hammad Ali\",\"phone\":\"923476543323\",\"note\":\"Delivery customer\",\"archived\":0,\"address\":\"Karachi\",\"city\":\"\",\"email\":\"\"}",
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 26,
+          "order_id": 17,
+          "variant_id": 6,
+          "name": "White Chicken Karahi",
+          "variant": "Full",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 243000,
+          "amount": 243000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        },
+        {
+          "id": 27,
+          "order_id": 17,
+          "variant_id": 4,
+          "name": "Mutton Karahi",
+          "variant": "Full",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 351000,
+          "amount": 351000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 594000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 594000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Delivery D-0017",
+      "customer": {
+        "id": 3,
+        "name": "Hammad Ali",
+        "phone": "923476543323",
+        "note": "Delivery customer",
+        "archived": 0,
+        "address": "Karachi",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 17,
+      "invoiceId": 17,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 594000,
+      "balance": 594000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 18,
+          "order_id": 17,
+          "batch": 1,
+          "created": "2026-10-15T13:15:44.094Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T13:15:44.097Z"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "number": "INV-000016",
+      "created": "2026-10-15T12:42:34.114Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Delivery",
+      "table_id": null,
+      "customer_id": 2,
+      "customer_snapshot": "{\"id\":2,\"name\":\"Tariq Mahmood\",\"phone\":\"923215551234\",\"note\":\"Delivery customer\",\"archived\":0,\"address\":\"House 12, Street 7, Sector F-6, Islamabad\",\"city\":\"\",\"email\":\"\"}",
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 25,
+          "order_id": 16,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "urgent delivery",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Delivery D-0016",
+      "customer": {
+        "id": 2,
+        "name": "Tariq Mahmood",
+        "phone": "923215551234",
+        "note": "Delivery customer",
+        "archived": 0,
+        "address": "House 12, Street 7, Sector F-6, Islamabad",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 16,
+      "invoiceId": 16,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 17,
+          "order_id": 16,
+          "batch": 1,
+          "created": "2026-10-15T12:42:34.116Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T12:42:34.116Z"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "number": "INV-000015",
+      "created": "2026-10-15T12:42:34.089Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Takeaway",
+      "table_id": null,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 24,
+          "order_id": 15,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "parcel test",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Token T-0015",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 15,
+      "invoiceId": 15,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 16,
+          "order_id": 15,
+          "batch": 1,
+          "created": "2026-10-15T12:42:34.091Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T12:42:34.091Z"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "number": "INV-000014",
+      "created": "2026-10-15T12:42:06.579Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Delivery",
+      "table_id": null,
+      "customer_id": 2,
+      "customer_snapshot": "{\"id\":2,\"name\":\"Tariq Mahmood\",\"phone\":\"923215551234\",\"note\":\"Delivery customer\",\"archived\":0,\"address\":\"House 12, Street 7, Sector F-6, Islamabad\",\"city\":\"\",\"email\":\"\"}",
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 23,
+          "order_id": 14,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "urgent delivery",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Delivery D-0014",
+      "customer": {
+        "id": 2,
+        "name": "Tariq Mahmood",
+        "phone": "923215551234",
+        "note": "Delivery customer",
+        "archived": 0,
+        "address": "House 12, Street 7, Sector F-6, Islamabad",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 14,
+      "invoiceId": 14,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 15,
+          "order_id": 14,
+          "batch": 1,
+          "created": "2026-10-15T12:42:06.585Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T12:42:06.586Z"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "number": "INV-000013",
+      "created": "2026-10-15T12:42:06.539Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Takeaway",
+      "table_id": null,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 22,
+          "order_id": 13,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "parcel test",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Token T-0013",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 13,
+      "invoiceId": 13,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 14,
+          "order_id": 13,
+          "batch": 1,
+          "created": "2026-10-15T12:42:06.542Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T12:42:06.542Z"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "number": "INV-000012",
+      "created": "2026-10-15T12:40:48.789Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Delivery",
+      "table_id": null,
+      "customer_id": 2,
+      "customer_snapshot": "{\"id\":2,\"name\":\"Tariq Mahmood\",\"phone\":\"923215551234\",\"note\":\"Delivery customer\",\"archived\":0,\"address\":\"House 12, Street 7, Sector F-6, Islamabad\",\"city\":\"\",\"email\":\"\"}",
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 21,
+          "order_id": 12,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "urgent delivery",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Delivery D-0012",
+      "customer": {
+        "id": 2,
+        "name": "Tariq Mahmood",
+        "phone": "923215551234",
+        "note": "Delivery customer",
+        "archived": 0,
+        "address": "House 12, Street 7, Sector F-6, Islamabad",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 12,
+      "invoiceId": 12,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 13,
+          "order_id": 12,
+          "batch": 1,
+          "created": "2026-10-15T12:40:48.790Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T12:40:48.791Z"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "number": "INV-000011",
+      "created": "2026-10-15T12:40:48.760Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Takeaway",
+      "table_id": null,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 20,
+          "order_id": 11,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "parcel test",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Token T-0011",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 11,
+      "invoiceId": 11,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 12,
+          "order_id": 11,
+          "batch": 1,
+          "created": "2026-10-15T12:40:48.761Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T12:40:48.762Z"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "number": "INV-000010",
+      "created": "2026-10-15T12:37:43.160Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Delivery",
+      "table_id": null,
+      "customer_id": 2,
+      "customer_snapshot": "{\"id\":2,\"name\":\"Tariq Mahmood\",\"phone\":\"923215551234\",\"note\":\"Delivery customer\",\"archived\":0,\"address\":\"House 12, Street 7, Sector F-6, Islamabad\",\"city\":\"\",\"email\":\"\"}",
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 19,
+          "order_id": 10,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "urgent delivery",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Delivery D-0010",
+      "customer": {
+        "id": 2,
+        "name": "Tariq Mahmood",
+        "phone": "923215551234",
+        "note": "Delivery customer",
+        "archived": 0,
+        "address": "House 12, Street 7, Sector F-6, Islamabad",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 10,
+      "invoiceId": 10,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 11,
+          "order_id": 10,
+          "batch": 1,
+          "created": "2026-10-15T12:37:43.161Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T12:37:43.161Z"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "number": "INV-000009",
+      "created": "2026-10-15T12:37:43.118Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Takeaway",
+      "table_id": null,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 18,
+          "order_id": 9,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "parcel test",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 120000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 120000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Token T-0009",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 9,
+      "invoiceId": 9,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 120000,
+      "balance": 120000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 10,
+          "order_id": 9,
+          "batch": 1,
+          "created": "2026-10-15T12:37:43.137Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T12:37:43.138Z"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "number": "INV-000008",
+      "created": "2026-10-15T12:10:57.630Z",
+      "business_date": "2026-10-15",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 11,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 16,
+          "order_id": 8,
+          "variant_id": 5,
+          "name": "White Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 135000,
+          "amount": 135000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        },
+        {
+          "id": 17,
+          "order_id": 8,
+          "variant_id": 12,
+          "name": "Chicken Tikka",
+          "variant": "Piece",
+          "unit": "piece",
+          "qty": 1000,
+          "price": 48000,
+          "amount": 48000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 183000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 183000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Table 11",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 8,
+      "invoiceId": 8,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 183000,
+      "balance": 183000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 9,
+          "order_id": 8,
+          "batch": 1,
+          "created": "2026-10-15T12:10:57.659Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-15T12:10:57.671Z"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "number": "INV-000007",
+      "created": "2026-10-10T12:57:54.610Z",
+      "business_date": "2026-10-10",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 12,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 4,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 14,
+          "order_id": 7,
+          "variant_id": 20,
+          "name": "Raita",
+          "variant": "Bowl",
+          "unit": "bowl",
+          "qty": 1000,
+          "price": 10000,
+          "amount": 10000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        },
+        {
+          "id": 15,
+          "order_id": 7,
+          "variant_id": 21,
+          "name": "Halwa Puri",
+          "variant": "Plate",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 25000,
+          "amount": 25000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 35000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 35000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Table 12",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 7,
+      "invoiceId": 7,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 35000,
+      "balance": 35000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 8,
+          "order_id": 7,
+          "batch": 1,
+          "created": "2026-10-10T12:57:54.611Z",
+          "state": "Served"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-10T12:57:54.612Z"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "number": "INV-000006",
+      "created": "2026-10-10T12:57:19.330Z",
+      "business_date": "2026-10-10",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 8,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "open",
+      "version": 1,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 13,
+          "order_id": 6,
+          "variant_id": 9,
+          "name": "Chicken Biryani",
+          "variant": "Plate",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 38000,
+          "amount": 38000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 38000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 38000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Table 08",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 6,
+      "invoiceId": 6,
+      "revision": 1,
+      "received": 0,
+      "refunded": 0,
+      "net": 0,
+      "collectible": 38000,
+      "balance": 38000,
+      "refundStatus": null,
+      "paymentStatus": "Unpaid",
+      "payments": [],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 7,
+          "order_id": 6,
+          "batch": 1,
+          "created": "2026-10-10T12:57:19.332Z",
+          "state": "New"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-10T12:57:19.333Z"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "number": "INV-000005",
+      "created": "2026-10-10T12:47:16.503Z",
+      "business_date": "2026-10-10",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 5,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "closed",
+      "version": 10,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 6,
+          "order_id": 5,
+          "variant_id": 1,
+          "name": "Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 120000,
+          "amount": 120000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        },
+        {
+          "id": 7,
+          "order_id": 5,
+          "variant_id": 4,
+          "name": "Mutton Karahi",
+          "variant": "Full",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 351000,
+          "amount": 351000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        },
+        {
+          "id": 8,
+          "order_id": 5,
+          "variant_id": 20,
+          "name": "Raita",
+          "variant": "Bowl",
+          "unit": "bowl",
+          "qty": 3000,
+          "price": 10000,
+          "amount": 30000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        },
+        {
+          "id": 9,
+          "order_id": 5,
+          "variant_id": 23,
+          "name": "Soft Drink",
+          "variant": "Bottle",
+          "unit": "bottle",
+          "qty": 4000,
+          "price": 12000,
+          "amount": 48000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        },
+        {
+          "id": 10,
+          "order_id": 5,
+          "variant_id": 17,
+          "name": "Plain Naan",
+          "variant": "Piece",
+          "unit": "piece",
+          "qty": 8000,
+          "price": 5000,
+          "amount": 40000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        },
+        {
+          "id": 11,
+          "order_id": 5,
+          "variant_id": 5,
+          "name": "White Chicken Karahi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 135000,
+          "amount": 135000,
+          "note": "",
+          "batch": 2,
+          "cost": null
+        },
+        {
+          "id": 12,
+          "order_id": 5,
+          "variant_id": 7,
+          "name": "Chicken Handi",
+          "variant": "Half",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 145000,
+          "amount": 145000,
+          "note": "",
+          "batch": 2,
+          "cost": null
+        }
+      ],
+      "subtotal": 869000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 869000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Table 05",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 5,
+      "invoiceId": 5,
+      "revision": 2,
+      "received": 869000,
+      "refunded": 0,
+      "net": 869000,
+      "collectible": 869000,
+      "balance": 0,
+      "refundStatus": null,
+      "paymentStatus": "Paid",
+      "payments": [
+        {
+          "id": 5,
+          "order_id": 5,
+          "amount": 869000,
+          "tendered": 869000,
+          "change": 0,
+          "method": "Bank/Wallet",
+          "created": "2026-10-10T12:55:35.497Z",
+          "business_date": "2026-10-10",
+          "actor": 1
+        }
+      ],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 5,
+          "order_id": 5,
+          "batch": 1,
+          "created": "2026-10-10T12:47:16.506Z",
+          "state": "Served"
+        },
+        {
+          "id": 6,
+          "order_id": 5,
+          "batch": 2,
+          "created": "2026-10-10T12:54:09.193Z",
+          "state": "Served"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-10T12:47:16.507Z"
+        },
+        {
+          "revision": 2,
+          "created": "2026-10-10T12:54:09.194Z"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "number": "INV-000004",
+      "created": "2026-10-09T07:19:06.143Z",
+      "business_date": "2026-10-09",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 8,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "closed",
+      "version": 7,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 4,
+          "order_id": 4,
+          "variant_id": 9,
+          "name": "Chicken Biryani",
+          "variant": "Plate",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 38000,
+          "amount": 38000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        },
+        {
+          "id": 5,
+          "order_id": 4,
+          "variant_id": 12,
+          "name": "Chicken Tikka",
+          "variant": "Piece",
+          "unit": "piece",
+          "qty": 2000,
+          "price": 48000,
+          "amount": 96000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 134000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 134000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Table 08",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 4,
+      "invoiceId": 4,
+      "revision": 1,
+      "received": 134000,
+      "refunded": 16000,
+      "net": 118000,
+      "collectible": 118000,
+      "balance": 0,
+      "refundStatus": "Refunded",
+      "paymentStatus": "Paid",
+      "payments": [
+        {
+          "id": 4,
+          "order_id": 4,
+          "amount": 134000,
+          "tendered": 150000,
+          "change": 16000,
+          "method": "Cash",
+          "created": "2026-10-09T07:22:05.491Z",
+          "business_date": "2026-10-09",
+          "actor": 1
+        }
+      ],
+      "refunds": [
+        {
+          "id": 1,
+          "order_id": 4,
+          "amount": 16000,
+          "method": "Cash",
+          "reason": "واپس کیے گئے پیسے ا",
+          "created": "2026-10-09T07:22:48.332Z",
+          "business_date": "2026-10-09",
+          "actor": 1
+        }
+      ],
+      "change": 16000,
+      "tickets": [
+        {
+          "id": 4,
+          "order_id": 4,
+          "batch": 1,
+          "created": "2026-10-09T07:19:06.144Z",
+          "state": "Served"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-09T07:19:06.145Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "number": "INV-000003",
+      "created": "2026-10-09T07:00:32.823Z",
+      "business_date": "2026-10-09",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 3,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "closed",
+      "version": 6,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 3,
+          "order_id": 3,
+          "variant_id": 6,
+          "name": "White Chicken Karahi",
+          "variant": "Full",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 243000,
+          "amount": 243000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 243000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 243000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Table 03",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 3,
+      "invoiceId": 3,
+      "revision": 1,
+      "received": 200000,
+      "refunded": 0,
+      "net": 200000,
+      "collectible": 243000,
+      "balance": 43000,
+      "refundStatus": null,
+      "paymentStatus": "Partial",
+      "payments": [
+        {
+          "id": 2,
+          "order_id": 3,
+          "amount": 200000,
+          "tendered": 200000,
+          "change": 0,
+          "method": "Bank/Wallet",
+          "created": "2026-10-09T07:01:47.613Z",
+          "business_date": "2026-10-09",
+          "actor": 1
+        }
+      ],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 3,
+          "order_id": 3,
+          "batch": 1,
+          "created": "2026-10-09T07:00:32.823Z",
+          "state": "Served"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-09T07:00:32.824Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "number": "INV-000002",
+      "created": "2026-10-09T06:57:08.294Z",
+      "business_date": "2026-10-09",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 2,
+      "customer_id": 1,
+      "customer_snapshot": "{\"id\":1,\"name\":\"ali\",\"phone\":\"923467897767\",\"note\":\"\",\"archived\":0,\"address\":\"rwp\",\"city\":\"\",\"email\":\"\"}",
+      "state": "closed",
+      "version": 6,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 2,
+          "order_id": 2,
+          "variant_id": 22,
+          "name": "Kheer",
+          "variant": "Bowl",
+          "unit": "bowl",
+          "qty": 2000,
+          "price": 18000,
+          "amount": 36000,
+          "note": "",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 36000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 36000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Table 02",
+      "customer": {
+        "id": 1,
+        "name": "ali",
+        "phone": "923467897767",
+        "note": "",
+        "archived": 0,
+        "address": "rwp",
+        "city": "",
+        "email": ""
+      },
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 2,
+      "invoiceId": 2,
+      "revision": 1,
+      "received": 36000,
+      "refunded": 0,
+      "net": 36000,
+      "collectible": 36000,
+      "balance": 0,
+      "refundStatus": null,
+      "paymentStatus": "Paid",
+      "payments": [
+        {
+          "id": 1,
+          "order_id": 2,
+          "amount": 36000,
+          "tendered": 36000,
+          "change": 0,
+          "method": "Cash",
+          "created": "2026-10-09T06:57:51.205Z",
+          "business_date": "2026-10-09",
+          "actor": 1
+        }
+      ],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 2,
+          "order_id": 2,
+          "batch": 1,
+          "created": "2026-10-09T06:57:08.296Z",
+          "state": "Served"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-09T06:57:08.297Z"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "number": "INV-000001",
+      "created": "2026-10-09T06:50:07.972Z",
+      "business_date": "2026-10-09",
+      "actor": 1,
+      "service": "Dine-in",
+      "table_id": 7,
+      "customer_id": null,
+      "customer_snapshot": null,
+      "state": "closed",
+      "version": 6,
+      "discount": 0,
+      "tax_bps": 0,
+      "service_bps": 0,
+      "reason": null,
+      "preparation": null,
+      "items": [
+        {
+          "id": 1,
+          "order_id": 1,
+          "variant_id": 10,
+          "name": "Beef Biryani",
+          "variant": "Plate",
+          "unit": "portion",
+          "qty": 1000,
+          "price": 46000,
+          "amount": 46000,
+          "note": "مرچ کم ",
+          "batch": 1,
+          "cost": null
+        }
+      ],
+      "subtotal": 46000,
+      "tax": 0,
+      "serviceCharge": 0,
+      "total": 46000,
+      "restaurant": {
+        "name": "Dastarkhwan",
+        "tagline": "Desi Kitchen",
+        "address": "Rawalpindi, Pakistan",
+        "phone": "",
+        "logo": "",
+        "taxId": "",
+        "taxBps": 0,
+        "serviceBps": 0,
+        "footer": "Thank you for dining with us.",
+        "receipt": "A4",
+        "version": 3
+      },
+      "place": "Table 07",
+      "customer": null,
+      "taxBps": 0,
+      "serviceBps": 0,
+      "orderId": 1,
+      "invoiceId": 1,
+      "revision": 1,
+      "received": 46000,
+      "refunded": 0,
+      "net": 46000,
+      "collectible": 46000,
+      "balance": 0,
+      "refundStatus": null,
+      "paymentStatus": "Paid",
+      "payments": [
+        {
+          "id": 3,
+          "order_id": 1,
+          "amount": 46000,
+          "tendered": 46000,
+          "change": 0,
+          "method": "Cash",
+          "created": "2026-10-09T07:07:18.588Z",
+          "business_date": "2026-10-09",
+          "actor": 1
+        }
+      ],
+      "refunds": [],
+      "change": 0,
+      "tickets": [
+        {
+          "id": 1,
+          "order_id": 1,
+          "batch": 1,
+          "created": "2026-10-09T06:50:07.979Z",
+          "state": "Served"
+        }
+      ],
+      "revisions": [
+        {
+          "revision": 1,
+          "created": "2026-10-09T06:50:07.981Z"
+        }
+      ]
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "ali",
+      "phone": "923467897767",
+      "note": "",
+      "archived": 0,
+      "address": "rwp",
+      "city": "",
+      "email": ""
+    },
+    {
+      "id": 2,
+      "name": "Tariq Mahmood",
+      "phone": "923215551234",
+      "note": "Delivery customer",
+      "archived": 0,
+      "address": "House 12, Street 7, Sector F-6, Islamabad",
+      "city": "",
+      "email": ""
+    },
+    {
+      "id": 3,
+      "name": "Hammad Ali",
+      "phone": "923476543323",
+      "note": "Delivery customer",
+      "archived": 0,
+      "address": "Karachi",
+      "city": "",
+      "email": ""
+    }
+  ],
+  "drafts": [
+    {
+      "id": 1,
+      "actor": 1,
+      "data": {
+        "items": [
+          {
+            "variantId": 22,
+            "name": "Kheer",
+            "image": "/media/kheer.jpg",
+            "variant": "Bowl",
+            "unit": "bowl",
+            "step": 1000,
+            "qty": 2000,
+            "price": 18000,
+            "note": ""
+          }
+        ],
+        "service": "Dine-in",
+        "tableId": "",
+        "customerId": "",
+        "discount": "0",
+        "key": "2e82da7d-a515-4203-acca-ec5fc8b3769f"
+      },
+      "created": "2026-10-09T06:54:42.768Z"
+    },
+    {
+      "id": 3,
+      "actor": 1,
+      "data": {
+        "items": [
+          {
+            "variantId": 5,
+            "name": "White Chicken Karahi",
+            "image": "/media/white-chicken-karahi.jpg",
+            "variant": "Half",
+            "unit": "portion",
+            "step": 1000,
+            "qty": 1000,
+            "price": 135000,
+            "note": ""
+          }
+        ],
+        "service": "Dine-in",
+        "tableId": "",
+        "customerId": "",
+        "discount": "0",
+        "key": "ce17daa8-e867-4cd1-8419-796a0a001f62",
+        "heldId": 2
+      },
+      "created": "2026-10-10T13:04:25.125Z"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "Chicken",
+      "unit": "kg",
+      "low": 10000,
+      "archived": 0,
+      "stock": 20000
+    },
+    {
+      "id": 2,
+      "name": "Rice",
+      "unit": "kg",
+      "low": 5000,
+      "archived": 0,
+      "stock": 26000
+    },
+    {
+      "id": 3,
+      "name": "Cooking oil",
+      "unit": "litre",
+      "low": 5000,
+      "archived": 0,
+      "stock": 7000
+    },
+    {
+      "id": 4,
+      "name": "Flour",
+      "unit": "kg",
+      "low": 5000,
+      "archived": 0,
+      "stock": 30000
+    }
+  ],
+  "movements": [
+    {
+      "id": 4,
+      "ingredient_id": 4,
+      "qty": 30000,
+      "kind": "opening",
+      "reference": null,
+      "reason": "Development opening balance",
+      "created": "2026-10-09T06:10:21.814Z",
+      "business_date": "2026-10-09",
+      "actor": 1,
+      "name": "Flour",
+      "unit": "kg",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 3,
+      "ingredient_id": 3,
+      "qty": 7000,
+      "kind": "opening",
+      "reference": null,
+      "reason": "Development opening balance",
+      "created": "2026-10-09T06:10:21.814Z",
+      "business_date": "2026-10-09",
+      "actor": 1,
+      "name": "Cooking oil",
+      "unit": "litre",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 2,
+      "ingredient_id": 2,
+      "qty": 26000,
+      "kind": "opening",
+      "reference": null,
+      "reason": "Development opening balance",
+      "created": "2026-10-09T06:10:21.813Z",
+      "business_date": "2026-10-09",
+      "actor": 1,
+      "name": "Rice",
+      "unit": "kg",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 1,
+      "ingredient_id": 1,
+      "qty": 20000,
+      "kind": "opening",
+      "reference": null,
+      "reason": "Development opening balance",
+      "created": "2026-10-09T06:10:21.743Z",
+      "business_date": "2026-10-09",
+      "actor": 1,
+      "name": "Chicken",
+      "unit": "kg",
+      "actor_name": "Ali Khan"
+    }
+  ],
+  "suppliers": [],
+  "purchases": [],
+  "supplierPayments": [],
+  "allTables": [
+    {
+      "id": 1,
+      "name": "Table 01",
+      "active": 1
+    },
+    {
+      "id": 2,
+      "name": "Table 02",
+      "active": 1
+    },
+    {
+      "id": 3,
+      "name": "Table 03",
+      "active": 1
+    },
+    {
+      "id": 4,
+      "name": "Table 04",
+      "active": 1
+    },
+    {
+      "id": 5,
+      "name": "Table 05",
+      "active": 1
+    },
+    {
+      "id": 6,
+      "name": "Table 06",
+      "active": 1
+    },
+    {
+      "id": 7,
+      "name": "Table 07",
+      "active": 1
+    },
+    {
+      "id": 8,
+      "name": "Table 08",
+      "active": 1
+    },
+    {
+      "id": 9,
+      "name": "Table 09",
+      "active": 1
+    },
+    {
+      "id": 10,
+      "name": "Table 10",
+      "active": 1
+    },
+    {
+      "id": 11,
+      "name": "Table 11",
+      "active": 1
+    },
+    {
+      "id": 12,
+      "name": "Table 12",
+      "active": 1
+    }
+  ],
+  "staff": [
+    {
+      "id": 1,
+      "username": "owner",
+      "name": "Ali Khan",
+      "role": "Owner",
+      "active": 1
+    },
+    {
+      "id": 2,
+      "username": "cashier",
+      "name": "Cashier",
+      "role": "Cashier",
+      "active": 1
+    },
+    {
+      "id": 3,
+      "username": "kitchen",
+      "name": "Kitchen",
+      "role": "Kitchen",
+      "active": 1
+    }
+  ],
+  "expenses": [],
+  "cash": [],
+  "audit": [
+    {
+      "id": 65,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "28",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":6,\"customerId\":null,\"deliveryName\":\"\",\"deliveryPhone\":\"\",\"deliveryAddress\":\"\",\"discount\":0,\"items\":[{\"variantId\":8,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-16T07:42:08.523Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 64,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "27",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":2,\"customerId\":null,\"deliveryName\":\"\",\"deliveryPhone\":\"\",\"deliveryAddress\":\"\",\"discount\":0,\"items\":[{\"variantId\":7,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-16T07:11:37.481Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 63,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "26",
+      "data": "{\"service\":\"Takeaway\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"\",\"deliveryPhone\":\"\",\"deliveryAddress\":\"\",\"discount\":0,\"items\":[{\"variantId\":3,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-16T07:11:23.544Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 62,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "25",
+      "data": "{\"service\":\"Delivery\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"Tariq Mahmood\",\"deliveryPhone\":\"03215551234\",\"deliveryAddress\":\"House 12, Street 7, Sector F-6, Islamabad\",\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"urgent delivery\"}]}",
+      "created": "2026-10-16T06:39:20.089Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 61,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "24",
+      "data": "{\"service\":\"Takeaway\",\"tableId\":null,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"parcel test\"}]}",
+      "created": "2026-10-16T06:39:20.065Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 60,
+      "actor": 1,
+      "action": "order.closed",
+      "entity": "5",
+      "data": "{\"balance\":0}",
+      "created": "2026-10-16T06:37:40.665Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 59,
+      "actor": 1,
+      "action": "kitchen.Served",
+      "entity": "6",
+      "data": "{\"id\":6,\"previous\":\"Ready\",\"state\":\"Served\"}",
+      "created": "2026-10-16T06:37:26.495Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 58,
+      "actor": 1,
+      "action": "kitchen.Ready",
+      "entity": "6",
+      "data": "{\"id\":6,\"previous\":\"Preparing\",\"state\":\"Ready\"}",
+      "created": "2026-10-16T06:37:25.217Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 57,
+      "actor": 1,
+      "action": "kitchen.Preparing",
+      "entity": "6",
+      "data": "{\"id\":6,\"previous\":\"New\",\"state\":\"Preparing\"}",
+      "created": "2026-10-16T06:37:24.286Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 56,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "23",
+      "data": "{\"service\":\"Delivery\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"Tariq Mahmood\",\"deliveryPhone\":\"03215551234\",\"deliveryAddress\":\"House 12, Street 7, Sector F-6, Islamabad\",\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"urgent delivery\"}]}",
+      "created": "2026-10-16T05:42:37.448Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 55,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "22",
+      "data": "{\"service\":\"Takeaway\",\"tableId\":null,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"parcel test\"}]}",
+      "created": "2026-10-16T05:42:37.416Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 54,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "21",
+      "data": "{\"service\":\"Delivery\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"Tariq Mahmood\",\"deliveryPhone\":\"03215551234\",\"deliveryAddress\":\"House 12, Street 7, Sector F-6, Islamabad\",\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"urgent delivery\"}]}",
+      "created": "2026-10-15T13:45:54.507Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 53,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "20",
+      "data": "{\"service\":\"Takeaway\",\"tableId\":null,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"parcel test\"}]}",
+      "created": "2026-10-15T13:45:54.483Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 52,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "19",
+      "data": "{\"service\":\"Delivery\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"Tariq Mahmood\",\"deliveryPhone\":\"03215551234\",\"deliveryAddress\":\"House 12, Street 7, Sector F-6, Islamabad\",\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"urgent delivery\"}]}",
+      "created": "2026-10-15T13:35:42.227Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 51,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "18",
+      "data": "{\"service\":\"Takeaway\",\"tableId\":null,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"parcel test\"}]}",
+      "created": "2026-10-15T13:35:42.205Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 50,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "17",
+      "data": "{\"service\":\"Delivery\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"Hammad Ali\",\"deliveryPhone\":\"03476543323\",\"deliveryAddress\":\"Karachi \",\"discount\":0,\"items\":[{\"variantId\":6,\"qty\":1000,\"note\":\"\"},{\"variantId\":4,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-15T13:15:44.097Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 49,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "16",
+      "data": "{\"service\":\"Delivery\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"Tariq Mahmood\",\"deliveryPhone\":\"03215551234\",\"deliveryAddress\":\"House 12, Street 7, Sector F-6, Islamabad\",\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"urgent delivery\"}]}",
+      "created": "2026-10-15T12:42:34.117Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 48,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "15",
+      "data": "{\"service\":\"Takeaway\",\"tableId\":null,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"parcel test\"}]}",
+      "created": "2026-10-15T12:42:34.091Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 47,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "14",
+      "data": "{\"service\":\"Delivery\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"Tariq Mahmood\",\"deliveryPhone\":\"03215551234\",\"deliveryAddress\":\"House 12, Street 7, Sector F-6, Islamabad\",\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"urgent delivery\"}]}",
+      "created": "2026-10-15T12:42:06.586Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 46,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "13",
+      "data": "{\"service\":\"Takeaway\",\"tableId\":null,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"parcel test\"}]}",
+      "created": "2026-10-15T12:42:06.542Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 45,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "12",
+      "data": "{\"service\":\"Delivery\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"Tariq Mahmood\",\"deliveryPhone\":\"03215551234\",\"deliveryAddress\":\"House 12, Street 7, Sector F-6, Islamabad\",\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"urgent delivery\"}]}",
+      "created": "2026-10-15T12:40:48.791Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 44,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "11",
+      "data": "{\"service\":\"Takeaway\",\"tableId\":null,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"parcel test\"}]}",
+      "created": "2026-10-15T12:40:48.762Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 43,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "10",
+      "data": "{\"service\":\"Delivery\",\"tableId\":null,\"customerId\":null,\"deliveryName\":\"Tariq Mahmood\",\"deliveryPhone\":\"03215551234\",\"deliveryAddress\":\"House 12, Street 7, Sector F-6, Islamabad\",\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"urgent delivery\"}]}",
+      "created": "2026-10-15T12:37:43.162Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 42,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "9",
+      "data": "{\"service\":\"Takeaway\",\"tableId\":null,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"parcel test\"}]}",
+      "created": "2026-10-15T12:37:43.138Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 41,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "8",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":11,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":5,\"qty\":1000,\"note\":\"\"},{\"variantId\":12,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-15T12:10:57.672Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 40,
+      "actor": 1,
+      "action": "order.closed",
+      "entity": "3",
+      "data": "{\"balance\":43000}",
+      "created": "2026-10-10T13:15:47.904Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 39,
+      "actor": 1,
+      "action": "order.closed",
+      "entity": "1",
+      "data": "{\"balance\":0}",
+      "created": "2026-10-10T13:15:12.880Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 38,
+      "actor": 1,
+      "action": "kitchen.Served",
+      "entity": "8",
+      "data": "{\"id\":8,\"previous\":\"Ready\",\"state\":\"Served\"}",
+      "created": "2026-10-10T13:05:16.158Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 37,
+      "actor": 1,
+      "action": "kitchen.Ready",
+      "entity": "8",
+      "data": "{\"id\":8,\"previous\":\"Preparing\",\"state\":\"Ready\"}",
+      "created": "2026-10-10T13:05:11.879Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 36,
+      "actor": 1,
+      "action": "kitchen.Preparing",
+      "entity": "8",
+      "data": "{\"id\":8,\"previous\":\"New\",\"state\":\"Preparing\"}",
+      "created": "2026-10-10T13:05:08.452Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 35,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "7",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":12,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":20,\"qty\":1000,\"note\":\"\"},{\"variantId\":21,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-10T12:57:54.612Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 34,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "6",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":8,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":9,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-10T12:57:19.333Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 33,
+      "actor": 1,
+      "action": "payment",
+      "entity": "5",
+      "data": "{\"applied\":869000,\"tendered\":869000,\"change\":0,\"method\":\"Bank/Wallet\"}",
+      "created": "2026-10-10T12:55:35.498Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 32,
+      "actor": 1,
+      "action": "order.appended",
+      "entity": "5",
+      "data": "{\"id\":5,\"version\":4,\"items\":[{\"variantId\":5,\"qty\":1000,\"note\":\"\"},{\"variantId\":7,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-10T12:54:09.194Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 31,
+      "actor": 1,
+      "action": "kitchen.Served",
+      "entity": "5",
+      "data": "{\"id\":5,\"previous\":\"Ready\",\"state\":\"Served\"}",
+      "created": "2026-10-10T12:53:19.710Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 30,
+      "actor": 1,
+      "action": "kitchen.Ready",
+      "entity": "5",
+      "data": "{\"id\":5,\"previous\":\"Preparing\",\"state\":\"Ready\"}",
+      "created": "2026-10-10T12:52:58.080Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 29,
+      "actor": 1,
+      "action": "kitchen.Preparing",
+      "entity": "5",
+      "data": "{\"id\":5,\"previous\":\"New\",\"state\":\"Preparing\"}",
+      "created": "2026-10-10T12:48:05.642Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 28,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "5",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":5,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":1,\"qty\":1000,\"note\":\"\"},{\"variantId\":4,\"qty\":1000,\"note\":\"\"},{\"variantId\":20,\"qty\":3000,\"note\":\"\"},{\"variantId\":23,\"qty\":4000,\"note\":\"\"},{\"variantId\":17,\"qty\":8000,\"note\":\"\"}]}",
+      "created": "2026-10-10T12:47:16.507Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 27,
+      "actor": 1,
+      "action": "menu.saved",
+      "entity": "25",
+      "data": "{\"id\":25,\"name\":\"محھلی\",\"category\":\"چکن \",\"image\":\"\",\"available\":1,\"archived\":0,\"version\":1,\"variants\":[{\"id\":30,\"menu_id\":25,\"name\":\"Half\",\"unit\":\"portion\",\"price\":150000,\"step\":1000,\"portions\":null,\"cost\":120000,\"active\":1},{\"id\":31,\"menu_id\":25,\"name\":\"Regular\",\"unit\":\"portion\",\"price\":290000,\"step\":1000,\"portions\":null,\"cost\":250000,\"active\":1}]}",
+      "created": "2026-10-09T07:37:06.147Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 26,
+      "actor": 1,
+      "action": "menu.saved",
+      "entity": "25",
+      "data": "{\"name\":\"محھلی\",\"category\":\"Karahi & Handi\",\"image\":\"\",\"available\":1,\"variants\":[{\"name\":\"Half\",\"unit\":\"portion\",\"price\":150000,\"step\":1000,\"portions\":null,\"priceInput\":\"1500\",\"costInput\":\"1200\",\"cost\":120000},{\"name\":\"Regular\",\"unit\":\"portion\",\"price\":290000,\"step\":1000,\"portions\":null,\"priceInput\":\"2900\",\"costInput\":\"2500\",\"cost\":250000}]}",
+      "created": "2026-10-09T07:36:05.521Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 25,
+      "actor": 1,
+      "action": "order.closed",
+      "entity": "4",
+      "data": "{\"balance\":0}",
+      "created": "2026-10-09T07:25:52.656Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 24,
+      "actor": 1,
+      "action": "refund",
+      "entity": "4",
+      "data": "{\"amount\":16000,\"reason\":\"واپس کیے گئے پیسے ا\",\"method\":\"Cash\",\"id\":4,\"version\":5}",
+      "created": "2026-10-09T07:22:48.346Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 23,
+      "actor": 1,
+      "action": "payment",
+      "entity": "4",
+      "data": "{\"applied\":134000,\"tendered\":150000,\"change\":16000,\"method\":\"Cash\"}",
+      "created": "2026-10-09T07:22:05.495Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 22,
+      "actor": 1,
+      "action": "kitchen.Served",
+      "entity": "4",
+      "data": "{\"id\":4,\"previous\":\"Ready\",\"state\":\"Served\"}",
+      "created": "2026-10-09T07:20:40.772Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 21,
+      "actor": 1,
+      "action": "kitchen.Ready",
+      "entity": "4",
+      "data": "{\"id\":4,\"previous\":\"Preparing\",\"state\":\"Ready\"}",
+      "created": "2026-10-09T07:20:29.623Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 20,
+      "actor": 1,
+      "action": "kitchen.Preparing",
+      "entity": "4",
+      "data": "{\"id\":4,\"previous\":\"New\",\"state\":\"Preparing\"}",
+      "created": "2026-10-09T07:20:17.240Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 19,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "4",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":8,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":9,\"qty\":1000,\"note\":\"\"},{\"variantId\":12,\"qty\":2000,\"note\":\"\"}]}",
+      "created": "2026-10-09T07:19:06.145Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 18,
+      "actor": 1,
+      "action": "order.closed",
+      "entity": "2",
+      "data": "{\"balance\":0}",
+      "created": "2026-10-09T07:14:03.426Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 17,
+      "actor": 1,
+      "action": "kitchen.Served",
+      "entity": "1",
+      "data": "{\"id\":1,\"previous\":\"Ready\",\"state\":\"Served\"}",
+      "created": "2026-10-09T07:11:42.879Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 16,
+      "actor": 1,
+      "action": "kitchen.Ready",
+      "entity": "1",
+      "data": "{\"id\":1,\"previous\":\"Preparing\",\"state\":\"Ready\"}",
+      "created": "2026-10-09T07:11:32.248Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 15,
+      "actor": 1,
+      "action": "kitchen.Served",
+      "entity": "2",
+      "data": "{\"id\":2,\"previous\":\"Ready\",\"state\":\"Served\"}",
+      "created": "2026-10-09T07:11:28.884Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 14,
+      "actor": 1,
+      "action": "kitchen.Ready",
+      "entity": "2",
+      "data": "{\"id\":2,\"previous\":\"Preparing\",\"state\":\"Ready\"}",
+      "created": "2026-10-09T07:11:26.830Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 13,
+      "actor": 1,
+      "action": "kitchen.Preparing",
+      "entity": "2",
+      "data": "{\"id\":2,\"previous\":\"New\",\"state\":\"Preparing\"}",
+      "created": "2026-10-09T07:11:21.373Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 12,
+      "actor": 1,
+      "action": "kitchen.Preparing",
+      "entity": "1",
+      "data": "{\"id\":1,\"previous\":\"New\",\"state\":\"Preparing\"}",
+      "created": "2026-10-09T07:11:16.258Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 11,
+      "actor": 1,
+      "action": "payment",
+      "entity": "1",
+      "data": "{\"applied\":46000,\"tendered\":46000,\"change\":0,\"method\":\"Cash\"}",
+      "created": "2026-10-09T07:07:18.590Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 10,
+      "actor": 1,
+      "action": "kitchen.Served",
+      "entity": "3",
+      "data": "{\"id\":3,\"previous\":\"Ready\",\"state\":\"Served\"}",
+      "created": "2026-10-09T07:05:22.931Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 9,
+      "actor": 1,
+      "action": "kitchen.Ready",
+      "entity": "3",
+      "data": "{\"id\":3,\"previous\":\"Preparing\",\"state\":\"Ready\"}",
+      "created": "2026-10-09T07:05:21.840Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 8,
+      "actor": 1,
+      "action": "kitchen.Preparing",
+      "entity": "3",
+      "data": "{\"id\":3,\"previous\":\"New\",\"state\":\"Preparing\"}",
+      "created": "2026-10-09T07:05:20.684Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 7,
+      "actor": 1,
+      "action": "payment",
+      "entity": "3",
+      "data": "{\"applied\":200000,\"tendered\":200000,\"change\":0,\"method\":\"Bank/Wallet\"}",
+      "created": "2026-10-09T07:01:47.614Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 6,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "3",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":3,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":6,\"qty\":1000,\"note\":\"\"}]}",
+      "created": "2026-10-09T07:00:32.824Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 5,
+      "actor": 1,
+      "action": "payment",
+      "entity": "2",
+      "data": "{\"applied\":36000,\"tendered\":36000,\"change\":0,\"method\":\"Cash\"}",
+      "created": "2026-10-09T06:57:51.208Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 4,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "2",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":2,\"customerId\":1,\"discount\":0,\"items\":[{\"variantId\":22,\"qty\":2000,\"note\":\"\"}]}",
+      "created": "2026-10-09T06:57:08.297Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 3,
+      "actor": 1,
+      "action": "order.created",
+      "entity": "1",
+      "data": "{\"service\":\"Dine-in\",\"tableId\":7,\"customerId\":null,\"discount\":0,\"items\":[{\"variantId\":10,\"qty\":1000,\"note\":\"مرچ کم \"}]}",
+      "created": "2026-10-09T06:50:07.982Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 2,
+      "actor": 1,
+      "action": "settings.saved",
+      "entity": "1",
+      "data": "{\"name\":\"Dastarkhwan\",\"tagline\":\"Desi Kitchen\",\"address\":\"Rawalpindi, Pakistan\",\"phone\":\"\",\"logo\":\"\",\"taxId\":\"\",\"taxBps\":0,\"serviceBps\":0,\"footer\":\"Thank you for dining with us.\",\"receipt\":\"A4\"}",
+      "created": "2026-10-09T06:28:13.844Z",
+      "actor_name": "Ali Khan"
+    },
+    {
+      "id": 1,
+      "actor": 1,
+      "action": "settings.saved",
+      "entity": "1",
+      "data": "{\"name\":\"Malik Hotel\",\"tagline\":\"Desi Kitchen\",\"address\":\"Rawalpindi, Pakistan\",\"phone\":\"\",\"logo\":\"\",\"taxId\":\"\",\"taxBps\":0,\"serviceBps\":0,\"footer\":\"Thank you for dining with us.\",\"receipt\":\"A4\"}",
+      "created": "2026-10-09T06:26:59.755Z",
+      "actor_name": "Ali Khan"
+    }
+  ]
+}

@@ -1,16 +1,10 @@
-// Centralized API configuration for local, cloud, and Firebase hosting
+// Centralized API configuration for local, cloud, and standalone execution
 export const getApiBase = (): string => {
   if (typeof window !== "undefined") {
-    // 1. Check if user configured a custom backend URL in localStorage
+    // Check if user configured a custom backend URL in localStorage
     const custom = localStorage.getItem("dastarkhwan_api_url");
     if (custom && custom.trim()) {
       return custom.trim().replace(/\/$/, "");
-    }
-
-    // 2. If running on Firebase Hosting (.web.app or .firebaseapp.com)
-    const hostname = window.location.hostname;
-    if (hostname.endsWith(".web.app") || hostname.endsWith(".firebaseapp.com")) {
-      return "https://dastarkhwan-pos.onrender.com";
     }
   }
   return "";

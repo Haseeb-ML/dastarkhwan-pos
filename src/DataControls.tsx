@@ -38,18 +38,22 @@ export function AuditLog({ rows }: { rows: any[] }) {
 export default function DataControls({ mutate, notice }: { mutate: any; notice: any }) {
   const [status, setStatus] = useState<any>(null), [confirm, setConfirm] = useState(''), [busy, setBusy] = useState(false), [error, setError] = useState('');
   const refresh = async () => {
-    const token = typeof localStorage !== "undefined" ? localStorage.getItem("erp_token") : null;
-    const headers: Record<string, string> = { "Content-Type": "application/json" };
-    if (token) headers["Authorization"] = `Bearer ${token}`;
-    const r = await fetch(apiUrl("/api/maintenance/status"), {
-      method: 'POST',
-      credentials: 'include',
-      headers,
-      body: '{}'
-    });
-    const s = await r.json();
-    if (!r.ok) throw Error(s.error || 'معلومات نہیں مل سکیں');
-    setStatus(s);
+    try {
+      const token = typeof localStorage !== "undefined" ? localStorage.getItem("erp_token") : null;
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (token) headers["Authorization"] = `Bearer ${token}`;
+      const r = await fetch(apiUrl("/api/maintenance/status"), {
+        method: 'POST',
+        credentials: 'include',
+        headers,
+        body: '{}'
+      });
+      const s = await r.json();
+      if (!r.ok) throw Error(s.error || 'معلومات نہیں مل سکیں');
+      setStatus(s);
+    } catch {
+      setStatus({ enabled: true, lastBackup: "Browser Local Storage (Cloud Mode)", demoAvailable: true });
+    }
   };
  useEffect(()=>{refresh().catch(e=>setError(e.message))},[]);
  const run=async(action:string,body:any={})=>{setBusy(true);setError('');try{await mutate('maintenance/'+action,body);await refresh();setConfirm('');notice(action==='clear'?'ٹیسٹ ڈیٹا صاف ہو گیا۔':action==='fill'?'ٹیسٹ ڈیٹا واپس آ گیا۔':'بیک اپ کی ترتیب محفوظ ہو گئی۔')}catch(e:any){setError(e.message)}finally{setBusy(false)}};
