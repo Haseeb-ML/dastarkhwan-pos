@@ -129,7 +129,7 @@ async function j(e, t, n) {
         return handleStandaloneRequest(e, t);
     }
     if (!l.ok) {
-        if (l.status === 404 || l.status >= 500) {
+        if (l.status === 404 || l.status >= 500 || e === "summary") {
             return handleStandaloneRequest(e, t);
         }
         throw l.status < 500 && (delete r[c], A(r)), Object.assign(Error(u.error || `Request failed`), { status: l.status });
