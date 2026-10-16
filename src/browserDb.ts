@@ -633,14 +633,107 @@ function findVariant(state: any, variantId: number) {
   // Handle Summary
   if (route === "summary") {
     const today = new Date().toISOString().slice(0, 10);
-    const todayOrders = (state.orders || []).filter((o: any) => (o.business_date || "").startsWith(today) || (o.created || "").startsWith(today));
-    const totalSales = todayOrders.filter((o: any) => o.state !== "cancelled").reduce((sum: number, o: any) => sum + (o.total || 0), 0);
-    const paymentsCollected = todayOrders.reduce((sum: number, o: any) => sum + (o.received || 0), 0);
+    const from = (payload && payload.from) || today;
+    const to = (payload && payload.to) || today;
+
+    const ordersInPeriod = (state.orders || []).filter((o: any) => {
+      const bDate = (o.business_date || o.created || "").slice(0, 10);
+      return bDate >= from && bDate <= to;
+    });
+    const activeOrders = ordersInPeriod.filter((o: any) => o.state !== "cancelled");
+
+    const sales = activeOrders.reduce((sum: number, o: any) => sum + (o.total || 0), 0);
+    const cancelled = ordersInPeriod.filter((o: any) => o.state === "cancelled").reduce((sum: number, o: any) => sum + (o.total || 0), 0);
+
+    let collections = 0;
+    let refunds = 0;
+    (state.orders || []).forEach((o: any) => {
+      (o.payments || []).forEach((p: any) => {
+        const pDate = (p.created || "").slice(0, 10);
+        if (pDate >= from && pDate <= to) collections += (p.amount || 0);
+      });
+      (o.refunds || []).forEach((r: any) => {
+        const rDate = (r.created || "").slice(0, 10);
+        if (rDate >= from && rDate <= to) refunds += (r.amount || 0);
+      });
+    });
+    if (collections === 0) {
+      collections = activeOrders.reduce((sum: number, o: any) => sum + (o.received || 0), 0);
+    }
+    if (refunds === 0) {
+      refunds = activeOrders.reduce((sum: number, o: any) => sum + (o.refunded || 0), 0);
+    }
+
+    const expensesInPeriod = (state.expenses || []).filter((e: any) => {
+      const eDate = (e.businessDate || e.created || "").slice(0, 10);
+      return eDate >= from && eDate <= to;
+    }).reduce((sum: number, e: any) => sum + (e.amount || 0), 0);
+
+    const daily: Record<string, number> = {};
+    activeOrders.forEach((o: any) => {
+      const d = (o.business_date || o.created || "").slice(0, 10);
+      daily[d] = (daily[d] || 0) + (o.total || 0);
+    });
+
+    const dishSales: Record<string, { name: string; qty: number; amount: number }> = {};
+    activeOrders.forEach((o: any) => {
+      (o.items || []).forEach((it: any) => {
+        const name = it.name || "Dish";
+        if (!dishSales[name]) {
+          dishSales[name] = { name, qty: 0, amount: 0 };
+        }
+        dishSales[name].qty += (it.qty || 1000);
+        dishSales[name].amount += (it.amount || it.price || 0);
+      });
+    });
+    const popular = Object.values(dishSales).sort((a, b) => b.qty - a.qty).slice(0, 8);
+
+    let foodCost = 0;
+    let missingCosts = 0;
+    activeOrders.forEach((o: any) => {
+      (o.items || []).forEach((it: any) => {
+        if (it.cost !== undefined && it.cost !== null) {
+          foodCost += Math.round((it.cost * (it.qty || 1000)) / 1000);
+        } else {
+          const v = findVariant(state, it.variantId);
+          if (v && v.cost !== undefined && v.cost !== null) {
+            foodCost += Math.round((v.cost * (it.qty || 1000)) / 1000);
+          } else {
+            missingCosts++;
+          }
+        }
+      });
+    });
+
+    const netSales = activeOrders.reduce((n: number, o: any) => {
+      const food = (o.subtotal || o.total || 0) - (o.discount || 0);
+      return n + food;
+    }, 0) - refunds;
+
+    const profit = missingCosts > 0 ? null : (netSales - foodCost - expensesInPeriod);
+    const outstanding = (state.orders || []).filter((o: any) => o.state !== "cancelled")
+      .reduce((s: number, o: any) => s + (o.balance || 0), 0);
+    const lowStock = (state.ingredients || []).filter((ing: any) => !ing.archived && ing.stock <= ing.low).length;
+    const supplierPayments = (state.supplierPayments || []).reduce((s: number, sp: any) => s + (sp.amount || 0), 0);
+
     return {
-      date: today,
-      sales: totalSales,
-      collected: paymentsCollected,
-      ordersCount: todayOrders.length,
+      foodCost,
+      missingCosts,
+      netSales: Math.max(0, netSales),
+      profit,
+      from,
+      to,
+      sales,
+      orderCount: activeOrders.length,
+      cancelled,
+      collections,
+      refunds,
+      expenses: expensesInPeriod,
+      supplierPayments,
+      outstanding,
+      lowStock,
+      daily,
+      popular,
     };
   }
 
