@@ -74,7 +74,7 @@ def designed_a4(o, p, money, font, bold):
             drawtext(r['tagline'],white,100,67,self.width-122)
             drawtext('گاہک کا بل',white,22,43,125)
             c.setFont(bold,13); c.setFillColor(colors.white); c.drawString(22,14,o['number'])
-            details=' | '.join(str(v) for v in [r.get('address','Rawalpindi, Pakistan'),'Phone: '+str(r.get('phone') or '051 6122024')] if v)
+            details=str(r.get('address') or 'Rawalpindi, Pakistan')
             drawtext(details,ParagraphStyle('Contact',parent=white,fontSize=8,leading=13),170,29,self.width-192)
     story=[Masthead(),Spacer(1,16)]
     timestamp=datetime.fromisoformat(o['created'].replace('Z','+00:00')).astimezone(ZoneInfo('Asia/Karachi')).strftime('%d/%m/%Y  %H:%M')
@@ -104,7 +104,10 @@ def designed_a4(o, p, money, font, bold):
     summary.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),pale),('BACKGROUND',(0,total_index),(-1,total_index),green),('VALIGN',(0,0),(-1,-1),'TOP'),('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),7),('LEFTPADDING',(0,0),(-1,-1),12),('RIGHTPADDING',(0,0),(-1,-1),12)]))
     thanks=Table([[p(r.get('footer') or 'تشریف لانے کا شکریہ۔',ParagraphStyle('Thanks',parent=body,fontSize=12,leading=21)),p('یہ محفوظ بل ہے۔',small)]],colWidths=[usable*.65,usable*.35])
     thanks.setStyle(TableStyle([('LINEABOVE',(0,0),(-1,0),.6,gold),('TOPPADDING',(0,0),(-1,-1),12),('LEFTPADDING',(0,0),(-1,-1),0),('RIGHTPADDING',(0,0),(-1,-1),0)]))
-    story += [KeepTogether([summary,Spacer(1,20),thanks])]
+    credit_style=ParagraphStyle('DevCredit',parent=small,alignment=TA_CENTER,textColor=colors.HexColor('#65756c'))
+    dev_credit=Table([[p('Software developed by HH Tech Hub',credit_style)]],colWidths=[usable])
+    dev_credit.setStyle(TableStyle([('TOPPADDING',(0,0),(-1,-1),8),('BOTTOMPADDING',(0,0),(-1,-1),4)]))
+    story += [KeepTogether([summary,Spacer(1,20),thanks,Spacer(1,6),dev_credit])]
     def footer(c,d):
         c.setStrokeColor(gold);c.setLineWidth(.5);c.line(margin,29,width-margin,29)
         c.setFont(font,8);c.setFillColor(colors.HexColor('#65756c'));c.drawString(margin,17,o['number']);c.drawRightString(width-margin,17,str(d.page))
@@ -151,8 +154,6 @@ def generate(o,size='A4'):
         if os.path.exists(path):
             img=Image(path,width=48,height=48,kind='proportional'); story.append(img)
     story += [p(r.get('name') or 'Dastarkhwan',heading),p(r.get('tagline') or 'Desi Kitchen',small),p(r.get('address') or 'Rawalpindi, Pakistan',small)]
-    story.append(p('Phone: '+(r.get('phone') or '051 6122024'),small))
-    if r.get('taxId'):story.append(p('Business / Tax ID: '+r['taxId'],small))
     story += [Spacer(1,12),p('گاہک کا بل '+o['number'],normal),p('نسخہ '+str(o['revision'])+' | '+o['paymentStatus'],small)]
     timestamp=datetime.fromisoformat(o['created'].replace('Z','+00:00')).astimezone(ZoneInfo('Asia/Karachi')).strftime('%d %b %Y, %I:%M %p')
     story += [p(timestamp+' (Asia/Karachi)',small),p(o['service']+' | '+o['place'],small),p('گاہک: '+(o.get('customer') or {}).get('name','Walk-in guest'),small),Spacer(1,12)]
@@ -170,11 +171,7 @@ def generate(o,size='A4'):
     totals=[('Subtotal',o['subtotal']),('Discount',-o['discount']),('Tax',o['tax']),('Service charge',o['serviceCharge']),('Grand total',o['total']),('Payments received',o['received']),('Refunds / reversals',o['refunded']),('Net received',o['net']),('Outstanding balance',o['balance']),('Cash change returned',o.get('change',0))]
     t=Table([[p(k,small),p(money(v),right)] for k,v in totals],colWidths=[usable*.55,usable*.45])
     t.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('LINEABOVE',(0,4),(-1,4),1,colors.HexColor('#164b3b')),('BACKGROUND',(0,4),(-1,4),colors.whitesmoke),('TOPPADDING',(0,0),(-1,-1),4),('BOTTOMPADDING',(0,0),(-1,-1),4)]))
-    hh_logo=os.path.join(os.path.dirname(__file__),'media','hh-tech-hub-logo.png')
-    footer_elements=[t,Spacer(1,10),p(r.get('footer') or 'تشریف لانے کا شکریہ۔',center),p('فون نمبر: '+(r.get('phone') or '051 6122024'),center)]
-    if os.path.exists(hh_logo):
-        from reportlab.platypus import Image as RLImage
-        footer_elements += [Spacer(1,6),RLImage(hh_logo,width=65,height=22,kind='proportional'),p('Powered by HH Tech Hub',center)]
+    footer_elements=[t,Spacer(1,10),p(r.get('footer') or 'تشریف لانے کا شکریہ۔',center),Spacer(1,4),p('Software developed by HH Tech Hub',center)]
     tail=footer_elements+[p('نسخہ '+str(o['revision'])+' · '+o['number'],center)]
     story += tail if thermal else [KeepTogether(tail)]
     if thermal:

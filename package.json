@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.mjs",
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0 --port 5173",
     "build": "vite build",
-    "preview": "vite preview",
-    "format": "oxfmt"
+    "preview": "vite preview --host 0.0.0.0 --port 5173",
+    "format": "oxfmt",
+    "web": "vite --host 0.0.0.0 --port 5173"
   },
   "engines": {
     "node": ">=22.5.0"

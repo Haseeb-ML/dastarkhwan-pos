@@ -15,11 +15,19 @@ export function computeSummaryFromData(data: any, from: string, to: string) {
   const orders = (data.orders || []).filter((o: any) => {
     if (!o) return false;
     const bDate = (o.business_date || o.created || "").slice(0, 10);
-    return bDate >= from && bDate <= to;
+    if (bDate >= from && bDate <= to) return true;
+    const hasPay = (o.payments || []).some((p: any) => {
+      const pDate = (p.business_date || p.created || "").slice(0, 10);
+      return pDate >= from && pDate <= to;
+    });
+    const hasRef = (o.refunds || []).some((r: any) => {
+      const rDate = (r.business_date || r.created || "").slice(0, 10);
+      return rDate >= from && rDate <= to;
+    });
+    return hasPay || hasRef;
   });
   const activeOrders = orders.filter((o: any) => o && o.state !== "cancelled");
   const cancelledOrders = orders.filter((o: any) => o && o.state === "cancelled");
-  const sales = activeOrders.reduce((sum: number, o: any) => sum + (Number(o.total) || 0), 0);
   const cancelled = cancelledOrders.reduce((sum: number, o: any) => sum + (Number(o.total) || 0), 0);
 
   let collections = 0;
@@ -28,12 +36,12 @@ export function computeSummaryFromData(data: any, from: string, to: string) {
     if (!o) return;
     (o.payments || []).forEach((p: any) => {
       if (!p) return;
-      const pDate = (p.created || "").slice(0, 10);
+      const pDate = (p.business_date || p.created || "").slice(0, 10);
       if (pDate >= from && pDate <= to) collections += (Number(p.amount) || 0);
     });
     (o.refunds || []).forEach((r: any) => {
       if (!r) return;
-      const rDate = (r.created || "").slice(0, 10);
+      const rDate = (r.business_date || r.created || "").slice(0, 10);
       if (rDate >= from && rDate <= to) refunds += (Number(r.amount) || 0);
     });
   });
@@ -44,16 +52,46 @@ export function computeSummaryFromData(data: any, from: string, to: string) {
     refunds = activeOrders.reduce((sum: number, o: any) => sum + (Number(o.refunded) || 0), 0);
   }
 
+  let rawSales = 0;
+  activeOrders.forEach((o: any) => {
+    const oDate = (o.business_date || o.created || "").slice(0, 10);
+    if (oDate >= from && oDate <= to) {
+      const food = (Number(o.subtotal) || Number(o.total) || 0) - (Number(o.discount) || 0);
+      rawSales += Math.max(0, food);
+    } else {
+      const payInPeriod = (o.payments || []).filter((p: any) => {
+        const pDate = (p.business_date || p.created || "").slice(0, 10);
+        return pDate >= from && pDate <= to;
+      }).reduce((sum: number, p: any) => sum + (Number(p.amount) || 0), 0);
+      rawSales += payInPeriod;
+    }
+  });
+  if (rawSales === 0 && collections > 0) {
+    rawSales = collections;
+  }
+  const netSales = Math.max(0, rawSales - refunds);
+  const sales = rawSales;
+
   const expensesInPeriod = (data.expenses || []).filter((e: any) => {
     if (!e) return false;
-    const eDate = (e.businessDate || e.created || "").slice(0, 10);
+    const eDate = (e.businessDate || e.date || e.created || "").slice(0, 10);
     return eDate >= from && eDate <= to;
   }).reduce((sum: number, e: any) => sum + (Number(e.amount) || 0), 0);
 
   const daily: Record<string, number> = {};
   activeOrders.forEach((o: any) => {
     const d = (o.business_date || o.created || "").slice(0, 10);
-    if (d) daily[d] = (daily[d] || 0) + (Number(o.total) || 0);
+    let targetDate = d;
+    if (targetDate < from || targetDate > to) {
+      const pMatch = (o.payments || []).find((p: any) => {
+        const pDate = (p.business_date || p.created || "").slice(0, 10);
+        return pDate >= from && pDate <= to;
+      });
+      if (pMatch) {
+        targetDate = (pMatch.business_date || pMatch.created || "").slice(0, 10);
+      }
+    }
+    if (targetDate) daily[targetDate] = (daily[targetDate] || 0) + (Number(o.total) || 0);
   });
 
   const dishSales: Record<string, { name: string; qty: number; amount: number }> = {};
@@ -96,17 +134,22 @@ export function computeSummaryFromData(data: any, from: string, to: string) {
           missingCosts++;
           const price = Number(it.price) || Number(it.amount) || 0;
           if (price > 0) {
-            foodCost += Math.round((price * 0.50 * qty) / 1000);
+            foodCost += Math.round((price * 0.45 * qty) / 1000);
           }
         }
       }
     });
   });
 
-  const netSales = Math.max(0, activeOrders.reduce((n: number, o: any) => {
-    const food = (Number(o.subtotal) || Number(o.total) || 0) - (Number(o.discount) || 0);
-    return n + food;
-  }, 0) - refunds);
+  const purchasesInPeriod = (data.purchases || []).filter((p: any) => {
+    if (!p) return false;
+    const pDate = (p.business_date || p.created || "").slice(0, 10);
+    return pDate >= from && pDate <= to;
+  }).reduce((sum: number, p: any) => sum + (Number(p.total) || 0), 0);
+
+  if (foodCost === 0 && purchasesInPeriod > 0) {
+    foodCost = purchasesInPeriod;
+  }
 
   const profit = netSales - foodCost - expensesInPeriod;
 

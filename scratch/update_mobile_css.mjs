@@ -78,7 +78,7 @@ const newMobileCss = `/* Desktop defaults for mobile-only controls */
     overflow-x: hidden !important;
     min-height: 100dvh !important;
     background: #f8f6f0 !important;
-    padding-bottom: 72px !important;
+    padding-bottom: 84px !important;
   }
   .main-shell {
     margin: 0 !important;
@@ -936,57 +936,65 @@ const newMobileCss = `/* Desktop defaults for mobile-only controls */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
   }
 
-  /* 12. TABLE-TO-CARD TRANSFORMATION FOR ALL TABLES */
-  .table-wrap {
-    overflow-x: visible !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
+  /* 12. ROBUST RESPONSIVE TABLE ENGINE FOR ALL ERP TABLES */
+  .table-wrap,
+  .data-card:has(table),
+  .data-card:has(.business-table),
+  .business-table-wrap,
+  .ledger-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important;
+    margin-bottom: 16px !important;
   }
   .business-table {
-    display: block !important;
+    display: table !important;
     width: 100% !important;
-    min-width: 0 !important;
-    border: none !important;
-    background: transparent !important;
+    min-width: 640px !important;
+    border-collapse: collapse !important;
+    table-layout: auto !important;
+    background: #ffffff !important;
   }
   .business-table thead {
-    display: none !important;
+    display: table-header-group !important;
   }
   .business-table tbody {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
-    width: 100% !important;
+    display: table-row-group !important;
   }
   .business-table tr {
-    display: flex !important;
-    flex-direction: column !important;
-    background: #ffffff !important;
-    border: 1.5px solid #dbe4dd !important;
-    border-radius: 14px !important;
-    padding: 14px !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
-    gap: 8px !important;
+    display: table-row !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .business-table th {
+    display: table-cell !important;
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    background: #f1f6f2 !important;
+    color: #174b3a !important;
+    border-bottom: 2px solid #d4dfd7 !important;
+    text-align: start !important;
   }
   .business-table td {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 6px 0 !important;
-    border: none !important;
+    display: table-cell !important;
+    padding: 11px 12px !important;
     font-size: 13px !important;
-    width: 100% !important;
+    border-bottom: 1px solid #e7eee9 !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+    text-align: start !important;
   }
-  .business-table td:not(:last-child) {
-    border-bottom: 1px dashed #e7eee9 !important;
-    padding-bottom: 8px !important;
-  }
-  .business-table td strong {
-    font-size: 15px !important;
-    color: #103f32 !important;
+  .business-table td.wrap-cell,
+  .business-table td:first-child {
+    white-space: normal !important;
+    min-width: 130px !important;
   }
   .business-table .ordered-foods {
     display: flex !important;
@@ -1002,20 +1010,21 @@ const newMobileCss = `/* Desktop defaults for mobile-only controls */
     color: #244b39 !important;
   }
   .business-table .row-actions {
-    display: flex !important;
-    width: 100% !important;
-    gap: 8px !important;
-    margin-top: 6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-wrap: nowrap !important;
+    width: auto !important;
+    margin: 0 !important;
   }
   .business-table .row-actions button {
-    flex: 1 !important;
-    min-height: 44px !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    border-radius: 10px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    flex: none !important;
+    padding: 6px 12px !important;
+    min-height: 38px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
     background: #f3f7f4 !important;
     border: 1.5px solid #cbdad0 !important;
     color: #124033 !important;
@@ -1026,7 +1035,7 @@ const newMobileCss = `/* Desktop defaults for mobile-only controls */
     border-color: #103f32 !important;
   }
 
-  /* 13. STAT CARDS & OVERVIEWS (Customers, Menu, Stock, Tables) */
+    /* 13. STAT CARDS & OVERVIEWS (Customers, Menu, Stock, Tables) */
   .customer-overview, .menu-overview, .stock-overview {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -1109,7 +1118,7 @@ const newMobileCss = `/* Desktop defaults for mobile-only controls */
 
   /* 16. Dashboard & Profit Report */
   .page-content {
-    padding: 12px 12px 90px !important;
+    padding: 12px 12px 100px !important;
   }
   .page-heading, .summary-welcome {
     gap: 8px !important;

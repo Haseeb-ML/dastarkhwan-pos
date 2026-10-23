@@ -4,11 +4,11 @@
     "role": "Owner"
   },
   "settings": {
-    "name": "Dastarkhwan",
-    "tagline": "Desi Kitchen",
+    "name": "Shah Brothers Restaurant",
+    "tagline": "Restaurant & Desi Kitchen",
     "address": "Rawalpindi, Pakistan",
-    "phone": "051 6122024",
-    "logo": "",
+    "phone": "",
+    "logo": "/media/shah-brothers-logo.png",
     "taxId": "",
     "taxBps": 0,
     "serviceBps": 0,
@@ -674,39 +674,6 @@
           "active": 1
         }
       ]
-    },
-    {
-      "id": 25,
-      "name": "محھلی",
-      "category": "چکن",
-      "image": "",
-      "available": 1,
-      "archived": 0,
-      "version": 2,
-      "variants": [
-        {
-          "id": 30,
-          "menu_id": 25,
-          "name": "Half",
-          "unit": "portion",
-          "price": 150000,
-          "step": 1000,
-          "portions": null,
-          "cost": 120000,
-          "active": 1
-        },
-        {
-          "id": 31,
-          "menu_id": 25,
-          "name": "Regular",
-          "unit": "portion",
-          "price": 290000,
-          "step": 1000,
-          "portions": null,
-          "cost": 250000,
-          "active": 1
-        }
-      ]
     }
   ],
   "orders": [
@@ -751,7 +718,7 @@
         "name": "Dastarkhwan",
         "tagline": "Desi Kitchen",
         "address": "Rawalpindi, Pakistan",
-        "phone": "051 6122024",
+        "phone": "",
         "logo": "",
         "taxId": "",
         "taxBps": 0,
@@ -834,7 +801,7 @@
         "name": "Dastarkhwan",
         "tagline": "Desi Kitchen",
         "address": "Rawalpindi, Pakistan",
-        "phone": "051 6122024",
+        "phone": "",
         "logo": "",
         "taxId": "",
         "taxBps": 0,
@@ -917,7 +884,7 @@
         "name": "Dastarkhwan",
         "tagline": "Desi Kitchen",
         "address": "Rawalpindi, Pakistan",
-        "phone": "051 6122024",
+        "phone": "",
         "logo": "",
         "taxId": "",
         "taxBps": 0,
@@ -1000,7 +967,7 @@
         "name": "Dastarkhwan",
         "tagline": "Desi Kitchen",
         "address": "Rawalpindi, Pakistan",
-        "phone": "051 6122024",
+        "phone": "",
         "logo": "",
         "taxId": "",
         "taxBps": 0,
@@ -3607,7 +3574,15 @@
       "actor_name": "Ali Khan"
     }
   ],
-  "suppliers": [],
+  "suppliers": [
+    {
+      "id": 1,
+      "name": "Malik",
+      "phone": "0346484748",
+      "balance": 0,
+      "archived": 0
+    }
+  ],
   "purchases": [],
   "supplierPayments": [],
   "allTables": [
@@ -4291,6 +4266,20 @@
       "data": "{\"name\":\"Malik Hotel\",\"tagline\":\"Desi Kitchen\",\"address\":\"Rawalpindi, Pakistan\",\"phone\":\"\",\"logo\":\"\",\"taxId\":\"\",\"taxBps\":0,\"serviceBps\":0,\"footer\":\"Thank you for dining with us.\",\"receipt\":\"A4\"}",
       "created": "2026-10-09T06:26:59.755Z",
       "actor_name": "Ali Khan"
+    }
+  ],
+  "_updated": "2026-10-18T15:02:12.590Z",
+  "_firestoreUpdated": "2026-10-18T15:02:12.590Z",
+  "accounts": [],
+  "ownerDrawings": [],
+  "ownerAccounts": [
+    {
+      "id": 1,
+      "name": "Main Owner",
+      "sharePercentage": 100,
+      "openingBalance": 0,
+      "description": "Primary Account",
+      "created": "2026-10-18T14:12:52.640Z"
     }
   ]
 }

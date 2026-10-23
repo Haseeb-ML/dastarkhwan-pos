@@ -115,7 +115,7 @@ export const defaults = {
   name: "Dastarkhwan",
   tagline: "Desi Kitchen",
   address: "Rawalpindi, Pakistan",
-  phone: "051 6122024",
+  phone: "",
   logo: "",
   taxId: "",
   taxBps: 0,
@@ -1068,7 +1068,7 @@ export function openERP(file, { seed = false } = {}) {
       return { id }
     }
 
-    if (route === "menu/archive") {
+    if (route === "menu/archive" || route === "menu/delete") {
       owner(u)
       exists("menu", b.id)
       run(
@@ -1076,6 +1076,14 @@ export function openERP(file, { seed = false } = {}) {
         b.id,
       )
       audit(u, "menu.archived", b.id, b)
+      return { ok: true }
+    }
+
+    if (route === "ingredients/archive" || route === "ingredients/delete") {
+      owner(u)
+      exists("ingredients", b.id)
+      run("UPDATE ingredients SET archived=1 WHERE id=?", b.id)
+      audit(u, "ingredients.archived", b.id, b)
       return { ok: true }
     }
 
@@ -1492,7 +1500,7 @@ export function openERP(file, { seed = false } = {}) {
   }
 
   const call = (u, route, b, key) => {
-    const ownerOnly = ['refunds','orders/cancel','menu/save','menu/archive','ingredients/save','stock/move','suppliers/save','purchases','suppliers/pay','expenses','cash/open','cash/close','settings','tables/save','staff','summary'];
+    const ownerOnly = ['refunds','orders/cancel','menu/save','menu/archive','menu/delete','ingredients/save','ingredients/archive','ingredients/delete','stock/move','suppliers/save','purchases','suppliers/pay','expenses','cash/open','cash/close','settings','tables/save','staff','summary'];
     const cashierOnly = ['orders/create','orders/append','payments','orders/close','drafts/save','drafts/delete','customers/save','order'];
     if(ownerOnly.includes(route))owner(u);
     if(cashierOnly.includes(route))cashier(u);

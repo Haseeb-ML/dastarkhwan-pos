@@ -1,29 +1,49 @@
 // @ts-nocheck
 import defaultState from "./initialState.json";
 import {
+  syncStaffToFirestore,
   fetchFirestoreState,
   saveFirestoreState,
   syncOrderToFirestore,
   syncCustomerToFirestore,
   syncMenuDishToFirestore,
+  deleteDishFromFirestore,
   syncExpenseToFirestore,
   syncIngredientToFirestore,
+  deleteIngredientFromFirestore,
   syncSupplierToFirestore,
   syncPurchaseToFirestore,
   syncStockMovementToFirestore,
   syncSupplierPaymentToFirestore,
+  syncAccountToFirestore,
+  deleteAccountFromFirestore,
+  syncOwnerAccountToFirestore,
+  deleteOwnerAccountFromFirestore,
+  syncOwnerDrawingToFirestore,
+  deleteOwnerDrawingFromFirestore,
+  syncImageToFirestore,
+  deleteImageFromFirestore,
 } from "./firestoreSync";
+import {
+  saveImageToIndexedDb,
+  preloadMenuImages,
+  cacheExternalImage,
+} from "./imageCache";
+
 
 const DB_KEY = "dastarkhwan_standalone_db";
-const USER_KEY = "dastarkhwan_current_user";
+const USER_KEY = "dastarkhwan_auth_session";
 
 let isSyncing = false;
 let lastSyncTime = 0;
+let lastLocalSaveTime = 0;
 
 export async function syncWithFirestore() {
   if (isSyncing || typeof window === "undefined") return;
   const now = Date.now();
   if (now - lastSyncTime < 5000) return; // limit sync checks to at most once per 5s
+  // Never let a stale remote copy overwrite an edit that was just saved locally
+  if (now - lastLocalSaveTime < 10000) return;
   isSyncing = true;
   lastSyncTime = now;
   try {
@@ -38,9 +58,13 @@ export async function syncWithFirestore() {
         remoteUpdated > localUpdated ||
         !local._updated ||
         remote.dataEpoch !== local.dataEpoch ||
-        (remote.orders?.length || 0) > (local.orders?.length || 0) ||
-        (remote.purchases?.length || 0) > (local.purchases?.length || 0) ||
-        (remote.suppliers?.length || 0) > (local.suppliers?.length || 0)
+        remote._firestoreUpdated !== local._firestoreUpdated ||
+        (remote.orders?.length || 0) !== (local.orders?.length || 0) ||
+        (remote.menu?.length || 0) !== (local.menu?.length || 0) ||
+        (remote.customers?.length || 0) !== (local.customers?.length || 0) ||
+        (remote.purchases?.length || 0) !== (local.purchases?.length || 0) ||
+        (remote.suppliers?.length || 0) !== (local.suppliers?.length || 0) ||
+        (remote.expenses?.length || 0) !== (local.expenses?.length || 0)
       ) {
         localStorage.setItem(DB_KEY, JSON.stringify(remote));
       }
@@ -62,8 +86,9 @@ export function getLocalState() {
     const raw = localStorage.getItem(DB_KEY);
     if (raw) {
       const parsed = JSON.parse(raw);
-      // Upgrade local state if epoch changed or defaultState has newer dataset
-      if (parsed.dataEpoch !== defaultState.dataEpoch || (defaultState.orders?.length || 0) > (parsed.orders?.length || 0)) {
+      // Upgrade local state if epoch changed or defaultState has newer dataset (unless user deliberately cleared demo data or restored/wiped data)
+      const isUserManaged = !!parsed.dummyCleared || !!parsed.isRestored || !!parsed.isDataWiped || String(parsed.dataEpoch || "").startsWith("restored-") || String(parsed.dataEpoch || "").startsWith("wiped-");
+      if (!isUserManaged && (parsed.dataEpoch !== defaultState.dataEpoch || (defaultState.orders?.length || 0) > (parsed.orders?.length || 0))) {
         const fresh = JSON.parse(JSON.stringify(defaultState));
         fresh._updated = new Date().toISOString();
         saveLocalState(fresh);
@@ -75,6 +100,50 @@ export function getLocalState() {
       if (!parsed.purchases) parsed.purchases = defaultState.purchases || [];
       if (!parsed.supplierPayments) parsed.supplierPayments = defaultState.supplierPayments || [];
       if (!parsed.accounts) parsed.accounts = defaultState.accounts || [];
+      if (!parsed.ownerDrawings) parsed.ownerDrawings = [];
+      if (!parsed.ownerAccounts || !Array.isArray(parsed.ownerAccounts) || parsed.ownerAccounts.length === 0) {
+        parsed.ownerAccounts = [
+          {
+            id: 1,
+            name: parsed.settings?.ownerName || "Main Owner",
+            sharePercentage: 100,
+            openingBalance: 0,
+            description: "Primary Account",
+            created: new Date().toISOString(),
+          },
+        ];
+      }
+      if (parsed.expenses && Array.isArray(parsed.expenses)) {
+        parsed.expenses.forEach((e: any) => {
+          if (!e.created) {
+            e.created = (e.date && e.date.length > 10) ? e.date : new Date().toISOString();
+          }
+        });
+      }
+      if (parsed.settings) {
+        if (!parsed.settings.logo || parsed.settings.logo === "" || parsed.settings.logo.includes("restaurant-logo") || parsed.settings.logo.includes("dastarkhwan")) {
+          parsed.settings.logo = "/media/shah-brothers-logo.png";
+        }
+        if (parsed.settings.name === "Dastarkhwan" || !parsed.settings.name) {
+          parsed.settings.name = "Shah Brothers Restaurant";
+        }
+        if (parsed.settings.tagline === "Desi Kitchen" || !parsed.settings.tagline) {
+          parsed.settings.tagline = "Restaurant & Desi Kitchen";
+        }
+        if (parsed.settings.phone === "051 6122024") parsed.settings.phone = "";
+        if (parsed.settings.taxId === "0" || parsed.settings.taxId === 0) parsed.settings.taxId = "";
+      }
+      if (parsed.orders && Array.isArray(parsed.orders)) {
+        parsed.orders.forEach((o: any) => {
+          if (o.restaurant) {
+            if (o.restaurant.name === "Dastarkhwan" || !o.restaurant.name) o.restaurant.name = "Shah Brothers Restaurant";
+            if (o.restaurant.tagline === "Desi Kitchen" || !o.restaurant.tagline) o.restaurant.tagline = "Restaurant & Desi Kitchen";
+            if (!o.restaurant.logo || o.restaurant.logo === "" || o.restaurant.logo.includes("restaurant-logo") || o.restaurant.logo.includes("dastarkhwan")) o.restaurant.logo = "/media/shah-brothers-logo.png";
+            if (o.restaurant.phone === "051 6122024") o.restaurant.phone = "";
+            if (o.restaurant.taxId === "0" || o.restaurant.taxId === 0) o.restaurant.taxId = "";
+          }
+        });
+      }
       return parsed;
     }
   } catch (e) {
@@ -89,6 +158,7 @@ export function getLocalState() {
 export function saveLocalState(state: any) {
   try {
     state._updated = new Date().toISOString();
+    lastLocalSaveTime = Date.now();
     localStorage.setItem(DB_KEY, JSON.stringify(state));
     // Persist full state to Cloud Firestore in background
     saveFirestoreState(state).catch(() => {});
@@ -99,12 +169,15 @@ export function saveLocalState(state: any) {
 
 export function getCurrentUser() {
   try {
+    // Purge any legacy auto-login session
+    if (localStorage.getItem("dastarkhwan_current_user")) {
+      localStorage.removeItem("dastarkhwan_current_user");
+    }
     const raw = localStorage.getItem(USER_KEY);
-    if (raw) return JSON.parse(raw);
+    if (!raw || raw === "logged_out") return null;
+    return JSON.parse(raw);
   } catch {}
-  const defaultOwner = { id: 1, name: "Ali Khan (Owner)", username: "owner", role: "Owner" };
-  setCurrentUser(defaultOwner);
-  return defaultOwner;
+  return null;
 }
 
 export function setCurrentUser(user: any) {
@@ -112,7 +185,7 @@ export function setCurrentUser(user: any) {
     localStorage.setItem(USER_KEY, JSON.stringify(user));
     localStorage.setItem("erp_token", "standalone_token_" + user.id);
   } else {
-    localStorage.removeItem(USER_KEY);
+    localStorage.setItem(USER_KEY, "logged_out");
     localStorage.removeItem("erp_token");
   }
 }
@@ -134,21 +207,32 @@ export function handleStandaloneRequest(route: string, body?: any): any {
     const username = String(body?.username || "").trim().toLowerCase();
     const password = String(body?.password || "").trim();
 
-    const allowed = [
-      { id: 1, name: "Ali Khan (Owner)", username: "owner", role: "Owner" },
-      { id: 2, name: "Hamza (Cashier)", username: "cashier", role: "Cashier" },
-      { id: 3, name: "Ustad Rasheed (Kitchen)", username: "kitchen", role: "Kitchen" },
-    ];
+    state.staff = state.staff || [];
+    if (state.staff.length === 0) {
+      state.staff = [
+        { id: 1, name: "Ali Khan (Owner)", username: "owner", role: "Owner", password: "owner", active: 1 },
+        { id: 2, name: "Hamza (Cashier)", username: "cashier", role: "Cashier", password: "123456", active: 1 },
+        { id: 3, name: "Ustad Rasheed (Kitchen)", username: "kitchen", role: "Kitchen", password: "123456", active: 1 },
+      ];
+      saveLocalState(state);
+    }
 
-    const match = allowed.find((u) => u.username === username);
-    if (!match || (password !== "123456" && password !== "Demo@2026!" && password !== "owner" && password !== "admin")) {
-      const err = new Error("غلط یوزر نیم یا پاس ورڈ (Incorrect username or password)");
+    const match = state.staff.find((u: any) => u.username?.toLowerCase() === username && u.active !== 0);
+    const isValidPassword = match && (
+      (match.password && password === String(match.password).trim()) ||
+      password === "123456" ||
+      password === "Demo@2026!" ||
+      (match.role === "Owner" && (password === "owner" || password === "admin"))
+    );
+
+    if (!match || !isValidPassword) {
+      const err = new Error("غلط یوزر نیم یا پاسورڈ (Incorrect username or password)");
       (err as any).status = 401;
       throw err;
     }
 
     const token = "standalone_jwt_" + match.id + "_" + Date.now();
-    const user = { ...match, token };
+    const user = { id: match.id, name: match.name, role: match.role, username: match.username, token };
     setCurrentUser(user);
     return user;
   }
@@ -190,11 +274,33 @@ export function handleStandaloneRequest(route: string, body?: any): any {
       return { ...s, balance: Math.max(0, totalPurchases - totalPayments) };
     });
 
+    // Filter out any archived items
+    const activeMenu = (state.menu || []).filter((m: any) => !m.archived);
+    const activeIngredients = (state.ingredients || []).filter((i: any) => !i.archived);
+
+    // Always show the live staff record (name/role), not the stale login snapshot
+    let sessionUser = currentUser;
+    const liveStaff = (state.staff || []).find((s: any) => Number(s.id) === Number(currentUser.id));
+    if (liveStaff) {
+      if (liveStaff.active === 0) {
+        setCurrentUser(null);
+        const err = new Error("Session expired. Please sign in.");
+        (err as any).status = 401;
+        throw err;
+      }
+      if (liveStaff.name !== currentUser.name || liveStaff.role !== currentUser.role || liveStaff.username !== currentUser.username) {
+        sessionUser = { ...currentUser, name: liveStaff.name, role: liveStaff.role, username: liveStaff.username };
+        try { localStorage.setItem(USER_KEY, JSON.stringify(sessionUser)); } catch {}
+      }
+    }
+
     return {
       ...state,
+      menu: activeMenu,
+      ingredients: activeIngredients,
       tables: updatedTables,
       suppliers: updatedSuppliers,
-      user: currentUser,
+      user: sessionUser,
       dataEpoch: state.dataEpoch || "standalone-1",
     };
   }
@@ -391,6 +497,16 @@ function findVariant(state: any, variantId: number) {
     return o;
   }
 
+  // Handle invoice data lookup
+  if (route.startsWith("invoices/")) {
+    const parts = route.split("/");
+    const invoiceId = parts[1];
+    const foundOrder = (state.orders || []).find((o: any) => String(o.id) === String(invoiceId));
+    if (foundOrder) {
+      return foundOrder;
+    }
+  }
+
   // Handle Payments
   if (route === "payments") {
     const o = (state.orders || []).find((x: any) => x.id === Number(body.id));
@@ -549,9 +665,37 @@ function findVariant(state: any, variantId: number) {
     }
   }
 
+  // Handle Image Uploads (Save to online Firestore and local cache)
+  if (route === "uploads") {
+    const dataUrl = body?.data;
+    if (!dataUrl) {
+      throw new Error("No image data provided");
+    }
+    const kind = body?.kind || "dish";
+    const imageId = `img_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+    
+    // 1. Immediately cache in local IndexedDB
+    saveImageToIndexedDb(imageId, dataUrl).catch(() => {});
+    saveImageToIndexedDb(dataUrl.slice(0, 60), dataUrl).catch(() => {});
+
+    // 2. Persist to Firestore online database
+    syncImageToFirestore(imageId, dataUrl, kind).catch((err) => {
+      console.warn("Firestore image sync warning:", err);
+    });
+
+    return {
+      ok: true,
+      url: dataUrl,
+      id: imageId,
+    };
+  }
+
   // Handle Menu Save
   if (route === "menu/save") {
     const dishData = body;
+    if (dishData.image) {
+      cacheExternalImage(dishData.image).catch(() => {});
+    }
     if (dishData.id) {
       const did = Number(dishData.id);
       state.menu = (state.menu || []).map((m: any) =>
@@ -570,6 +714,7 @@ function findVariant(state: any, variantId: number) {
       const updated = state.menu.find((m: any) => m.id === did);
       saveLocalState(state);
       if (updated) syncMenuDishToFirestore(updated).catch(() => {});
+      saveFirestoreState(state).catch(() => {});
       return { id: did };
     } else {
       const nextId = (state.menu?.length ? Math.max(...state.menu.map((m: any) => m.id || 0)) : 0) + 1;
@@ -596,21 +741,77 @@ function findVariant(state: any, variantId: number) {
       state.menu = [newDish, ...(state.menu || [])];
       saveLocalState(state);
       syncMenuDishToFirestore(newDish).catch(() => {});
+      saveFirestoreState(state).catch(() => {});
       return { id: nextId };
     }
   }
 
-  // Handle Menu Archive
-  if (route === "menu/archive") {
+  // Handle Menu Archive and Delete
+  if (route === "menu/archive" || route === "menu/delete") {
     const id = Number(body.id);
-    state.menu = (state.menu || []).map((m: any) =>
-      m.id === id ? { ...m, archived: 1 } : m
-    );
+    state.menu = (state.menu || []).filter((m: any) => m.id !== id);
     saveLocalState(state);
+    deleteDishFromFirestore(id).catch(() => {});
+    saveFirestoreState(state).catch(() => {});
     return { ok: true };
   }
 
   // Handle Tables Save
+    if (route === "staff" || route === "staff/save") {
+    state.staff = state.staff || [];
+    const cleanName = String(body.name ?? "").trim();
+    if (!cleanName) throw new Error("Staff name is required");
+    const newUsername = String(body.username || "").trim().toLowerCase();
+    if (newUsername && state.staff.some((s: any) => s.username?.toLowerCase() === newUsername && s.id !== Number(body.id))) {
+      throw new Error("This username is already used by another staff member");
+    }
+    let saved: any;
+    if (body.id) {
+      const idx = state.staff.findIndex((s: any) => Number(s.id) === Number(body.id));
+      if (idx !== -1) {
+        const old = state.staff[idx];
+        saved = {
+          ...old,
+          ...body,
+          id: old.id,
+          name: cleanName,
+          username: (newUsername || old.username).trim().toLowerCase(),
+          password: body.password ? String(body.password).trim() : old.password,
+          active: Number(body.active ?? 1),
+        };
+        state.staff[idx] = saved;
+      } else {
+        saved = {
+          ...body,
+          id: Number(body.id),
+          name: cleanName,
+          username: newUsername,
+          password: String(body.password || "123456").trim(),
+          active: Number(body.active ?? 1),
+        };
+        state.staff.push(saved);
+      }
+    } else {
+      const nextId = (state.staff.length ? Math.max(...state.staff.map((s: any) => Number(s.id) || 0)) : 0) + 1;
+      saved = {
+        ...body,
+        id: nextId,
+        name: cleanName,
+        username: newUsername || `user${nextId}`,
+        password: String(body.password || "123456").trim(),
+        active: Number(body.active ?? 1),
+      };
+      state.staff.push(saved);
+    }
+    // Keep the logged-in session in sync when the user edits their own account
+    if (currentUser && Number(currentUser.id) === Number(saved.id)) {
+      try { localStorage.setItem(USER_KEY, JSON.stringify({ ...currentUser, name: saved.name, role: saved.role, username: saved.username })); } catch {}
+    }
+    saveLocalState(state);
+    syncStaffToFirestore(saved).catch(() => {});
+    return { ok: true, staff: state.staff };
+  }
+
   if (route === "tables/save") {
     if (body.id) {
       state.tables = (state.tables || []).map((t: any) =>
@@ -627,9 +828,14 @@ function findVariant(state: any, variantId: number) {
   // Handle Settings
   if (route === "settings") {
     state.settings = { ...state.settings, ...body };
+    if (body.logo) {
+      cacheExternalImage(body.logo).catch(() => {});
+    }
     saveLocalState(state);
+    saveFirestoreState(state).catch(() => {});
     return state.settings;
   }
+
 
   // Handle Drafts Save & Delete
   if (route === "drafts/save") {
@@ -654,7 +860,11 @@ function findVariant(state: any, variantId: number) {
   // Handle Expenses
   if (route === "expenses") {
     const nextId = (state.expenses?.length ? Math.max(...state.expenses.map((e: any) => e.id || 0)) : 0) + 1;
-    const bDate = body.businessDate || body.date || new Date().toISOString().slice(0, 10);
+    const nowIso = new Date().toISOString();
+    const created = body.created || nowIso;
+    const bDate = body.businessDate || (body.date && body.date.slice(0, 10)) || nowIso.slice(0, 10);
+    const dateVal = (body.date && body.date.length > 10) ? body.date : (body.date === bDate && bDate === nowIso.slice(0, 10) ? nowIso : created);
+
     const newExp = {
       id: nextId,
       category: body.category || "General",
@@ -662,8 +872,8 @@ function findVariant(state: any, variantId: number) {
       method: body.method || "Cash",
       note: body.note || "",
       businessDate: bDate,
-      date: bDate,
-      created: new Date().toISOString(),
+      date: dateVal,
+      created: created,
       actor: currentUser?.id || 1,
     };
     state.expenses = [newExp, ...(state.expenses || [])];
@@ -683,14 +893,18 @@ function findVariant(state: any, variantId: number) {
   // Handle Custom Accounts Save
   if (route === "accounts/save") {
     state.accounts = state.accounts || [];
+    let accRecord: any;
     if (body?.id) {
       const aid = Number(body.id);
       state.accounts = state.accounts.map((a: any) => a.id === aid ? { ...a, ...body } : a);
+      accRecord = state.accounts.find((a: any) => a.id === aid);
     } else {
       const nextId = (state.accounts.length ? Math.max(...state.accounts.map((a: any) => a.id || 0)) : 0) + 1;
-      state.accounts = [...state.accounts, { id: nextId, ...body }];
+      accRecord = { id: nextId, ...body };
+      state.accounts = [...state.accounts, accRecord];
     }
     saveLocalState(state);
+    if (accRecord) syncAccountToFirestore(accRecord).catch(() => {});
     return { ok: true };
   }
 
@@ -699,6 +913,100 @@ function findVariant(state: any, variantId: number) {
     const id = Number(body?.id);
     state.accounts = (state.accounts || []).filter((a: any) => a.id !== id);
     saveLocalState(state);
+    deleteAccountFromFirestore(id).catch(() => {});
+    return { ok: true };
+  }
+
+  // Handle Owner / Partner Accounts Save
+  if (route === "owner/accounts/save") {
+    state.ownerAccounts = state.ownerAccounts || [];
+    const name = String(body?.name || "").trim();
+    if (!name) throw new Error("Account name is required");
+    const sharePercentage = Math.max(0, Math.min(100, Number(body?.sharePercentage ?? 100)));
+    const openingBalance = Math.round(Number(body?.openingBalance || 0));
+    const phone = String(body?.phone || "").trim();
+    const description = String(body?.description || "").trim();
+
+    let accountRecord: any;
+    if (body?.id) {
+      const aid = Number(body.id);
+      state.ownerAccounts = state.ownerAccounts.map((a: any) =>
+        a.id === aid ? { ...a, name, sharePercentage, openingBalance, phone, description } : a
+      );
+      accountRecord = state.ownerAccounts.find((a: any) => a.id === aid);
+    } else {
+      const nextId = (state.ownerAccounts.length ? Math.max(...state.ownerAccounts.map((a: any) => a.id || 0)) : 0) + 1;
+      accountRecord = {
+        id: nextId,
+        name,
+        sharePercentage,
+        openingBalance,
+        phone,
+        description,
+        created: new Date().toISOString(),
+      };
+      state.ownerAccounts = [...state.ownerAccounts, accountRecord];
+    }
+    saveLocalState(state);
+    if (accountRecord) syncOwnerAccountToFirestore(accountRecord).catch(() => {});
+    return accountRecord || { ok: true };
+  }
+
+  // Handle Owner / Partner Accounts Delete
+  if (route === "owner/accounts/delete") {
+    const id = Number(body?.id);
+    if ((state.ownerAccounts || []).length <= 1) {
+      throw new Error("کم از کم ایک کھاتہ ہونا ضروری ہے۔ (At least one account must remain)");
+    }
+    state.ownerAccounts = (state.ownerAccounts || []).filter((a: any) => a.id !== id);
+    saveLocalState(state);
+    deleteOwnerAccountFromFirestore(id).catch(() => {});
+    return { ok: true };
+  }
+
+  // Handle Owner Personal Transactions Save (Drawings from Profit / Capital Injection)
+  if (route === "owner/drawings/save") {
+    state.ownerDrawings = state.ownerDrawings || [];
+    const amt = Number(body?.amount || 0);
+    const type = body?.type === "deposit" ? "deposit" : "draw";
+    const method = body?.method || "Cash";
+    const note = String(body?.note || "").trim();
+    const ownerAccountId = Number(body?.ownerAccountId || 1);
+    const date = body?.date || new Date().toISOString();
+    const created = body?.created || new Date().toISOString();
+
+    let record: any;
+    if (body?.id) {
+      const oid = Number(body.id);
+      state.ownerDrawings = state.ownerDrawings.map((d: any) =>
+        d.id === oid ? { ...d, amount: amt, type, method, note, ownerAccountId, date } : d
+      );
+      record = state.ownerDrawings.find((d: any) => d.id === oid);
+    } else {
+      const nextId = (state.ownerDrawings.length ? Math.max(...state.ownerDrawings.map((d: any) => d.id || 0)) : 0) + 1;
+      record = {
+        id: nextId,
+        ownerAccountId,
+        type,
+        amount: amt,
+        method,
+        note,
+        date,
+        created,
+      };
+      state.ownerDrawings = [record, ...state.ownerDrawings];
+    }
+    saveLocalState(state);
+    if (record) syncOwnerDrawingToFirestore(record).catch(() => {});
+    return record || { ok: true };
+  }
+
+  // Handle Owner Personal Transactions Delete
+  if (route === "owner/drawings/delete") {
+    const id = Number(body?.id);
+    state.ownerDrawings = (state.ownerDrawings || []).filter((d: any) => d.id !== id);
+    saveLocalState(state);
+    deleteOwnerDrawingFromFirestore(id).catch(() => {});
     return { ok: true };
   }
 
@@ -746,6 +1054,15 @@ function findVariant(state: any, variantId: number) {
       syncIngredientToFirestore(newIng).catch(() => {});
       return { id: nextId };
     }
+  }
+
+  // Handle Ingredients Archive and Delete
+  if (route === "ingredients/archive" || route === "ingredients/delete") {
+    const id = Number(body?.id);
+    state.ingredients = (state.ingredients || []).filter((i: any) => i.id !== id);
+    saveLocalState(state);
+    deleteIngredientFromFirestore(id).catch(() => {});
+    return { ok: true };
   }
 
   // Handle Stock Movement
@@ -986,12 +1303,19 @@ function findVariant(state: any, variantId: number) {
       const ordersInPeriod = (state.orders || []).filter((o: any) => {
         if (!o) return false;
         const bDate = (o.business_date || o.created || "").slice(0, 10);
-        return bDate >= from && bDate <= to;
+        if (bDate >= from && bDate <= to) return true;
+        const hasPay = (o.payments || []).some((p: any) => {
+          const pDate = (p.business_date || p.created || "").slice(0, 10);
+          return pDate >= from && pDate <= to;
+        });
+        const hasRef = (o.refunds || []).some((r: any) => {
+          const rDate = (r.business_date || r.created || "").slice(0, 10);
+          return rDate >= from && rDate <= to;
+        });
+        return hasPay || hasRef;
       });
       const activeOrders = ordersInPeriod.filter((o: any) => o && o.state !== "cancelled");
       const cancelledOrders = ordersInPeriod.filter((o: any) => o && o.state === "cancelled");
-
-      const sales = activeOrders.reduce((sum: number, o: any) => sum + (Number(o.total) || 0), 0);
       const cancelled = cancelledOrders.reduce((sum: number, o: any) => sum + (Number(o.total) || 0), 0);
 
       let collections = 0;
@@ -1000,12 +1324,12 @@ function findVariant(state: any, variantId: number) {
         if (!o) return;
         (o.payments || []).forEach((p: any) => {
           if (!p) return;
-          const pDate = (p.created || "").slice(0, 10);
+          const pDate = (p.business_date || p.created || "").slice(0, 10);
           if (pDate >= from && pDate <= to) collections += (Number(p.amount) || 0);
         });
         (o.refunds || []).forEach((r: any) => {
           if (!r) return;
-          const rDate = (r.created || "").slice(0, 10);
+          const rDate = (r.business_date || r.created || "").slice(0, 10);
           if (rDate >= from && rDate <= to) refunds += (Number(r.amount) || 0);
         });
       });
@@ -1016,16 +1340,46 @@ function findVariant(state: any, variantId: number) {
         refunds = activeOrders.reduce((sum: number, o: any) => sum + (Number(o.refunded) || 0), 0);
       }
 
+      let rawSales = 0;
+      activeOrders.forEach((o: any) => {
+        const oDate = (o.business_date || o.created || "").slice(0, 10);
+        if (oDate >= from && oDate <= to) {
+          const food = (Number(o.subtotal) || Number(o.total) || 0) - (Number(o.discount) || 0);
+          rawSales += Math.max(0, food);
+        } else {
+          const payInPeriod = (o.payments || []).filter((p: any) => {
+            const pDate = (p.business_date || p.created || "").slice(0, 10);
+            return pDate >= from && pDate <= to;
+          }).reduce((sum: number, p: any) => sum + (Number(p.amount) || 0), 0);
+          rawSales += payInPeriod;
+        }
+      });
+      if (rawSales === 0 && collections > 0) {
+        rawSales = collections;
+      }
+      const netSales = Math.max(0, rawSales - refunds);
+      const sales = rawSales;
+
       const expensesInPeriod = (state.expenses || []).filter((e: any) => {
         if (!e) return false;
-        const eDate = (e.businessDate || e.created || "").slice(0, 10);
+        const eDate = (e.businessDate || e.date || e.created || "").slice(0, 10);
         return eDate >= from && eDate <= to;
       }).reduce((sum: number, e: any) => sum + (Number(e.amount) || 0), 0);
 
       const daily: Record<string, number> = {};
       activeOrders.forEach((o: any) => {
         const d = (o.business_date || o.created || "").slice(0, 10);
-        if (d) daily[d] = (daily[d] || 0) + (Number(o.total) || 0);
+        let targetDate = d;
+        if (targetDate < from || targetDate > to) {
+          const pMatch = (o.payments || []).find((p: any) => {
+            const pDate = (p.business_date || p.created || "").slice(0, 10);
+            return pDate >= from && pDate <= to;
+          });
+          if (pMatch) {
+            targetDate = (pMatch.business_date || pMatch.created || "").slice(0, 10);
+          }
+        }
+        if (targetDate) daily[targetDate] = (daily[targetDate] || 0) + (Number(o.total) || 0);
       });
 
       const dishSales: Record<string, { name: string; qty: number; amount: number }> = {};
@@ -1059,17 +1413,22 @@ function findVariant(state: any, variantId: number) {
               missingCosts++;
               const price = Number(it.price) || Number(it.amount) || 0;
               if (price > 0) {
-                foodCost += Math.round((price * 0.50 * qty) / 1000);
+                foodCost += Math.round((price * 0.45 * qty) / 1000);
               }
             }
           }
         });
       });
 
-      const netSales = Math.max(0, activeOrders.reduce((n: number, o: any) => {
-        const food = (Number(o.subtotal) || Number(o.total) || 0) - (Number(o.discount) || 0);
-        return n + food;
-      }, 0) - refunds);
+      const purchasesInPeriod = (state.purchases || []).filter((p: any) => {
+        if (!p) return false;
+        const pDate = (p.business_date || p.created || "").slice(0, 10);
+        return pDate >= from && pDate <= to;
+      }).reduce((sum: number, p: any) => sum + (Number(p.total) || 0), 0);
+
+      if (foodCost === 0 && purchasesInPeriod > 0) {
+        foodCost = purchasesInPeriod;
+      }
 
       const profit = netSales - foodCost - expensesInPeriod;
       const outstanding = (state.orders || []).filter((o: any) => o && o.state !== "cancelled")
@@ -1142,7 +1501,188 @@ function findVariant(state: any, variantId: number) {
       enabled: true,
       lastBackup: "Google Cloud Firestore (Live)",
       demoAvailable: true,
+      dummyCleared: !!state.dummyCleared || (state.orders?.length || 0) === 0,
     };
+  }
+
+  if (route === "maintenance/clear") {
+    if (body.confirm !== "clear") throw new Error("Confirmation required");
+    state.dummyCleared = true;
+    state.orders = [];
+    state.orderItems = [];
+    state.expenses = [];
+    state.payments = [];
+    state.ledger = [];
+    state.movements = [];
+    state.purchases = [];
+    state.supplierPayments = [];
+    saveLocalState(state);
+    return { ok: true };
+  }
+
+  if (route === "maintenance/fill") {
+    if (body.confirm !== "fill") throw new Error("Confirmation required");
+    const fresh = JSON.parse(JSON.stringify(defaultState));
+    fresh.dummyCleared = false;
+    saveLocalState(fresh);
+    return { ok: true };
+  }
+
+  if (route === "maintenance/delete_all" || route === "maintenance/wipe") {
+    if (body.confirm !== "delete_all" && body.confirm !== "wipe") {
+      throw new Error("تصدیق درکار ہے (Confirmation required: delete_all)");
+    }
+    state.dummyCleared = true;
+    state.isDataWiped = true;
+    state.isRestored = false;
+    state.orders = [];
+    state.orderItems = [];
+    state.drafts = [];
+    state.menu = [];
+    state.ingredients = [];
+    state.movements = [];
+    state.purchases = [];
+    state.suppliers = [];
+    state.supplierPayments = [];
+    state.customers = [];
+    state.expenses = [];
+    state.payments = [];
+    state.ledger = [];
+    state.cash = [];
+    state.ownerDrawings = [];
+    state.tables = (state.tables || []).map((t: any) => ({ ...t, orderId: null }));
+    state.allTables = (state.allTables || []).map((t: any) => ({ ...t, orderId: null }));
+    state.accounts = (state.accounts || []).map((a: any) => ({ ...a, balance: 0 }));
+    state.audit = [
+      {
+        id: 1,
+        action: "تمام ڈیٹا صاف کیا گیا (All Data Wiped)",
+        actor: currentUser?.id || 1,
+        actor_name: currentUser?.name || "Owner",
+        date: new Date().toISOString(),
+        details: "صارف نے تمام کھانے، بل، سامان، گاہک اور ریکارڈ مکمل صاف کیے۔",
+        reference: "FACTORY_RESET",
+      },
+    ];
+    state.dataEpoch = "wiped-" + Date.now();
+    state._updated = new Date().toISOString();
+    state._lastBackup = null;
+
+    if (typeof localStorage !== "undefined") {
+      try {
+        for (const k of Object.keys(localStorage)) {
+          if (k.startsWith("erp-draft-") || k.startsWith("erp-pending-")) {
+            localStorage.removeItem(k);
+          }
+        }
+      } catch {}
+    }
+
+    saveLocalState(state);
+    saveFirestoreState(state).catch(() => {});
+    return { ok: true, cleared: true, epoch: state.dataEpoch };
+  }
+
+  if (route === "maintenance/schedule") {
+    return { ok: true };
+  }
+
+  if (route === "maintenance/backup") {
+    const backupTimestamp = new Date().toISOString();
+    state._lastBackup = backupTimestamp;
+    saveLocalState(state);
+    return {
+      ok: true,
+      timestamp: backupTimestamp,
+      folder: "Google Cloud Firestore (Live Realtime Backup)",
+      backup: {
+        version: "1.0",
+        appName: "Dastarkhwan ERP",
+        exportedAt: backupTimestamp,
+        restaurant: state.settings?.name || "Dastarkhwan",
+        data: {
+          orders: state.orders || [],
+          orderItems: state.orderItems || [],
+          drafts: state.drafts || [],
+          menu: state.menu || [],
+          ingredients: state.ingredients || [],
+          movements: state.movements || [],
+          purchases: state.purchases || [],
+          suppliers: state.suppliers || [],
+          supplierPayments: state.supplierPayments || [],
+          customers: state.customers || [],
+          tables: state.tables || [],
+          allTables: state.allTables || state.tables || [],
+          expenses: state.expenses || [],
+          payments: state.payments || [],
+          ledger: state.ledger || [],
+          accounts: state.accounts || [],
+          ownerAccounts: state.ownerAccounts || [],
+          ownerDrawings: state.ownerDrawings || [],
+          cash: state.cash || [],
+          staff: state.staff || [],
+          audit: state.audit || [],
+          settings: state.settings || {},
+        },
+      },
+    };
+  }
+
+  if (route === "maintenance/restore") {
+    const backupObj = body?.backup?.data || body?.data || body?.backup?.state || body?.state || body;
+    if (!backupObj || typeof backupObj !== "object") {
+      throw new Error("غلط بیک اپ فائل (Invalid backup file structure)");
+    }
+    const restoredTables = Array.isArray(backupObj.tables) ? backupObj.tables : state.tables || [];
+    const restoredAllTables = Array.isArray(backupObj.allTables)
+      ? backupObj.allTables
+      : (Array.isArray(backupObj.tables) ? backupObj.tables : state.allTables || []);
+
+    const restoredState = {
+      ...state,
+      orders: Array.isArray(backupObj.orders) ? backupObj.orders : state.orders || [],
+      orderItems: Array.isArray(backupObj.orderItems) ? backupObj.orderItems : state.orderItems || [],
+      drafts: Array.isArray(backupObj.drafts) ? backupObj.drafts : [],
+      menu: Array.isArray(backupObj.menu) ? backupObj.menu : state.menu || [],
+      ingredients: Array.isArray(backupObj.ingredients) ? backupObj.ingredients : state.ingredients || [],
+      movements: Array.isArray(backupObj.movements) ? backupObj.movements : state.movements || [],
+      purchases: Array.isArray(backupObj.purchases) ? backupObj.purchases : state.purchases || [],
+      suppliers: Array.isArray(backupObj.suppliers) ? backupObj.suppliers : state.suppliers || [],
+      supplierPayments: Array.isArray(backupObj.supplierPayments) ? backupObj.supplierPayments : state.supplierPayments || [],
+      customers: Array.isArray(backupObj.customers) ? backupObj.customers : state.customers || [],
+      tables: restoredTables,
+      allTables: restoredAllTables,
+      expenses: Array.isArray(backupObj.expenses) ? backupObj.expenses : state.expenses || [],
+      payments: Array.isArray(backupObj.payments) ? backupObj.payments : state.payments || [],
+      ledger: Array.isArray(backupObj.ledger) ? backupObj.ledger : state.ledger || [],
+      accounts: Array.isArray(backupObj.accounts) ? backupObj.accounts : state.accounts || [],
+      ownerAccounts: Array.isArray(backupObj.ownerAccounts) ? backupObj.ownerAccounts : state.ownerAccounts || [],
+      ownerDrawings: Array.isArray(backupObj.ownerDrawings) ? backupObj.ownerDrawings : state.ownerDrawings || [],
+      cash: Array.isArray(backupObj.cash) ? backupObj.cash : state.cash || [],
+      staff: (Array.isArray(backupObj.staff) && backupObj.staff.length > 0) ? backupObj.staff : state.staff || [],
+      audit: Array.isArray(backupObj.audit) ? backupObj.audit : state.audit || [],
+      settings: (backupObj.settings && typeof backupObj.settings === "object") ? { ...state.settings, ...backupObj.settings } : state.settings,
+      dummyCleared: false,
+      isRestored: true,
+      isDataWiped: false,
+      dataEpoch: "restored-" + Date.now(),
+      _updated: new Date().toISOString(),
+      _lastBackup: new Date().toISOString(),
+    };
+
+    if (typeof localStorage !== "undefined") {
+      try {
+        for (const k of Object.keys(localStorage)) {
+          if (k.startsWith("erp-draft-") || k.startsWith("erp-pending-")) {
+            localStorage.removeItem(k);
+          }
+        }
+      } catch {}
+    }
+
+    saveLocalState(restoredState);
+    saveFirestoreState(restoredState).catch(() => {});
+    return { ok: true, timestamp: restoredState._lastBackup, epoch: restoredState.dataEpoch };
   }
 
   // Generic fallback: preserve state

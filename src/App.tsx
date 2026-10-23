@@ -2,6 +2,8 @@ import React, {useEffect,useLayoutEffect} from "react";
 import {useAppZoom} from "./AppZoom";
 import Workspace from "./Workspace";
 import {useLanguage} from "./LanguageSwitch";
+import ErrorBoundary from "./ErrorBoundary";
+
 export default function App() {
  const language=useLanguage(),zoom=useAppZoom();
  useLayoutEffect(()=>{
@@ -24,5 +26,9 @@ export default function App() {
   return ()=>window.removeEventListener("resize", applyZoom);
  },[zoom]);
  useEffect(()=>{document.documentElement.lang=language;document.documentElement.dir=language==="ur"?"rtl":"ltr";},[language]);
- return <Workspace />;
+ return (
+   <ErrorBoundary moduleName="Dastarkhwan App">
+     <Workspace />
+   </ErrorBoundary>
+ );
 }

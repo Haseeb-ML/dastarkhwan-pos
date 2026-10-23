@@ -169,15 +169,26 @@ export const nav = [
 ] as [string, IconName][]
 
 export function Brand({
-  name = "Dastarkhwan",
-  tagline = "Desi Kitchen",
+  name = "Shah Brothers Restaurant",
+  tagline = "Restaurant & Desi Kitchen",
+  logo = "/media/shah-brothers-logo.png",
 }: {
   name?: string
   tagline?: string
+  logo?: string
 }) {
   return (
     <div className="brand">
-      <div className="brand-mark">{name[0]}</div>
+      {logo ? (
+        <img
+          src={logo}
+          alt={name}
+          className="brand-logo-img"
+          style={{ width: "42px", height: "42px", borderRadius: "10px", objectFit: "contain", background: "#ffffff", padding: "2px", boxShadow: "0 2px 6px rgba(0,0,0,0.18)", flexShrink: 0 }}
+        />
+      ) : (
+        <div className="brand-mark">{name[0]}</div>
+      )}
       <div>
         <strong>{name}</strong>
         <span>{tagline.toUpperCase()}</span>

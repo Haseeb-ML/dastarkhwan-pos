@@ -1,7 +1,52 @@
 /* Finance & Accounts Styling for Dastarkhwan ERP */
 
+.app-shell .main-shell > .finance-workspace,
+.app-shell .main-shell > .page-content.finance-workspace,
+.page-content.finance-workspace,
 .finance-workspace {
-  padding: 24px 28px 60px;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  align-self: stretch !important;
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 24px 28px 140px !important;
+  box-sizing: border-box !important;
+}
+
+/* Prominent Right-Side Vertical Scrollbar for Finance Workspace */
+.page-content.finance-workspace::-webkit-scrollbar,
+.finance-workspace::-webkit-scrollbar {
+  width: 12px !important;
+  display: block !important;
+}
+
+.page-content.finance-workspace::-webkit-scrollbar-track,
+.finance-workspace::-webkit-scrollbar-track {
+  background: #edf3ee !important;
+  border-left: 1px solid var(--line) !important;
+}
+
+.page-content.finance-workspace::-webkit-scrollbar-thumb,
+.finance-workspace::-webkit-scrollbar-thumb {
+  background: #164b3b !important;
+  border-radius: 6px !important;
+  border: 2px solid #edf3ee !important;
+}
+
+.page-content.finance-workspace::-webkit-scrollbar-thumb:hover,
+.finance-workspace::-webkit-scrollbar-thumb:hover {
+  background: #0f3529 !important;
+}
+
+.page-content.finance-workspace,
+.finance-workspace {
+  scrollbar-width: thin !important;
+  scrollbar-color: #164b3b #edf3ee !important;
 }
 
 .finance-workspace .subnav {
@@ -214,6 +259,26 @@
   background: #fdfdfc;
 }
 
+.finance-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.finance-button-cluster {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.finance-button-cluster .finance-btn {
+  white-space: nowrap;
+  padding: 8px 13px;
+  font-size: 12px;
+}
+
 .finance-btn {
   padding: 9px 16px;
   border-radius: 9px;
@@ -262,6 +327,42 @@
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollable Container with Custom Horizontal Scrollbar */
+.ledger-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar Styles */
+.ledger-table-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.ledger-table-scroll::-webkit-scrollbar-track {
+  background: #f1f4f2;
+  border-radius: 4px;
+}
+
+.ledger-table-scroll::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+.ledger-table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #164b3b;
+}
+
+.ledger-table-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f4f2;
 }
 
 .ledger-table {
@@ -269,13 +370,17 @@
   border-collapse: collapse;
   text-align: left;
   font-size: 13px;
+  min-width: 850px;
 }
 
 [dir="rtl"] .ledger-table {
   text-align: right;
 }
 
-.ledger-table th {
+.ledger-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background: #f7f6f2;
   color: var(--muted);
   font-size: 11px;
@@ -284,6 +389,94 @@
   letter-spacing: 0.5px;
   padding: 12px 16px;
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+/* Pagination Bar */
+.finance-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.finance-pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.finance-page-size-select {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.finance-page-size-select:focus {
+  border-color: #164b3b;
+}
+
+.finance-pagination-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.finance-page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.finance-page-btn:hover:not(:disabled) {
+  background: #f0f7f3;
+  border-color: #164b3b;
+  color: #164b3b;
+}
+
+.finance-page-btn.active {
+  background: #164b3b;
+  border-color: #164b3b;
+  color: #ffffff;
+}
+
+.finance-page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background: #f8fafc;
+}
+
+.finance-page-ellipsis {
+  padding: 0 4px;
+  color: var(--muted);
+  font-weight: bold;
 }
 
 .ledger-table td {
@@ -501,14 +694,219 @@
   border-radius: 3px;
 }
 
+/* Owner's Personal Account Styles */
+.owner-info-banner {
+  background: linear-gradient(135deg, rgba(22, 75, 59, 0.08) 0%, rgba(213, 106, 45, 0.08) 100%);
+  border: 1px solid rgba(22, 75, 59, 0.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.owner-info-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 800px;
+}
+
+.owner-info-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.owner-info-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+
+.owner-info-desc {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.badge-owner-drawing {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #fdf2f2;
+  color: #c0392b;
+  border: 1px solid #fadbd8;
+}
+
+.badge-owner-deposit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #eafaf1;
+  color: #27ae60;
+  border: 1px solid #a9dfbf;
+}
+
+.owner-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Multi-Owner Accounts Switcher Styles */
+.owner-accounts-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding: 4px 2px 12px;
+  scrollbar-width: thin;
+}
+
+.owner-account-chip {
+  background: #ffffff;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.owner-account-chip:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(22, 75, 59, 0.1);
+}
+
+.owner-account-chip.active {
+  background: #f0f7f3;
+  border-color: var(--green);
+  box-shadow: 0 4px 12px rgba(22, 75, 59, 0.15);
+}
+
+.owner-chip-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.owner-chip-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+html[dir="rtl"] .owner-chip-details {
+  text-align: right;
+}
+
+.owner-chip-name {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.owner-chip-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.owner-share-tag {
+  background: rgba(22, 75, 59, 0.1);
+  color: var(--green);
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.owner-chip-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 6px;
+}
+
+html[dir="rtl"] .owner-chip-actions {
+  margin-left: 0;
+  margin-right: 6px;
+}
+
+.owner-chip-action-btn {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  padding: 3px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.15s, background-color 0.15s;
+}
+
+.owner-chip-action-btn:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.btn-add-owner-acc {
+  background: transparent;
+  border: 2px dashed rgba(22, 75, 59, 0.35);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-add-owner-acc:hover {
+  background: rgba(22, 75, 59, 0.05);
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
 /* Print Styles */
 @media print {
+  @page {
+    size: A4 landscape;
+    margin: 10mm 12mm;
+  }
   .sidebar,
   .topbar,
   .subnav,
   .finance-controls-bar,
   .mobile-drawer-overlay,
-  .mobile-bottom-more-btn {
+  .mobile-bottom-more-btn,
+  .finance-pagination-bar {
     display: none !important;
   }
   .main-shell {
@@ -522,9 +920,182 @@
     border: none !important;
     box-shadow: none !important;
   }
+  .ledger-table-scroll {
+    overflow: visible !important;
+  }
+  .ledger-table {
+    width: 100% !important;
+  }
   .ledger-table th,
   .ledger-table td {
-    padding: 8px 10px !important;
+    padding: 7px 8px !important;
     font-size: 11px !important;
+  }
+}
+
+
+/* MOBILE RESPONSIVE ENGINE FOR FINANCE & ACCOUNTS */
+@media (max-width: 800px) {
+  .page-content.finance-workspace,
+  .finance-workspace {
+    padding: 12px 10px 100px !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .finance-workspace .subnav {
+    margin: 0 -10px 14px !important;
+    padding: 0 10px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 6px !important;
+    border-bottom: 1.5px solid var(--line) !important;
+  }
+  .finance-workspace .subnav::-webkit-scrollbar {
+    display: none !important;
+  }
+  .finance-workspace .subnav button {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    min-height: 42px !important;
+  }
+
+  .finance-metrics {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin-bottom: 16px !important;
+  }
+  .finance-metric-card {
+    padding: 12px 14px !important;
+    border-radius: 12px !important;
+    gap: 6px !important;
+  }
+  .finance-metric-card .card-value {
+    font-size: 18px !important;
+  }
+  .finance-metric-card .card-title {
+    font-size: 11px !important;
+  }
+  .finance-metric-card .card-icon {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 15px !important;
+    border-radius: 8px !important;
+  }
+
+  .finance-controls-bar {
+    padding: 12px !important;
+    border-radius: 12px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    margin-bottom: 14px !important;
+  }
+  .finance-filter-group {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+  .finance-period-btn {
+    flex: 1 1 auto !important;
+    text-align: center !important;
+    padding: 9px 8px !important;
+    font-size: 12px !important;
+  }
+  .finance-date-inputs {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    gap: 6px !important;
+    align-items: center !important;
+  }
+  .finance-date-inputs input[type="date"] {
+    width: 100% !important;
+    min-height: 44px !important;
+    font-size: 14px !important;
+    box-sizing: border-box !important;
+    padding: 6px 8px !important;
+    border-radius: 8px !important;
+  }
+  .finance-select,
+  .finance-search-input {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    font-size: 15px !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+  }
+  .finance-actions-group {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+  .finance-button-cluster {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  .finance-button-cluster .finance-btn {
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 9px 8px !important;
+    min-height: 44px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+  }
+  .finance-btn {
+    min-height: 44px !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+  }
+
+  .coa-account-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .coa-account-card {
+    padding: 14px 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .ledger-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important;
+  }
+  .ledger-table-scroll {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  .ledger-table {
+    min-width: 680px !important;
+    width: 100% !important;
+  }
+  .ledger-table thead th {
+    padding: 10px 8px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+    background: #f1f6f2 !important;
+  }
+  .ledger-table td {
+    padding: 10px 8px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
   }
 }

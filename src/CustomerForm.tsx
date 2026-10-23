@@ -1,6 +1,6 @@
 import {ui, languageDirection} from "./LanguageCore";
-﻿import React,{useState,useRef} from "react"
-import UrduInput from "./UrduKeyboard"
+import React, { useState, useRef } from "react";
+import UrduInput from "./UrduKeyboard";
 export default function CustomerForm({initial={},onSave}:{initial?:any;onSave:(value:any)=>Promise<void>}){
  const [value,setValue]=useState<any>({name:"",phone:"",address:"",city:"",email:"",note:"",...initial});const [busy,setBusy]=useState(false),[error,setError]=useState("");const lock=useRef(false)
  const field=(name:string)=>({value:value[name]||"",onChange:(e:any)=>setValue({...value,[name]:e.target.value})})

@@ -114,6 +114,16 @@ export async function syncMenuDishToFirestore(dish: any) {
   }
 }
 
+export async function deleteDishFromFirestore(id: number) {
+  try {
+    const docId = `DISH-${id}`;
+    const url = `${FIRESTORE_BASE}/menu/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, { method: "DELETE" });
+  } catch (e) {
+    console.warn("Failed to delete dish from Firestore:", e);
+  }
+}
+
 export async function syncExpenseToFirestore(exp: any) {
   try {
     const docId = `EXP-${exp.id}`;
@@ -127,7 +137,8 @@ export async function syncExpenseToFirestore(exp: any) {
           category: exp.category || "Expense",
           amount: exp.amount || 0,
           note: exp.note || "",
-          date: exp.date || exp.business_date || new Date().toISOString(),
+          date: exp.created || (exp.date && exp.date.length > 10 ? exp.date : null) || exp.date || exp.business_date || new Date().toISOString(),
+          created: exp.created || new Date().toISOString(),
           updated: new Date().toISOString(),
         }),
       }),
@@ -147,6 +158,30 @@ export async function fetchFirestoreState(): Promise<any | null> {
     if (raw) {
       const parsed = JSON.parse(raw);
       parsed._firestoreUpdated = json.fields?.updated?.stringValue || "";
+      if (parsed.settings) {
+        if (!parsed.settings.logo || parsed.settings.logo === "" || parsed.settings.logo.includes("restaurant-logo") || parsed.settings.logo.includes("dastarkhwan")) {
+          parsed.settings.logo = "/media/shah-brothers-logo.png";
+        }
+        if (parsed.settings.name === "Dastarkhwan" || !parsed.settings.name) {
+          parsed.settings.name = "Shah Brothers Restaurant";
+        }
+        if (parsed.settings.tagline === "Desi Kitchen" || !parsed.settings.tagline) {
+          parsed.settings.tagline = "Restaurant & Desi Kitchen";
+        }
+        if (parsed.settings.phone === "051 6122024") parsed.settings.phone = "";
+        if (parsed.settings.taxId === "0" || parsed.settings.taxId === 0) parsed.settings.taxId = "";
+      }
+      if (parsed.orders && Array.isArray(parsed.orders)) {
+        parsed.orders.forEach((o: any) => {
+          if (o.restaurant) {
+            if (o.restaurant.name === "Dastarkhwan" || !o.restaurant.name) o.restaurant.name = "Shah Brothers Restaurant";
+            if (o.restaurant.tagline === "Desi Kitchen" || !o.restaurant.tagline) o.restaurant.tagline = "Restaurant & Desi Kitchen";
+            if (!o.restaurant.logo || o.restaurant.logo === "" || o.restaurant.logo.includes("restaurant-logo") || o.restaurant.logo.includes("dastarkhwan")) o.restaurant.logo = "/media/shah-brothers-logo.png";
+            if (o.restaurant.phone === "051 6122024") o.restaurant.phone = "";
+            if (o.restaurant.taxId === "0" || o.restaurant.taxId === 0) o.restaurant.taxId = "";
+          }
+        });
+      }
       return parsed;
     }
   } catch (e) {
@@ -176,6 +211,16 @@ export async function syncIngredientToFirestore(ing: any) {
     });
   } catch (e) {
     console.warn("Failed to sync ingredient to Firestore:", e);
+  }
+}
+
+export async function deleteIngredientFromFirestore(id: number) {
+  try {
+    const docId = `ING-${id}`;
+    const url = `${FIRESTORE_BASE}/ingredients/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, { method: "DELETE" });
+  } catch (e) {
+    console.warn("Failed to delete ingredient from Firestore:", e);
   }
 }
 
@@ -282,6 +327,112 @@ export async function syncSupplierPaymentToFirestore(pay: any) {
   }
 }
 
+export async function syncAccountToFirestore(account: any) {
+  try {
+    const docId = `ACC-${account.id}`;
+    const url = `${FIRESTORE_BASE}/accounts/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: toFirestoreFields({
+          id: account.id,
+          code: account.code || "1090",
+          name: account.name || account.english || "",
+          english: account.english || account.name || "",
+          category: account.category || "Assets",
+          openingBalance: account.openingBalance || 0,
+          description: account.description || "",
+          updated: new Date().toISOString(),
+        }),
+      }),
+    });
+  } catch (e) {
+    console.warn("Failed to sync account to Firestore:", e);
+  }
+}
+
+export async function deleteAccountFromFirestore(id: number) {
+  try {
+    const docId = `ACC-${id}`;
+    const url = `${FIRESTORE_BASE}/accounts/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, { method: "DELETE" });
+  } catch (e) {
+    console.warn("Failed to delete account from Firestore:", e);
+  }
+}
+
+export async function syncOwnerAccountToFirestore(acc: any) {
+  try {
+    const docId = `OWN-${acc.id}`;
+    const url = `${FIRESTORE_BASE}/owner_accounts/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: toFirestoreFields({
+          id: acc.id,
+          name: acc.name,
+          sharePercentage: acc.sharePercentage ?? 100,
+          openingBalance: acc.openingBalance || 0,
+          phone: acc.phone || "",
+          description: acc.description || "",
+          created: acc.created || new Date().toISOString(),
+          updated: new Date().toISOString(),
+        }),
+      }),
+    });
+  } catch (e) {
+    console.warn("Failed to sync owner account to Firestore:", e);
+  }
+}
+
+export async function deleteOwnerAccountFromFirestore(id: number) {
+  try {
+    const docId = `OWN-${id}`;
+    const url = `${FIRESTORE_BASE}/owner_accounts/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, { method: "DELETE" });
+  } catch (e) {
+    console.warn("Failed to delete owner account from Firestore:", e);
+  }
+}
+
+export async function syncOwnerDrawingToFirestore(drawing: any) {
+  try {
+    const docId = `ODRAW-${drawing.id}`;
+    const url = `${FIRESTORE_BASE}/owner_drawings/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: toFirestoreFields({
+          id: drawing.id,
+          ownerAccountId: drawing.ownerAccountId || 1,
+          type: drawing.type || "draw",
+          amount: drawing.amount || 0,
+          method: drawing.method || "Cash",
+          note: drawing.note || "",
+          date: drawing.date || new Date().toISOString(),
+          created: drawing.created || new Date().toISOString(),
+          updated: new Date().toISOString(),
+        }),
+      }),
+    });
+  } catch (e) {
+    console.warn("Failed to sync owner drawing to Firestore:", e);
+  }
+}
+
+export async function deleteOwnerDrawingFromFirestore(id: number) {
+  try {
+    const docId = `ODRAW-${id}`;
+    const url = `${FIRESTORE_BASE}/owner_drawings/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, { method: "DELETE" });
+  } catch (e) {
+    console.warn("Failed to delete owner drawing from Firestore:", e);
+  }
+}
+
 export async function saveFirestoreState(state: any): Promise<boolean> {
   try {
     const url = `${FIRESTORE_BASE}/restaurant/state?key=${FIRESTORE_API_KEY}`;
@@ -295,6 +446,9 @@ export async function saveFirestoreState(state: any): Promise<boolean> {
         ingredientCount: { integerValue: String(state.ingredients?.length || 0) },
         supplierCount: { integerValue: String(state.suppliers?.length || 0) },
         purchaseCount: { integerValue: String(state.purchases?.length || 0) },
+        accountCount: { integerValue: String(state.accounts?.length || 0) },
+        ownerAccountCount: { integerValue: String(state.ownerAccounts?.length || 0) },
+        ownerDrawingCount: { integerValue: String(state.ownerDrawings?.length || 0) },
       },
     };
     const res = await fetch(url, {
@@ -306,5 +460,84 @@ export async function saveFirestoreState(state: any): Promise<boolean> {
   } catch (e) {
     console.warn("Firestore save error:", e);
     return false;
+  }
+}
+
+export async function syncImageToFirestore(id: string, dataUrl: string, kind: string = "dish") {
+  try {
+    const docId = `IMG-${id}`;
+    const url = `${FIRESTORE_BASE}/images/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fields: toFirestoreFields({
+          id,
+          dataUrl,
+          kind,
+          created: new Date().toISOString(),
+          updated: new Date().toISOString(),
+        }),
+      }),
+    });
+  } catch (e) {
+    console.warn("Failed to sync image to Firestore:", e);
+  }
+}
+
+export async function deleteImageFromFirestore(id: string) {
+  try {
+    const docId = `IMG-${id}`;
+    const url = `${FIRESTORE_BASE}/images/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(url, { method: "DELETE" });
+  } catch (e) {
+    console.warn("Failed to delete image from Firestore:", e);
+  }
+}
+
+
+
+
+export async function syncStaffToFirestore(user: any) {
+  try {
+    const docId = user.docId || `user_${(user.username || user.id || 'staff').toLowerCase().replace(/[^a-z0-9]/g, '_')}`;
+    const payload = {
+      fields: toFirestoreFields({
+        id: user.id,
+        name: user.name,
+        username: (user.username || '').toLowerCase(),
+        role: user.role || 'Cashier',
+        password: user.password || '123456',
+        active: user.active ?? 1,
+        updated: new Date().toISOString(),
+      }),
+    };
+
+    // Save to users collection
+    const usersUrl = `${FIRESTORE_BASE}/users/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(usersUrl, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    // Also mirror to staff collection
+    const staffUrl = `${FIRESTORE_BASE}/staff/${docId}?key=${FIRESTORE_API_KEY}`;
+    await fetch(staffUrl, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  } catch (e) {
+    console.warn("Failed to sync staff user to Firestore:", e);
+  }
+}
+
+export async function deleteStaffFromFirestore(docId: string) {
+  try {
+    await fetch(`${FIRESTORE_BASE}/users/${docId}?key=${FIRESTORE_API_KEY}`, { method: "DELETE" });
+    await fetch(`${FIRESTORE_BASE}/staff/${docId}?key=${FIRESTORE_API_KEY}`, { method: "DELETE" });
+  } catch (e) {
+    console.warn("Failed to delete staff from Firestore:", e);
   }
 }

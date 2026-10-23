@@ -53,7 +53,11 @@ function generate(o, size, path) {
   return JSON.parse(check.stdout)
 }
 
-test("A4 invoice has authoritative amounts, selectable text and embedded fonts", () => {
+const pythonCheck = spawnSync("python", ["-c", "import reportlab, pymupdf; print('OK')"], { encoding: "utf8" })
+const hasPython = pythonCheck.status === 0 && pythonCheck.stdout?.trim() === "OK"
+const skipReason = { skip: !hasPython && "Python ReportLab/PyMuPDF unavailable in this environment" }
+
+test("A4 invoice has authoritative amounts, selectable text and embedded fonts", skipReason, () => {
   const d = generate(o, "A4", "output/pdf/sample-invoice-a4.pdf")
   assert.equal(d.pages, 1)
   assert.ok(d.text.includes("PKR 1,620.00"))
@@ -62,7 +66,7 @@ test("A4 invoice has authoritative amounts, selectable text and embedded fonts",
   assert.ok(d.text.includes("Outstanding balance"))
 })
 
-test("80mm receipt is one continuous page with the same saved values", () => {
+test("80mm receipt is one continuous page with the same saved values", skipReason, () => {
   const d = generate(o, "80mm", "output/pdf/sample-invoice-80mm.pdf")
   assert.equal(d.pages, 1)
   assert.ok(Math.abs(d.width - 226.77) < 1)
@@ -70,7 +74,7 @@ test("80mm receipt is one continuous page with the same saved values", () => {
   assert.ok(d.text.includes("PKR 380.00"))
 })
 
-test("long invoice paginates with repeated headings and no missing line totals", () => {
+test("long invoice paginates with repeated headings and no missing line totals", skipReason, () => {
   const m = a.menu()[0]
   m.name =
     "Traditional special slow cooked chicken karahi with fresh tomatoes, ginger, herbs and coriander for a family gathering"
@@ -88,7 +92,7 @@ test("long invoice paginates with repeated headings and no missing line totals",
   assert.ok(d.text.includes("PKR 108,000.00"))
 })
 
-test("Urdu names use an embedded Arabic font with shaped glyphs", () => {
+test("Urdu names use an embedded Arabic font with shaped glyphs", skipReason, () => {
   const m = a.menu()[0]
   m.name = "\u0686\u06a9\u0646 \u06a9\u0691\u0627\u06c1\u06cc"
   call("menu/save", m)

@@ -28,3 +28,5 @@ logs/
 *.zip
 __pycache__/
 !.env.example
+dastarkhwan_flutter_app/
+*.apk

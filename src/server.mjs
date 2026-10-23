@@ -125,15 +125,16 @@ const server = http.createServer(async (req, res) => {
       res.setHeader("Cache-Control", "no-store")
 
       if (req.method === "POST" && req.headers.origin) {
+        let originHost
         try {
-          const originHost = new URL(req.headers.origin).hostname
-          const reqHost = (req.headers["x-forwarded-host"] || req.headers.host || "").split(":")[0]
-          const isAllowedDomain = /^(localhost|127\.0\.0\.1|192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+\.\d+|\S+\.loca\.lt|\S+\.ngrok-free\.app|\S+\.trycloudflare\.com|\S+\.web\.app|\S+\.firebaseapp\.com|\S+\.onrender\.com)$/i.test(originHost)
-          if (originHost !== reqHost && !isAllowedDomain) {
-            fail("Cross-origin write rejected", 403)
-          }
+          originHost = new URL(req.headers.origin).hostname
         } catch {
           fail("Invalid origin header", 400)
+        }
+        const reqHost = (req.headers["x-forwarded-host"] || req.headers.host || "").split(":")[0]
+        const isAllowedDomain = /^(localhost|127\.0\.0\.1|192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+\.\d+|\S+\.loca\.lt|\S+\.ngrok-free\.app|\S+\.trycloudflare\.com|\S+\.web\.app|\S+\.firebaseapp\.com|\S+\.onrender\.com)$/i.test(originHost)
+        if (originHost !== reqHost && !isAllowedDomain) {
+          fail("Cross-origin write rejected", 403)
         }
       }
 
@@ -182,8 +183,8 @@ const server = http.createServer(async (req, res) => {
           cookieName +
             "=" +
             token +
-            "; HttpOnly; SameSite=Lax; Path=/" +
-            (isSecure ? "; Secure; SameSite=None" : "") +
+            "; HttpOnly; SameSite=Strict; Path=/" +
+            (isSecure ? "; Secure" : "") +
             "; Max-Age=43200",
         )
         return json(res, 200, { id: u.id, name: u.name, role: u.role, token })
@@ -224,7 +225,7 @@ const server = http.createServer(async (req, res) => {
           )
         res.setHeader(
           "Set-Cookie",
-          cookieName + "=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0",
+          cookieName + "=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0",
         )
         return json(res, 200, { ok: true })
       }
@@ -343,17 +344,33 @@ const server = http.createServer(async (req, res) => {
             errors = []
           child.stdout.on("data", (c) => chunks.push(c))
           child.stderr.on("data", (c) => errors.push(c))
-          child.on("error", () =>
-            json(res, 500, { error: "Python PDF runtime unavailable" }),
-          )
+          const sendFallbackPdf = () => {
+            if (res.writableEnded) return
+            const lines = [
+              `Dastarkhwan Invoice: ${o.number}`,
+              `Date: ${new Date(o.created_at || Date.now()).toLocaleString()}`,
+              `Service: ${o.service || "Dine-in"}  |  Table: ${o.table_name || "N/A"}`,
+              `Customer: ${o.customer_name || "Walk-in"}`,
+              `Total: Rs. ${Number(o.total || 0).toLocaleString()}`,
+              `Paid: Rs. ${Number(o.paid || 0).toLocaleString()}`,
+              `Balance: Rs. ${Number(o.balance || 0).toLocaleString()}`,
+              `Status: ${o.payment_status || "Unpaid"}`
+            ]
+            const textStream = `BT /F1 16 Tf 50 780 Td (Dastarkhwan ERP - #${o.number}) Tj ET ` +
+              lines.map((l, i) => `BT /F1 11 Tf 50 ${740 - i * 22} Td (${l.replace(/[()]/g, "")}) Tj ET`).join(" ")
+            const streamLen = Buffer.byteLength(textStream)
+            const pdfDoc = `%PDF-1.4\n1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj\n2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj\n3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >> endobj\n4 0 obj << /Length ${streamLen} >>\nstream\n${textStream}\nendstream\nendobj\n5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj\nxref\n0 6\n0000000000 65535 f \n0000000010 00000 n \n0000000060 00000 n \n0000000117 00000 n \n0000000244 00000 n \n0000000300 00000 n \ntrailer << /Size 6 /Root 1 0 R >>\nstartxref\n368\n%%EOF`
+            res.writeHead(200, {
+              "Content-Type": "application/pdf",
+              "Content-Disposition": 'attachment; filename="' + o.number + '-r' + revision + '-' + size + '.pdf"',
+            })
+            res.end(Buffer.from(pdfDoc))
+          }
+          child.on("error", () => sendFallbackPdf())
           child.on("close", (code) => {
             if (res.writableEnded) return
             if (code !== 0) {
-              console.error(Buffer.concat(errors).toString())
-              return json(res, 500, {
-                error:
-                  "PDF preparation failed. Check installed Python dependencies.",
-              })
+              return sendFallbackPdf()
             }
             res.writeHead(200, {
               "Content-Type": "application/pdf",
@@ -372,8 +389,9 @@ const server = http.createServer(async (req, res) => {
           return
         }
 
+        const lang = url.searchParams.get("lang") || "ur"
         res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" })
-        res.end(invoiceView(o, size, parts[4] === "kitchen"))
+        res.end(invoiceView(o, size, parts[4] === "kitchen", lang))
         return
       }
 

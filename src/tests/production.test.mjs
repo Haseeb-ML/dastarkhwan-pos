@@ -21,7 +21,8 @@ test("production onboarding, secure sessions, protected API, build assets and re
   let child
 
   const start = async () => {
-    child = spawn(process.execPath, ["server.mjs"], {
+    child = spawn(process.execPath, [resolve(import.meta.dirname, "../server.mjs")], {
+      cwd: resolve(import.meta.dirname, "../.."),
       env: {
         ...process.env,
         NODE_ENV: "production",

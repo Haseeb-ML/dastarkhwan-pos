@@ -1,8 +1,9 @@
-﻿/* Shared visual language: warm ivory, emerald surfaces, restrained brass details. */
+/* Shared visual language: warm ivory, emerald surfaces, restrained brass details. */
 :root{--ivory:#f7f7f0;--line:#dce5d5;--ink:#203c2b;--muted:#75836c;--shadow:0 10px 30px #163b2810}
 [lang=en] body,[lang=en] .app-shell,[lang=en] .app-shell *,[lang=en] .modal-backdrop,[lang=en] .modal-backdrop *,[lang=en] .login-page *{font-family:'DM Sans',Arial,sans-serif!important;letter-spacing:normal!important}
 [lang=en] [lang=ur],[lang=en] [lang=ur] *{font-family:'Restaurant Nastaliq',serif!important}
-.app-shell .main-shell>.page-content{width:100%;max-width:none;margin:0;min-width:0;align-self:stretch;padding:24px}
+.app-shell .main-shell>.page-content,
+.app-shell .main-shell>.finance-workspace{width:100%;max-width:none;margin:0;min-width:0;align-self:stretch;overflow-y:auto!important}
 .app-shell .main-shell{background:radial-gradient(ellipse at top right,#edf3e455,transparent 65%),#f7f7f0}
 .app-shell .sidebar{background:linear-gradient(155deg,#1c5440,#10392e 70%,#0b3028);box-shadow:0 0 28px #153b2915;scrollbar-width:thin}
 .app-shell .sidebar nav button{transition:background .18s,color .18s;border-radius:10px}.app-shell .sidebar nav button.active{background:#f2e5cb!important;color:#214c35!important;box-shadow:0 3px 12px #0a2f2320}
